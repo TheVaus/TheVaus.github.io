@@ -19,8 +19,10 @@
   <div class="wrap">
     <a class="wordmark" href="./">Daniel Vekar</a>
     <nav class="site-nav" aria-label="Main">
-      <a href="./#work" aria-current="page">Work</a>
-      <a href="./#experience" class="opt">Experience</a>
+      <a href="./#games">Games</a>
+      <a href="./#work" class="opt">Work</a>
+      <a href="optcg.html" class="opt">Competitive</a>
+      <a href="timeline.html">Timeline</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -29,7 +31,8 @@
 <main id="main">
 <div class="wrap">
   <header class="cs-head">
-    <a class="crumb" href="./#work">All work</a>
+    <a class="crumb" href="./">Home</a>
+    <img src="img/chardss-logo.webp" alt="CHARDSS logo" width="72" height="72" style="border-radius:6px;margin-bottom:16px">
     <h1>CHARDSS</h1>
     <p class="lede">Cards, Chess &amp; Chaos. It's chess with a shared deck of 40 cards, and every card bends one rule of chess. You pay for cards with the pieces you lose.</p>
     <dl class="summary">
@@ -75,7 +78,19 @@
 
       <section id="economy">
         <h2>Your losses pay for your cards</h2>
-        <p>You earn points when <b>your own</b> pieces are captured, equal to their chess value: Pawn 1, Knight and Bishop 3, Rook 5, Queen 9. Capturing your opponent's pieces earns you nothing.</p>
+        <p>You earn points when <b>your own</b> pieces are captured, equal to their chess value. Capturing your opponent's pieces earns you nothing.</p>
+        <div class="table-wrap" style="max-width:560px">
+          <table>
+            <thead><tr><th scope="col">Piece lost</th><th scope="col">Points earned</th></tr></thead>
+            <tbody>
+              <tr><th scope="row"><img class="piece" src="img/pieces/Pawn.svg" alt="">Pawn</th><td>1</td></tr>
+              <tr><th scope="row"><img class="piece" src="img/pieces/Knight.svg" alt="">Knight</th><td>3</td></tr>
+              <tr><th scope="row"><img class="piece" src="img/pieces/Bishop.svg" alt="">Bishop</th><td>3</td></tr>
+              <tr><th scope="row"><img class="piece" src="img/pieces/Rook.svg" alt="">Rook</th><td>5</td></tr>
+              <tr><th scope="row"><img class="piece" src="img/pieces/Queen.svg" alt="">Queen</th><td>9</td></tr>
+            </tbody>
+          </table>
+        </div>
         <p>So the player who is behind on material has the most points to spend. Most cards cost 1 or 2, so losing a Pawn or two is enough to play one.</p>
       </section>
 
@@ -105,9 +120,10 @@
       <section id="look">
         <h2>The look</h2>
         <p>The first card fronts were colour-coded in blue, red, green and purple. The current version uses one brown frame for every card.</p>
-        <ol class="evo" style="grid-template-columns:repeat(2,minmax(0,220px))">
+        <ol class="evo" style="grid-template-columns:repeat(3,minmax(0,220px))">
           <li><img src="img/chardss-teleport-v1.webp" alt="Version 1 of Teleport with a blue frame" width="360" height="503" loading="lazy"><b>Version 1</b><span>Colour-coded fronts</span></li>
           <li><img src="img/chardss-teleport-v2.webp" alt="Current Teleport with a brown frame" width="360" height="503" loading="lazy"><b>Current</b><span>One frame for all 40 cards</span></li>
+          <li><img src="img/chardss-back.webp" alt="The CHARDSS card back: brown and cream quarters with the CHARDSS logo in a diamond" width="500" height="698" loading="lazy"><b>Card back</b><span>Shared by all 40 cards</span></li>
         </ol>
         <p>The game's font, <b>Chardss Display</b>, is Cormorant with chess-piece glyphs added (pieces by Colin M.L. Burnett). Typing <i>{King}</i> on a card or on the website gives you the King icon. The card data lives in one JSON file, and every change to the rules or cards rebuilds the website's rules, card pages and images.</p>
         <figure class="fig"><img src="img/shots/ch-home.webp" alt="The CHARDSS homepage with the title Chess, Cards, Chaos and a hand of three cards" width="1200" height="750" loading="lazy"><figcaption>The CHARDSS homepage. The hero deals you an opening hand of three cards.</figcaption></figure>

@@ -22,8 +22,10 @@
   <div class="wrap">
     <a class="wordmark" href="./">Daniel Vekar</a>
     <nav class="site-nav" aria-label="Main">
-      <a href="#work">Work</a>
-      <a href="#experience" class="opt">Experience</a>
+      <a href="./#games">Games</a>
+      <a href="./#work" class="opt">Work</a>
+      <a href="optcg.html" class="opt">Competitive</a>
+      <a href="timeline.html">Timeline</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -45,10 +47,12 @@
   </div>
 </section>
 
-<section class="section" id="work">
+<section class="band" id="games" aria-labelledby="games-title">
   <div class="wrap">
-    <h2 class="section-title">Selected work</h2>
-    <p class="section-intro">Four games I designed or worked on, and a world I'm building. Each one has a case study with my role, the design problems and how I solved them.</p>
+    <header class="band__head">
+      <h2 id="games-title">Games I designed</h2>
+      <p>Three original games: a trading card game, a chess variant played with cards, and a digital tactics card game.</p>
+    </header>
 
     <article class="feature">
       <a class="feature__media" href="war-tcg.html" tabindex="-1" aria-hidden="true">
@@ -75,7 +79,7 @@
     </article>
 
     <article class="project">
-      <a class="project__thumb project__thumb--card" href="chardss.html" tabindex="-1" aria-hidden="true"><img src="img/chardss-armageddon.webp" alt="" width="500" height="698" loading="lazy"></a>
+      <a class="project__thumb project__thumb--card" href="chardss.html" tabindex="-1" aria-hidden="true"><img src="img/chardss-back.webp" alt="" width="500" height="698" loading="lazy"></a>
       <div>
         <p class="project-kind">Chess variant with a 40-card deck</p>
         <h3>CHARDSS</h3>
@@ -86,21 +90,6 @@
           <div><dt>Status</dt><dd>Playable, public rules</dd></div>
         </dl>
         <a class="read" href="chardss.html">Read the CHARDSS case study</a>
-      </div>
-    </article>
-
-    <article class="project">
-      <a class="project__thumb" href="expanchess.html" tabindex="-1" aria-hidden="true"><img src="img/expanchess-thumb.webp" alt="" width="440" height="248" loading="lazy"></a>
-      <div>
-        <p class="project-kind">Chess video game with ability cards, my current job</p>
-        <h3>Expanchess</h3>
-        <p>A browser chess game that adds one-use ability cards. I work across design, UI/UX, monetization and the product roadmap in a small startup team.</p>
-        <dl class="meta">
-          <div><dt>Role</dt><dd>Game development contractor</dd></div>
-          <div><dt>Team</dt><dd>Small startup</dd></div>
-          <div><dt>Years</dt><dd>2025 to now</dd></div>
-        </dl>
-        <a class="read" href="expanchess.html">Read about my work on Expanchess</a>
       </div>
     </article>
 
@@ -118,43 +107,88 @@
         <a class="read" href="glory.html">Read the Glory case study</a>
       </div>
     </article>
+  </div>
+</section>
 
+<section class="band band--alt" id="work" aria-labelledby="work-title">
+  <div class="wrap">
+    <header class="band__head">
+      <h2 id="work-title">Professional work</h2>
+      <p>My current job, on a chess game with ability cards.</p>
+    </header>
+    <article class="project">
+      <a class="project__thumb" href="expanchess.html" tabindex="-1" aria-hidden="true"><img src="img/expanchess-thumb.webp" alt="" width="440" height="248" loading="lazy"></a>
+      <div>
+        <p class="project-kind">Chess video game with ability cards</p>
+        <h3>Expanchess</h3>
+        <p>A browser chess game that adds one-use ability cards. I work across design, UI/UX, monetization and the product roadmap in a small startup team.</p>
+        <dl class="meta">
+          <div><dt>Role</dt><dd>Game development contractor</dd></div>
+          <div><dt>Team</dt><dd>Small startup</dd></div>
+          <div><dt>Years</dt><dd>2025 to now</dd></div>
+        </dl>
+        <a class="read" href="expanchess.html">Read about my work on Expanchess</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="band" id="competitive" aria-labelledby="comp-title">
+  <div class="wrap">
+    <header class="band__head">
+      <h2 id="comp-title">Competitive play and community</h2>
+      <p>I've competed in One Piece TCG at the highest level since 2022, and I helped run its community in Israel.</p>
+    </header>
+    <div class="pair">
+      <article class="pair__item">
+        <p class="project-kind">2022 to now</p>
+        <h3>Competitive One Piece TCG</h3>
+        <p class="big-stat">About $200,000</p>
+        <p>won in tournament prizes. I also coach local players and designed a One Piece cube format with a 540-card pool.</p>
+        <a class="read" href="optcg.html">More on competitive play</a>
+      </article>
+      <article class="pair__item">
+        <p class="project-kind">2022 to 2025</p>
+        <h3>Community management</h3>
+        <p class="big-stat">50 to 1,000+</p>
+        <p>members in One Piece TCG Israel, which I co-managed: weekly events, tournaments with local stores and anti-fraud rules for trading.</p>
+        <a class="read" href="community.html">More on community management</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band band--alt" id="world" aria-labelledby="world-title">
+  <div class="wrap">
+    <header class="band__head">
+      <h2 id="world-title">Worldbuilding</h2>
+      <p>An original setting I'm building.</p>
+    </header>
     <article class="project">
       <a class="project__thumb" href="world.html" tabindex="-1" aria-hidden="true"><img src="img/world-thumb.webp" alt="" width="440" height="248" loading="lazy"></a>
       <div>
-        <p class="project-kind">Worldbuilding</p>
+        <p class="project-kind">Fantasy-steampunk world</p>
         <h3>The Wondering Emperor</h3>
-        <p>An original fantasy-steampunk world with a hard magic system, hundreds of kingdoms and a full timeline. This is a short preview of it.</p>
+        <p>A world with a hard magic system, hundreds of kingdoms and a full timeline. This is a short preview of it.</p>
         <a class="read" href="world.html">See the world preview</a>
       </div>
     </article>
   </div>
 </section>
 
-<section class="section" id="play">
+<section class="band" id="timeline-teaser" aria-labelledby="tl-title">
   <div class="wrap split">
-    <div>
-      <h2 class="section-title">Competitive play</h2>
-      <p class="section-intro">I've competed in One Piece TCG at the highest level since 2022.</p>
-    </div>
-    <ul class="record">
-      <li><b>About $200,000</b><span>won in One Piece TCG tournament prizes since 2022</span></li>
-      <li><b>Coach</b><span>for local players preparing for competitive events</span></li>
-      <li><b>Cube designer</b><span>a custom One Piece TCG cube format with its own rules and a 540-card pool</span></li>
-      <li><b>Playtester</b><span>structured feedback on mechanics, rules, balance and player experience for other designers' board and video games. Some of those games went into production.</span></li>
-      <li><b>Also played</b><span>Cyberpunk TCG, Magic: The Gathering, Flesh and Blood, Riftbound, Lorcana</span></li>
-    </ul>
-  </div>
-</section>
-
-<section class="section" id="experience">
-  <div class="wrap">
-    <h2 class="section-title">Experience</h2>
-    <ol class="timeline">
-      <li><time>2025 to now</time><div><h3>Game development contractor, Expanchess</h3><p>Rules and player-experience iteration, UI/UX, monetization, roadmap planning, and automations that cut manual work and running costs.</p></div></li>
-      <li><time>2022 to 2025</time><div><h3>Community manager, One Piece TCG Israel</h3><p>Co-ran the local community and grew it from about 50 to more than 1,000 members. Organised weekly events and tournaments with stores, enforced anti-fraud rules for trading and worked with retailers on product supply.</p></div></li>
-      <li><time>2022 to 2024</time><div><h3>IT administrator and DBA</h3><p>SQL, programming, Linux systems, virtual machines and network infrastructure.</p></div></li>
-      <li><time>2020 to now</time><div><h3>Independent game designer</h3><p>An original TCG, a chess variant, a tactical card-driven board game and a long-running worldbuilding project, from two-week experiments to a two-year design.</p></div></li>
+    <header class="band__head">
+      <h2 id="tl-title">Timeline</h2>
+      <p>Everything above, in the order it happened.</p>
+      <a class="btn btn-secondary" href="timeline.html">See the full timeline</a>
+    </header>
+    <ol class="mini-tl">
+      <li><time>2026</time><span>WAR-TCG, from first design log entry to a 127-card table</span></li>
+      <li><time>2025</time><span>Joined Expanchess. First CHARDSS prototype.</span></li>
+      <li><time>2024</time><span>Glory, a digital tactics card game</span></li>
+      <li><time>2022</time><span>Started competing in One Piece TCG and co-managing its Israeli community</span></li>
+      <li><time>2020</time><span>Started designing games independently</span></li>
     </ol>
   </div>
 </section>

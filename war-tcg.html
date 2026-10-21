@@ -19,8 +19,10 @@
   <div class="wrap">
     <a class="wordmark" href="./">Daniel Vekar</a>
     <nav class="site-nav" aria-label="Main">
-      <a href="./#work" aria-current="page">Work</a>
-      <a href="./#experience" class="opt">Experience</a>
+      <a href="./#games">Games</a>
+      <a href="./#work" class="opt">Work</a>
+      <a href="optcg.html" class="opt">Competitive</a>
+      <a href="timeline.html">Timeline</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -29,7 +31,7 @@
 <main id="main">
 <div class="wrap">
   <header class="cs-head">
-    <a class="crumb" href="./#work">All work</a>
+    <a class="crumb" href="./">Home</a>
     <h1>WAR-TCG</h1>
     <p class="lede">A five-colour trading card game about a kingdom fighting on every front. Any unit in your hand can become a resource, a threat or a shield, and you decide which.</p>
     <dl class="summary">
@@ -55,6 +57,7 @@
         <li><a href="#might">Combat</a></li>
         <li><a href="#pitch">Blocking</a></li>
         <li><a href="#colours">Colour pie</a></li>
+        <li><a href="#cards">More cards</a></li>
         <li><a href="#balance">Balance</a></li>
         <li><a href="#frames">Card frame</a></li>
         <li><a href="#tools">Tools</a></li>
@@ -89,6 +92,11 @@
           <dt>Solution</dt><dd>There's no resource card. Once per turn you can <b>station</b> a unit from your hand in your <b>Backline</b> for free, where it taps to produce energy. Or you pay its cost and <b>deploy</b> it to the <b>Frontline</b> to fight. Backline units can later <b>advance</b> through the <b>Middle</b>, which holds only one unit.</dd>
           <dt>Result</dt><dd>A unit you can't afford yet is still useful as next turn's energy, and resources can turn into threats over time.</dd>
         </dl>
+        <div class="zones" role="img" aria-label="The three board zones from back to front: Backline, Middle and Frontline">
+          <div><b>Backline</b><span>Stationed units tap for energy</span></div>
+          <div><b>Middle</b><span>Holds one unit on its way forward</span></div>
+          <div><b>Frontline</b><span>Deployed units and items, where attacks come from</span></div>
+        </div>
         <p>The Middle came in a second pass. In May the board had two zones. In June I added the Middle, capped at one unit, to add travel time between producing energy and fighting, and to prevent big, sudden board swings.</p>
       </section>
 
@@ -96,7 +104,7 @@
         <h2>Combat on one number</h2>
         <dl class="psr">
           <dt>Problem</dt><dd>Games like Magic give units separate power and toughness and track damage on them, which is more to explain and more to remember.</dd>
-          <dt>Solution</dt><dd>Units fight with one number, <b>Might</b>. An attack hits if the attackers' total Might is at least the target's. A unit that's hit is destroyed. A Leader that's hit loses Life equal to the strongest attacker's Might. Attackers never take damage back.</dd>
+          <dt>Solution</dt><dd>Units fight with one number, <b>Might</b> <span class="ico-inline" aria-hidden="true">{Might}</span>. An attack hits if the attackers' total Might is at least the target's. A unit that's hit is destroyed. A Leader that's hit loses Life <span class="ico-inline" aria-hidden="true">{Life}</span> equal to the strongest attacker's Might. Attackers never take damage back.</dd>
           <dt>Result</dt><dd>Combat is one comparison, and an effect like "−3 Might" works on any target. I also scaled all numbers down from thousands (3000) to single digits (3).</dd>
         </dl>
         <p>This went back and forth. In June I removed Life and had players defend Regions instead, so damage and removal used the same number. Leaders and Regions now have Life again. In August I kept Leader Might as a fixed budget, so every Region stays roughly equal in power no matter how many a deck runs.</p>
@@ -104,7 +112,7 @@
 
       <section id="pitch">
         <h2>Blocking by pitching</h2>
-        <p>When you're attacked, you can <b>pitch</b> cards from your hand that have a Block value (0, 1 or 2). Each one adds its Block to the target's Might for that combat, and pitched cards go to the bottom of their owner's deck at the end of the turn. A defender can also tap one unit with <i>Blocker</i> to take the attack instead.</p>
+        <p>When you're attacked, you can <b>pitch</b> cards from your hand that have a Block value <span class="ico-inline" aria-hidden="true">{Block}</span> (0, 1 or 2). Each one adds its Block to the target's Might for that combat, and pitched cards go to the bottom of their owner's deck at the end of the turn. A defender can also tap one unit with <i>Blocker</i> to take the attack instead.</p>
         <p>So a unit in hand has three uses: play it, station it, or keep it to block. In June I tried having Block lower the attacker's Might instead, to make attacks by several units easier to resolve. The current rules add Block to the defender again.</p>
       </section>
 
@@ -124,6 +132,23 @@
           </table>
         </div>
         <p>Each of the ten colour pairs has its own written identity too. Blue and Red, for example, is "thinking before acting against acting without thinking", and it's a deck where Commands matter.</p>
+      </section>
+
+      <section id="cards">
+        <h2>More from the card table</h2>
+        <p>Ten more cards across the five colours and all three card types: units, commands and items.</p>
+        <div class="strip" tabindex="0" aria-label="Scrollable row of ten WAR-TCG cards">
+          <img src="img/strip/war-004.webp" alt="Rotfuse Sappers, black-red unit" width="340" height="475" loading="lazy">
+          <img src="img/strip/war-008.webp" alt="Countercharge, white command" width="340" height="475" loading="lazy">
+          <img src="img/strip/war-010.webp" alt="Thornwake Sentinel, green unit" width="340" height="475" loading="lazy">
+          <img src="img/strip/war-013.webp" alt="Goblin Field Mortar, red item" width="340" height="475" loading="lazy">
+          <img src="img/strip/war-036.webp" alt="Shrinker, blue item" width="340" height="475" loading="lazy">
+          <img src="img/strip/war-040.webp" alt="Selfish Inventor, blue-black unit" width="340" height="475" loading="lazy">
+          <img src="img/strip/war-055.webp" alt="Signal Cannon, red item" width="340" height="475" loading="lazy">
+          <img src="img/strip/war-059.webp" alt="Siegecaller Ryn, blue-red unit" width="340" height="475" loading="lazy">
+          <img src="img/strip/war-061.webp" alt="Purify, white command" width="340" height="475" loading="lazy">
+          <img src="img/strip/war-067.webp" alt="Iron Manacles, white item" width="340" height="475" loading="lazy">
+        </div>
       </section>
 
       <section id="balance">

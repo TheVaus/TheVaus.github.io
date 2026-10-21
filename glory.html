@@ -19,8 +19,10 @@
   <div class="wrap">
     <a class="wordmark" href="./">Daniel Vekar</a>
     <nav class="site-nav" aria-label="Main">
-      <a href="./#work" aria-current="page">Work</a>
-      <a href="./#experience" class="opt">Experience</a>
+      <a href="./#games">Games</a>
+      <a href="./#work" class="opt">Work</a>
+      <a href="optcg.html" class="opt">Competitive</a>
+      <a href="timeline.html">Timeline</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -29,7 +31,7 @@
 <main id="main">
 <div class="wrap">
   <header class="cs-head">
-    <a class="crumb" href="./#work">All work</a>
+    <a class="crumb" href="./">Home</a>
     <h1>Glory</h1>
     <p class="lede">A turn-based tactics game where your hand is your move set. Each character brings its own ability to a hex battlefield.</p>
     <dl class="summary">
@@ -79,7 +81,7 @@
           <li><b>Answer</b>The attacker may play an offensive reaction. Repeat from step 2 until nobody plays.</li>
           <li><b>Resolve</b>Pick a path, resolve reactions last-in first-out, then deal damage.</li>
         </ol>
-        <p>The full flow is also drawn as a flowchart in the design docs, which is what the game server implements.</p>
+        <figure class="fig" style="max-width:360px"><img src="img/shots/glory-chain.webp" alt="Flowchart: attack action by player 1, then a loop of defensive reactions by player 2 and offensive reactions by player 1, ending in Resolve Combat Chain" width="681" height="879" loading="lazy"><figcaption>The combat chain flowchart from the design docs, drawn in draw.io.</figcaption></figure>
       </section>
 
       <section id="facing">
@@ -118,6 +120,7 @@
           <li><b>Assassin</b> makes reactions cost more for everyone else during their turn.</li>
           <li><b>Ice Wizard</b> can spend Mana to put Frost on an enemy whenever it hits or gets hit.</li>
         </ul>
+        <figure class="fig"><img src="img/shots/glory-necro.webp" alt="The same match from the Necromancer player's side, with their own stats and hand" width="1200" height="750" loading="lazy"><figcaption>The same match from the Necromancer's side, with its own stats and hand.</figcaption></figure>
         <p>Across them there are 75 cards and 10 weapons, defined in the game's code and exported to spreadsheets.</p>
       </section>
 
