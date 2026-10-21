@@ -1,8 +1,7 @@
 # DESIGN.md — Daniel Vekar portfolio
 
 The site is set in the same type and colours as WAR-TCG, Daniel's own trading card game, so the portfolio reads as
-the work of the person who made those cards. One thematic element (a Leader card of Daniel in the hero, in the colourless WAR frame);
-everything else is quiet, left-aligned and easy to skim for a recruiter.
+the work of the person who made those cards. Everything is quiet, left-aligned and easy to skim for a recruiter.
 
 Direction note: no UXKIN tools were connected, so this direction comes from Daniel's own game assets and from
 game-design portfolio guides (GameDesignSkills, Game Developer, PocketGamer.biz), not from comparing real sites.
@@ -70,4 +69,4 @@ spreadsheets. No stock art, no AI art, no emoji, no icon sets beyond the WAR gly
 
 ## Motion
 
-None. Nothing animates on load, scroll or hover beyond link and button colour changes. The hero card is hidden on phones.
+None. Nothing animates on load, scroll or hover beyond link and button colour changes.
