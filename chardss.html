@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CHARDSS case study, Daniel Vekar</title>
-<meta name="description" content="CHARDSS is chess with a shared deck of 40 rule-bending cards, paid for with the pieces you lose. How I designed its economy, its cards and its website.">
+<meta name="description" content="CHARDSS is chess with a shared deck of 40 rule-bending cards, paid for with the pieces you lose. How I designed its economy and its cards.">
 <meta property="og:title" content="CHARDSS case study, Daniel Vekar">
 <meta property="og:image" content="https://thevaus.github.io/img/og.png">
 <meta name="theme-color" content="#191F21">
@@ -33,10 +33,10 @@
     <h1>CHARDSS</h1>
     <p class="lede">Cards, Chess &amp; Chaos. It's chess with a shared deck of 40 cards, and every card bends one rule of chess. You pay for cards with the pieces you lose.</p>
     <dl class="summary">
-      <div><dt>My role</dt><dd>Sole designer: rules, cards, card frames, font, website</dd></div>
+      <div><dt>My role</dt><dd>Sole designer: rules, cards, card frames</dd></div>
       <div><dt>Team</dt><dd>Solo project</dd></div>
       <div><dt>Timeline</dt><dd>2025 to now</dd></div>
-      <div><dt>Tools</dt><dd>Affinity, Python, Astro</dd></div>
+      <div><dt>Tools</dt><dd>Affinity, Python, AI coding tools</dd></div>
       <div><dt>Status</dt><dd>Playable. <a href="https://thevaus.github.io/CHARDSS-Website/">Rules and all 40 cards</a></dd></div>
     </dl>
   </header>
@@ -63,23 +63,20 @@
       <section id="idea">
         <h2>The idea</h2>
         <p>Both players draw from one shared deck. Each turn you may play one card, then make one move, then draw back to three cards.</p>
-        <p>Every card changes exactly one rule, for one turn or one move. Your Pawns capture sideways. Your King swaps places with a Rook. Your opponent has to take back their last move. All normal chess rules still apply unless a card says otherwise.</p>
+        <p>Every card bends one rule of chess. Your Pawns capture sideways. Your King swaps places with a Rook. Your opponent has to change their last move. All normal chess rules still apply unless a card says otherwise.</p>
         <figure class="fig fig--cards">
           <img src="img/chardss-teleport.webp" alt="Teleport, cost 3: switch your King with another piece, then pass the turn" width="500" height="698" loading="lazy">
           <img src="img/chardss-mimic.webp" alt="Mimic, cost 2: when you capture, your piece may become the type it captured" width="500" height="698" loading="lazy">
           <img src="img/chardss-plan-b.webp" alt="Plan B, cost 3: your opponent must change their last move" width="500" height="698" loading="lazy">
           <img src="img/chardss-armageddon.webp" alt="Armageddon, cost 39: if your King is your only piece left, you win" width="500" height="698" loading="lazy">
-          <figcaption>Four of the 40 cards. The piece icons in the text come from a font I made for the game.</figcaption>
+          <figcaption>Four of the 40 cards. The piece icons in the text come from the game's font.</figcaption>
         </figure>
       </section>
 
       <section id="economy">
         <h2>Your losses pay for your cards</h2>
-        <dl class="psr">
-          <dt>Problem</dt><dd>If powers are earned by playing well, the player who's already ahead gets stronger and the game snowballs.</dd>
-          <dt>Solution</dt><dd>You earn points when <b>your own</b> pieces are captured, equal to their chess value: Pawn 1, Knight and Bishop 3, Rook 5, Queen 9. You don't earn anything for capturing.</dd>
-          <dt class="res">Result</dt><dd>The player who is behind on material has the most to spend. Most cards cost 1 or 2, so losing a Pawn or two already buys a real option. Comebacks are part of the resource system instead of luck.</dd>
-        </dl>
+        <p>You earn points when <b>your own</b> pieces are captured, equal to their chess value: Pawn 1, Knight and Bishop 3, Rook 5, Queen 9. Capturing your opponent's pieces earns you nothing.</p>
+        <p>So the player who is behind on material has the most points to spend. Most cards cost 1 or 2, so losing a Pawn or two is enough to play one.</p>
       </section>
 
       <section id="cards">
@@ -92,7 +89,7 @@
           </table>
         </div>
         <p>A family of cards lets your Pawns move like another piece for a turn. Their costs follow the strength of that piece: <b>Kingified</b> costs 1, <b>Knightified</b> and <b>Bishopified</b> 2, <b>Rookified</b> 3 and <b>Queenified</b> 4.</p>
-        <p>The outlier is <b>Armageddon</b>. It costs 39, which is every point a player can earn in a game (8 Pawns, 2 Knights, 2 Bishops, 2 Rooks and a Queen). It wins the game if your King is your last piece. In practice you can only afford it when you're already close to the position where it wins.</p>
+        <p>The outlier is <b>Armageddon</b>. It costs 39, the total value of all your pieces except the King (8 Pawns, 2 Knights, 2 Bishops, 2 Rooks and a Queen). It wins the game if your King is the only piece you have left on the board.</p>
       </section>
 
       <section id="rules">
@@ -112,7 +109,7 @@
           <li><img src="img/chardss-teleport-v1.webp" alt="Version 1 of Teleport with a blue frame" width="360" height="503" loading="lazy"><b>Version 1</b><span>Colour-coded fronts</span></li>
           <li><img src="img/chardss-teleport-v2.webp" alt="Current Teleport with a brown frame" width="360" height="503" loading="lazy"><b>Current</b><span>One frame for all 40 cards</span></li>
         </ol>
-        <p>I made a font, <b>Chardss Display</b>, from Cormorant with chess-piece glyphs added. Typing <i>{King}</i> on a card or on the website gives you the King icon. The card data lives in one JSON file, and every push to the game's repository rebuilds the website's rules, card pages and images.</p>
+        <p>The game's font, <b>Chardss Display</b>, is Cormorant with chess-piece glyphs added (pieces by Colin M.L. Burnett). Typing <i>{King}</i> on a card or on the website gives you the King icon. The card data lives in one JSON file, and every change to the rules or cards rebuilds the website's rules, card pages and images.</p>
         <figure class="fig"><img src="img/shots/ch-home.webp" alt="The CHARDSS homepage with the title Chess, Cards, Chaos and a hand of three cards" width="1200" height="750" loading="lazy"><figcaption>The CHARDSS homepage. The hero deals you an opening hand of three cards.</figcaption></figure>
       </section>
 
@@ -132,7 +129,7 @@
 
 <footer class="site-foot on-iron" id="contact">
   <div class="wrap">
-    <h2>Let's talk about cards</h2>
+    <h2>Contact</h2>
     <p>I'm looking for a game designer role on a trading card game. I'm based in Tel Aviv and work remotely, including US hours.</p>
     <div class="actions">
       <a class="btn btn-primary" href="mailto:daniel.vekar@gmail.com">Email daniel.vekar@gmail.com</a>

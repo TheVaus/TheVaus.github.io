@@ -1,8 +1,8 @@
 # DESIGN.md — Daniel Vekar portfolio
 
 The site is set in the same type and colours as WAR-TCG, Daniel's own trading card game, so the portfolio reads as
-the work of the person who made those cards. One loud element (the Leader card of Daniel in the hero); everything
-else is quiet, left-aligned and easy to skim for a recruiter.
+the work of the person who made those cards. One thematic element (a Leader card of Daniel in the hero, in the colourless WAR frame);
+everything else is quiet, left-aligned and easy to skim for a recruiter.
 
 Direction note: no UXKIN tools were connected, so this direction comes from Daniel's own game assets and from
 game-design portfolio guides (GameDesignSkills, Game Developer, PocketGamer.biz), not from comparing real sites.
@@ -22,7 +22,7 @@ All values come from `WAR-TCG/Assets/Palette.ase` (CMYK converted to sRGB).
 | `--on-iron` | `#ECEDEA` / `#AEB7B8` | Text on Iron, primary / secondary |
 | `--primary` | `#0B39DA` | Links and the primary button (palette "Sapphire", 7:1 on page) |
 | `--primary-deep` | `#001570` | Hover / pressed (palette "Midnight") |
-| `--gold` | `#F5991F` | Focus ring and the Leader card's frame only (palette "Frame Gold") |
+| `--gold` | `#F5991F` | Focus ring only (palette "Frame Gold") |
 | `--paper` | `#E6E0CF` | Card text boxes only |
 
 Faction colours appear only where they mean a WAR colour: W `#EBC000`, U `#0B39DA`, B `#4C0BC3`, R `#B8001F`,
@@ -70,5 +70,4 @@ spreadsheets. No stock art, no AI art, no emoji, no icon sets beyond the WAR gly
 
 ## Motion
 
-One moment: the Leader card lifts and straightens on hover or focus. Nothing animates on load or scroll.
-`prefers-reduced-motion` disables it.
+None. Nothing animates on load, scroll or hover beyond link and button colour changes. The hero card is hidden on phones.

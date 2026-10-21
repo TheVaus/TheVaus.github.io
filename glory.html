@@ -31,12 +31,12 @@
   <header class="cs-head">
     <a class="crumb" href="./#work">All work</a>
     <h1>Glory</h1>
-    <p class="lede">A turn-based tactics game where your hand is your move set. Each character brings their own deck, weapons and resources to a hex battlefield.</p>
+    <p class="lede">A turn-based tactics game where your hand is your move set. Each character brings its own ability to a hex battlefield.</p>
     <dl class="summary">
       <div><dt>My role</dt><dd>Game designer: rules, characters, cards, weapons</dd></div>
-      <div><dt>Team</dt><dd>3 people: me and two developers</dd></div>
+      <div><dt>Team</dt><dd>2 people: me and a developer</dd></div>
       <div><dt>Timeline</dt><dd>Nov 2024 to Feb 2025</dd></div>
-      <div><dt>Tools</dt><dd>Spreadsheets, draw.io, Markdown</dd></div>
+      <div><dt>Tools</dt><dd>draw.io, Markdown</dd></div>
       <div><dt>Status</dt><dd>Playable multiplayer build with 2 characters</dd></div>
     </dl>
   </header>
@@ -61,7 +61,7 @@
     <div class="cs-main">
       <section id="idea">
         <h2>The idea</h2>
-        <p>Glory mixes a tactics game with a card game. Moving, attacking and defending all come from cards, so a character's deck is their move set. Every character has five stats that shape how they play:</p>
+        <p>Glory mixes a tactics game with a card game. Attacks, defence and movement are driven by cards, weapons and each character's ability, so a character's deck is a big part of how it plays. Every character has five stats that shape how they play:</p>
         <ul>
           <li><b>Hit points</b> and <b>Toughness</b>, which reduces every hit.</li>
           <li><b>Wisdom</b>, the maximum hand size you draw up to each turn.</li>
@@ -72,11 +72,7 @@
 
       <section id="chain">
         <h2>The combat chain</h2>
-        <dl class="psr">
-          <dt>Problem</dt><dd>In many turn-based tactics games, the defending player has nothing to do until their own turn.</dd>
-          <dt>Solution</dt><dd>An attack opens a <b>combat chain</b>. The defender and the attacker take turns adding reactions until both pass. Then the chain resolves from the last card to the first, like a stack in Magic or a combat chain in Flesh and Blood.</dd>
-          <dt class="res">Result</dt><dd>Every attack becomes a short back-and-forth, and the defender's hand matters as much as the attacker's.</dd>
-        </dl>
+        <p>An attack opens a <b>combat chain</b>. The defender and the attacker take turns adding reactions until both pass. Then the chain resolves from the last card to the first, like the stack in Magic or the combat chain in Flesh and Blood. Both players make decisions during every attack.</p>
         <ol class="chain">
           <li><b>Attack</b>The active player plays an attack action against a target.</li>
           <li><b>Defend</b>The target may play a defensive reaction.</li>
@@ -101,7 +97,7 @@
               <div><dt>Agility</dt><dd>+4 / 5</dd></div>
               <div><dt>Weapon</dt><dd>Great Axe</dd></div>
             </dl>
-            <p><b>Ability.</b> Agility and 3 Energy: deal 4 damage to an adjacent enemy. It's pushed 1 tile and discards a card, and the Barbarian steps into the tile it left.</p>
+            <p><b>Ability (attack action).</b> Deal 4 damage to an adjacent enemy. It moves 1 tile and discards a card, and the Barbarian steps into the tile it left.</p>
           </article>
           <article class="sheet">
             <small>Defensive reaction, cost 0</small>
@@ -115,19 +111,19 @@
 
       <section id="characters">
         <h2>Ten characters</h2>
-        <p>I designed ten characters: Assassin, Barbarian, Bard, Cleric, Ice Wizard, Marksman, Necromancer, Rogue, Soul Stealer and Wizard. Each has its own deck and twist. A few examples:</p>
+        <p>I designed ten characters: Assassin, Barbarian, Bard, Cleric, Ice Wizard, Marksman, Necromancer, Rogue, Soul Stealer and Wizard. Each has its own ability. A few examples:</p>
         <ul>
           <li><b>Marksman</b> carries up to two guns, and each gun has to be reloaded with ammo counters.</li>
           <li><b>Necromancer</b> spends Mana to summon units, up to three at a time.</li>
           <li><b>Assassin</b> makes reactions cost more for everyone else during their turn.</li>
           <li><b>Ice Wizard</b> can spend Mana to put Frost on an enemy whenever it hits or gets hit.</li>
         </ul>
-        <p>Across them there are 75 cards and 10 weapons, all kept in spreadsheets the game loads directly.</p>
+        <p>Across them there are 75 cards and 10 weapons, defined in the game's code and exported to spreadsheets.</p>
       </section>
 
       <section id="scope">
         <h2>Scope</h2>
-        <p>We built a working multiplayer version with the Barbarian and the Necromancer, which you can see in the screenshots. The other eight characters exist as complete designs in the data sheets but weren't implemented. The last update to the project was in February 2025.</p>
+        <p>The playable multiplayer build offers the Barbarian and the Necromancer, as in the screenshots. The other eight characters are in the code but not enabled, and some of them aren't finished. The last update to the project was in February 2025.</p>
       </section>
 
       <nav class="next" aria-label="More case studies">
@@ -141,7 +137,7 @@
 
 <footer class="site-foot on-iron" id="contact">
   <div class="wrap">
-    <h2>Let's talk about cards</h2>
+    <h2>Contact</h2>
     <p>I'm looking for a game designer role on a trading card game. I'm based in Tel Aviv and work remotely, including US hours.</p>
     <div class="actions">
       <a class="btn btn-primary" href="mailto:daniel.vekar@gmail.com">Email daniel.vekar@gmail.com</a>
