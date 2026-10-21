@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CHARDSS case study, Daniel Vekar</title>
+<meta name="description" content="CHARDSS is chess with a shared deck of 40 rule-bending cards, paid for with the pieces you lose. How I designed its economy, its cards and its website.">
+<meta property="og:title" content="CHARDSS case study, Daniel Vekar">
+<meta property="og:image" content="https://thevaus.github.io/img/og.png">
+<meta name="theme-color" content="#191F21">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/war/WARCaption-Bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/war/WARText-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="wordmark" href="./">Daniel Vekar</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="./#work" aria-current="page">Work</a>
+      <a href="./#experience" class="opt">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<div class="wrap">
+  <header class="cs-head">
+    <a class="crumb" href="./#work">All work</a>
+    <h1>CHARDSS</h1>
+    <p class="lede">Cards, Chess &amp; Chaos. It's chess with a shared deck of 40 cards, and every card bends one rule of chess. You pay for cards with the pieces you lose.</p>
+    <dl class="summary">
+      <div><dt>My role</dt><dd>Sole designer: rules, cards, card frames, font, website</dd></div>
+      <div><dt>Team</dt><dd>Solo project</dd></div>
+      <div><dt>Timeline</dt><dd>2025 to now</dd></div>
+      <div><dt>Tools</dt><dd>Affinity, Python, Astro</dd></div>
+      <div><dt>Status</dt><dd>Playable. <a href="https://thevaus.github.io/CHARDSS-Website/">Rules and all 40 cards</a></dd></div>
+    </dl>
+  </header>
+
+  <figure class="cs-hero">
+    <img src="img/shots/ch-card.webp" alt="The Teleport card page on the CHARDSS website, with the card on the left and an animated chessboard demo on the right" width="1200" height="750">
+    <figcaption>Every card has its own page with an animated board that plays out what it does.</figcaption>
+  </figure>
+
+  <div class="cs-body">
+    <nav class="toc" aria-label="On this page">
+      <p>On this page</p>
+      <ol>
+        <li><a href="#idea">The idea</a></li>
+        <li><a href="#economy">The economy</a></li>
+        <li><a href="#cards">Pricing the cards</a></li>
+        <li><a href="#rules">Rules that hold</a></li>
+        <li><a href="#look">The look</a></li>
+        <li><a href="#learned">Where it started</a></li>
+      </ol>
+    </nav>
+
+    <div class="cs-main">
+      <section id="idea">
+        <h2>The idea</h2>
+        <p>Both players draw from one shared deck. Each turn you may play one card, then make one move, then draw back to three cards.</p>
+        <p>Every card changes exactly one rule, for one turn or one move. Your Pawns capture sideways. Your King swaps places with a Rook. Your opponent has to take back their last move. All normal chess rules still apply unless a card says otherwise.</p>
+        <figure class="fig fig--cards">
+          <img src="img/chardss-teleport.webp" alt="Teleport, cost 3: switch your King with another piece, then pass the turn" width="500" height="698" loading="lazy">
+          <img src="img/chardss-mimic.webp" alt="Mimic, cost 2: when you capture, your piece may become the type it captured" width="500" height="698" loading="lazy">
+          <img src="img/chardss-plan-b.webp" alt="Plan B, cost 3: your opponent must change their last move" width="500" height="698" loading="lazy">
+          <img src="img/chardss-armageddon.webp" alt="Armageddon, cost 39: if your King is your only piece left, you win" width="500" height="698" loading="lazy">
+          <figcaption>Four of the 40 cards. The piece icons in the text come from a font I made for the game.</figcaption>
+        </figure>
+      </section>
+
+      <section id="economy">
+        <h2>Your losses pay for your cards</h2>
+        <dl class="psr">
+          <dt>Problem</dt><dd>If powers are earned by playing well, the player who's already ahead gets stronger and the game snowballs.</dd>
+          <dt>Solution</dt><dd>You earn points when <b>your own</b> pieces are captured, equal to their chess value: Pawn 1, Knight and Bishop 3, Rook 5, Queen 9. You don't earn anything for capturing.</dd>
+          <dt class="res">Result</dt><dd>The player who is behind on material has the most to spend. Most cards cost 1 or 2, so losing a Pawn or two already buys a real option. Comebacks are part of the resource system instead of luck.</dd>
+        </dl>
+      </section>
+
+      <section id="cards">
+        <h2>Pricing the cards</h2>
+        <p>Costs run from 0 to 39. Almost everything sits between 0 and 3, so cards come out often:</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th scope="col">Cost</th><th scope="col">0</th><th scope="col">1</th><th scope="col">2</th><th scope="col">3</th><th scope="col">4</th><th scope="col">7</th><th scope="col">39</th></tr></thead>
+            <tbody><tr><th scope="row">Cards</th><td>4</td><td>13</td><td>14</td><td>5</td><td>2</td><td>1</td><td>1</td></tr></tbody>
+          </table>
+        </div>
+        <p>A family of cards lets your Pawns move like another piece for a turn. Their costs follow the strength of that piece: <b>Kingified</b> costs 1, <b>Knightified</b> and <b>Bishopified</b> 2, <b>Rookified</b> 3 and <b>Queenified</b> 4.</p>
+        <p>The outlier is <b>Armageddon</b>. It costs 39, which is every point a player can earn in a game (8 Pawns, 2 Knights, 2 Bishops, 2 Rooks and a Queen). It wins the game if your King is your last piece. In practice you can only afford it when you're already close to the position where it wins.</p>
+      </section>
+
+      <section id="rules">
+        <h2>Rules that hold up</h2>
+        <p>Cards that bend chess rules can create positions chess has no answer for. Three rules keep the game playable:</p>
+        <ul>
+          <li><b>Cards beat rules, but legality beats cards.</b> A card wins over normal chess rules, but you can't play a card if the result would be an illegal position. For example, you can't skip your move while in check.</li>
+          <li><b>One card per turn, and play before you move.</b> Turns stay readable: card, move, draw.</li>
+          <li><b>When the deck runs out, it's chess.</b> Nobody draws from an empty deck. Once both hands are empty, the game finishes as normal chess.</li>
+        </ul>
+      </section>
+
+      <section id="look">
+        <h2>The look</h2>
+        <p>The first card fronts were colour-coded in blue, red, green and purple. The current version uses one brown frame for every card.</p>
+        <ol class="evo" style="grid-template-columns:repeat(2,minmax(0,220px))">
+          <li><img src="img/chardss-teleport-v1.webp" alt="Version 1 of Teleport with a blue frame" width="360" height="503" loading="lazy"><b>Version 1</b><span>Colour-coded fronts</span></li>
+          <li><img src="img/chardss-teleport-v2.webp" alt="Current Teleport with a brown frame" width="360" height="503" loading="lazy"><b>Current</b><span>One frame for all 40 cards</span></li>
+        </ol>
+        <p>I made a font, <b>Chardss Display</b>, from Cormorant with chess-piece glyphs added. Typing <i>{King}</i> on a card or on the website gives you the King icon. The card data lives in one JSON file, and every push to the game's repository rebuilds the website's rules, card pages and images.</p>
+        <figure class="fig"><img src="img/shots/ch-home.webp" alt="The CHARDSS homepage with the title Chess, Cards, Chaos and a hand of three cards" width="1200" height="750" loading="lazy"><figcaption>The CHARDSS homepage. The hero deals you an opening hand of three cards.</figcaption></figure>
+      </section>
+
+      <section id="learned">
+        <h2>Where it started</h2>
+        <p>The first prototype, from March 2025, was a Python chess engine that plays full chess with castling, en passant and a clock. It never got card mechanics. The game became a physical card deck instead, with the website for rules and card demos.</p>
+      </section>
+
+      <nav class="next" aria-label="More case studies">
+        <a href="war-tcg.html"><span>Previous</span>WAR-TCG</a>
+        <a href="expanchess.html"><span>Next</span>Expanchess</a>
+      </nav>
+    </div>
+  </div>
+</div>
+</main>
+
+<footer class="site-foot on-iron" id="contact">
+  <div class="wrap">
+    <h2>Let's talk about cards</h2>
+    <p>I'm looking for a game designer role on a trading card game. I'm based in Tel Aviv and work remotely, including US hours.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="mailto:daniel.vekar@gmail.com">Email daniel.vekar@gmail.com</a>
+      <a class="btn btn-secondary" href="https://github.com/TheVaus">GitHub</a>
+    </div>
+    <div class="foot-small"><span>© 2026 Daniel Vekar</span><span>Set in the WAR-TCG card fonts</span></div>
+  </div>
+</footer>
+</body>
+</html>

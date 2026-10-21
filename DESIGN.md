@@ -1,0 +1,74 @@
+# DESIGN.md — Daniel Vekar portfolio
+
+The site is set in the same type and colours as WAR-TCG, Daniel's own trading card game, so the portfolio reads as
+the work of the person who made those cards. One loud element (the Leader card of Daniel in the hero); everything
+else is quiet, left-aligned and easy to skim for a recruiter.
+
+Direction note: no UXKIN tools were connected, so this direction comes from Daniel's own game assets and from
+game-design portfolio guides (GameDesignSkills, Game Developer, PocketGamer.biz), not from comparing real sites.
+
+## Colour
+
+All values come from `WAR-TCG/Assets/Palette.ase` (CMYK converted to sRGB).
+
+| Token | Value | Role |
+|---|---|---|
+| `--page` | `#E8EAE9` | Page background (Pewter, lightened) |
+| `--surface` | `#F8F8F5` | Raised areas: summary boxes, tables |
+| `--ink` | `#170F0B` | Body text, headings (palette "Ink") |
+| `--ink-2` | `#353F42` | Secondary text, captions (palette "Ash", 9:1 on page) |
+| `--rule` | `#C3C9C9` | Hairlines and table borders |
+| `--iron` | `#191F21` | Dark bands: hero, footer (palette "Iron") |
+| `--on-iron` | `#ECEDEA` / `#AEB7B8` | Text on Iron, primary / secondary |
+| `--primary` | `#0B39DA` | Links and the primary button (palette "Sapphire", 7:1 on page) |
+| `--primary-deep` | `#001570` | Hover / pressed (palette "Midnight") |
+| `--gold` | `#F5991F` | Focus ring and the Leader card's frame only (palette "Frame Gold") |
+| `--paper` | `#E6E0CF` | Card text boxes only |
+
+Faction colours appear only where they mean a WAR colour: W `#EBC000`, U `#0B39DA`, B `#4C0BC3`, R `#B8001F`,
+G `#139926`.
+
+## Typography
+
+Daniel's card fonts, subset to WOFF2 in `fonts/war/` (all derived from OFL / GUST-licensed families).
+
+- **WAR Caption** (Barlow Semi Condensed base): headings, navigation, buttons, labels. Sentence case. 600 and 700.
+- **WAR Text** (TeX Gyre Pagella base): body copy, 18px / 1.6, measure ≤ 66ch.
+- **WAR Display** (Cormorant Upright base): card subtype lines and figure captions, sparingly.
+- **WAR Text Icons**: the full WAR Text with the game's icon ligatures (`[DEPLOY]`, `{Might}`, `<rush>`), used
+  only inside card mock-ups.
+
+Scale (px): 14 · 16 · 18 · 22 · 28 · 38 · 52 · 76. Headings use line-height 1.05, body 1.6.
+No all-caps labels, no monospace, no tracked eyebrows.
+
+## Spacing and layout
+
+- 8px base: 8, 16, 24, 32, 48, 64, 96, 128.
+- Content width 1120px, side gutter 24px (16px on phones). Section spacing 96px (64px on phones).
+- Everything left-aligned. Case studies: summary block, then a sticky table of contents on the left (desktop) and
+  the narrative on the right.
+
+## Shape and depth
+
+- Radius: 3px on buttons and inputs; card images keep their own printed corners; panels have no radius.
+- One shadow, for card images and screenshots only: `0 18px 36px rgba(23,15,11,.28)`.
+- Structure is drawn with hairlines (`--rule`), not boxes.
+
+## Components
+
+- **Primary button**: Sapphire fill, white WAR Caption 600, 48px tall. Hover Midnight. Focus: 3px gold outline.
+- **Secondary button**: 1.5px ink outline (Iron bands: light outline).
+- **Text link**: Sapphire, underlined, thicker underline on hover.
+- **Summary block** (case studies): definition list of Role, Team, Timeline, Tools, Links.
+- **Project row** (home): thumbnail, title, one-line pitch, role and years, "Read the case study".
+- **Figure**: image + WAR Display caption that says what to notice.
+
+## Imagery
+
+Only real material: card renders, card frame versions, screenshots of Daniel's own sites, data from his
+spreadsheets. No stock art, no AI art, no emoji, no icon sets beyond the WAR glyphs.
+
+## Motion
+
+One moment: the Leader card lifts and straightens on hover or focus. Nothing animates on load or scroll.
+`prefers-reduced-motion` disables it.

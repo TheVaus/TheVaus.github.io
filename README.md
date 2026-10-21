@@ -2,4 +2,4 @@
 
 Portfolio site: https://thevaus.github.io
 
-Plain HTML/CSS, no build step. Edit `index.html` and `styles.css`; card images are in `img/`, fonts (SIL OFL) in `fonts/`.
+Plain HTML/CSS, no build step. Design decisions are in `DESIGN.md`. Pages: `index.html` plus one case study per project. Images in `img/`, fonts (the WAR-TCG card fonts, subset) in `fonts/war/`.

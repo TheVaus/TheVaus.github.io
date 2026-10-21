@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WAR-TCG case study, Daniel Vekar</title>
+<meta name="description" content="How I designed WAR-TCG, a five-colour trading card game: the resource system, one-number combat, the balance formula, card frame iterations and the tools that ship it.">
+<meta property="og:title" content="WAR-TCG case study, Daniel Vekar">
+<meta property="og:image" content="https://thevaus.github.io/img/og.png">
+<meta name="theme-color" content="#191F21">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/war/WARCaption-Bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/war/WARText-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="wordmark" href="./">Daniel Vekar</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="./#work" aria-current="page">Work</a>
+      <a href="./#experience" class="opt">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<div class="wrap">
+  <header class="cs-head">
+    <a class="crumb" href="./#work">All work</a>
+    <h1>WAR-TCG</h1>
+    <p class="lede">A five-colour trading card game about a kingdom fighting on every front. Every card in your hand can be a resource, a threat or a shield, and you choose which.</p>
+    <dl class="summary">
+      <div><dt>My role</dt><dd>Sole designer: rules, colour pie, balance, templates, tools</dd></div>
+      <div><dt>Team</dt><dd>Solo project</dd></div>
+      <div><dt>Timeline</dt><dd>May 2026 to now</dd></div>
+      <div><dt>Tools</dt><dd>Apple Numbers, Affinity, Obsidian, TypeScript</dd></div>
+      <div><dt>Status</dt><dd>127 cards in testing. <a href="https://thevaus.github.io/war-tcg-site/">Card database</a></dd></div>
+    </dl>
+  </header>
+
+  <figure class="cs-hero">
+    <img src="img/shots/war-cards.webp" alt="The WAR-TCG card gallery: filters for colour, type, cost and rarity on the left and a grid of card renders on the right" width="1200" height="750">
+    <figcaption>The public card database I built for playtesters, with filters for colour, type, cost, rarity and Might.</figcaption>
+  </figure>
+
+  <div class="cs-body">
+    <nav class="toc" aria-label="On this page">
+      <p>On this page</p>
+      <ol>
+        <li><a href="#goals">Goals</a></li>
+        <li><a href="#resources">Resources</a></li>
+        <li><a href="#might">One number</a></li>
+        <li><a href="#pitch">Every card defends</a></li>
+        <li><a href="#colours">Colour pie</a></li>
+        <li><a href="#balance">Balance</a></li>
+        <li><a href="#frames">Card frame</a></li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#next">What's next</a></li>
+      </ol>
+    </nav>
+
+    <div class="cs-main">
+      <section id="goals">
+        <h2>What I set out to make</h2>
+        <p>I play a lot of TCGs competitively, and I kept noticing the same moments that make players quit a game. In Magic you lose to your own deck when you draw too many or too few lands. In One Piece you lose to a random trigger you couldn't play around. Lots of games have cards nobody can answer.</p>
+        <p>WAR-TCG starts from a short list of rules I hold every card to:</p>
+        <ul>
+          <li><b>No dead draws.</b> Every card can do something on every turn.</li>
+          <li><b>Always answerable.</b> No hexproof, no shroud, nothing that can't be interacted with.</li>
+          <li><b>Low upkeep at the table.</b> No +1/+1 counters to track and no shuffling in the middle of a game. Searches look at the top cards and put the rest on the bottom.</li>
+          <li><b>Rules text that reads like code.</b> Keywords are nested (<i>On Play: Hand</i>, <i>Rush: Unit</i>) so every card parses the same way.</li>
+        </ul>
+        <figure class="fig fig--cards">
+          <img src="img/war-011.webp" alt="Old Grimtusk, green unit, 8 Might, Ward 2" width="500" height="698" loading="lazy">
+          <img src="img/war-007.webp" alt="Emberseer Krag, red unit, pitches the top card of the deck when it attacks" width="500" height="698" loading="lazy">
+          <img src="img/war-038.webp" alt="Arch Artificer, blue unit with Ward 2 and a Fee" width="500" height="698" loading="lazy">
+          <img src="img/war-021.webp" alt="Rebbeca, black necromancer with Blocker" width="500" height="698" loading="lazy">
+          <img src="img/war-009.webp" alt="Cinder Outrider, red-green unit that gains Might when deployed from the Middle" width="500" height="698" loading="lazy">
+          <figcaption>One card from each colour plus a two-colour card. The art boxes are empty on purpose: the cards are still in testing, and art comes last.</figcaption>
+        </figure>
+      </section>
+
+      <section id="resources">
+        <h2>Resources without mana screw</h2>
+        <dl class="psr">
+          <dt>Problem</dt><dd>Separate resource cards (lands, DON!!, ink) mean some games are lost before they start: too many resources and nothing to spend them on, or too few to play anything.</dd>
+          <dt>Solution</dt><dd>There's no resource card. Any unit can be <b>stationed</b> face-up in your <b>Backline</b> once per turn for free, where it taps to make energy. Or you pay for it and <b>deploy</b> it to the <b>Frontline</b> to fight. Units in the Backline can later <b>advance</b> through the <b>Middle</b>, which holds only one unit, so resources can turn into threats over time.</dd>
+          <dt class="res">Result</dt><dd>A hand is never dead: a card you can't afford is still next turn's energy. The one-unit Middle gives that change a turn of travel time, so the opponent can see a threat coming and plan for it.</dd>
+        </dl>
+        <p>This took two passes. In May the board had two zones. In June I added the Middle because units were jumping from resource to attacker in one turn, which made big swings impossible to answer.</p>
+      </section>
+
+      <section id="might">
+        <h2>One number for everything</h2>
+        <dl class="psr">
+          <dt>Problem</dt><dd>Most TCGs give units separate attack and toughness numbers and track damage on them. That's more to explain and more to remember at the table.</dd>
+          <dt>Solution</dt><dd>Units, Leaders and Regions all have one combat number, <b>Might</b>. An attack hits if the attackers' total Might is at least the target's Might. A unit that's hit is destroyed. A Leader that's hit loses Life equal to the strongest attacker's Might. Attackers never take damage back.</dd>
+          <dt class="res">Result</dt><dd>Combat is one comparison, and "−3 Might" works on any target. I also scaled all numbers down from thousands (3000) to single digits (3).</dd>
+        </dl>
+        <p>This one went back and forth. In June I removed Life completely and had players defend Regions instead. In August I brought Life back for Leaders, with a fixed Might budget, because every Region needs to stay roughly equal in power no matter how many a deck runs.</p>
+      </section>
+
+      <section id="pitch">
+        <h2>Every card is also a shield</h2>
+        <dl class="psr">
+          <dt>Problem</dt><dd>In One Piece TCG, counters make every card useful on defence. But blocking that buffs the defender gets messy when several units attack at once.</dd>
+          <dt>Solution</dt><dd>When you're attacked, you <b>pitch</b> cards from your hand for their Block value (0, 1 or 2). Pitched cards go to the bottom of your deck at the end of the turn. In June I changed blocking so it lowers the attacker's Might instead of raising the defender's.</dd>
+          <dt class="res">Result</dt><dd>Group attacks resolve with one subtraction. And every card in hand is a choice between playing it, stationing it or keeping it to block.</dd>
+        </dl>
+      </section>
+
+      <section id="colours">
+        <h2>The colour pie</h2>
+        <p>Five colours, each with a play style, the zones it cares about and mechanics it may never use. The "never" column matters most, because it's what keeps the colours different from each other.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th scope="col">Colour</th><th scope="col">Plays like</th><th scope="col">Signature mechanics</th><th scope="col">Never gets</th></tr></thead>
+            <tbody>
+              <tr><th scope="row"><span class="pip" style="background:var(--w)"></span>White</th><td>Control with some aggro</td><td>Blocker, Convoke, Banish, Recover</td><td>Big units, direct removal</td></tr>
+              <tr><th scope="row"><span class="pip" style="background:var(--u)"></span>Blue</th><td>Control and combo</td><td>Flash, Evasive, Foresight, Bounce</td><td>Direct removal, damage to Regions</td></tr>
+              <tr><th scope="row"><span class="pip" style="background:var(--b)"></span>Black</th><td>Control and combo</td><td>Delve, Mill, Discard, Destroy</td><td>Removing Items, gaining Might directly</td></tr>
+              <tr><th scope="row"><span class="pip" style="background:var(--r)"></span>Red</th><td>Aggro</td><td>Rush, Pierce, Advance, Impulse</td><td>Destroying Items, healing, protecting its units</td></tr>
+              <tr><th scope="row"><span class="pip" style="background:var(--g)"></span>Green</th><td>Midrange, big bodies</td><td>Hunt, Overwhelm, Ramp</td><td>Removal except by fighting</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Every one of the ten colour pairs has a written identity, too. For example, Blue and Red is "acting before thinking against thinking before acting", and it plays as a deck where Commands matter.</p>
+      </section>
+
+      <section id="balance">
+        <h2>Balance: one formula, one curve</h2>
+        <p>Every unit is priced by the same formula, and the card spreadsheet checks each card against it:</p>
+        <div class="formula">
+          <code>value − cost = 3 to 5</code><br>
+          where value = Might + Block + production + text. Each keyword counts 1. A drawback like <i>Fee — X</i> counts −X. Cheap cards sit near 3, expensive cards near 5.
+        </div>
+        <p>In August the spreadsheet had drifted to a much looser scale, with keywords worth 2 or 3. I brought it back to this formula and rescaled the old prices to 40%, so there's a single source of truth again.</p>
+        <h3>The set is locked at 107 cards</h3>
+        <p>That's 12 per colour, 2 for each of the 10 colour pairs, 7 colourless and 5 free slots, plus 5 Leaders and 10 Regions. The 92 costed cards follow this curve, peaking at 3 with nothing at 0:</p>
+        <figure class="curve" aria-label="Target cost curve: cost 1, 8 cards; cost 2, 18; cost 3, 25; cost 4, 19; cost 5, 13; cost 6, 6; cost 7, 3.">
+          <div class="curve__bars" aria-hidden="true">
+            <span style="--v:8"><i>8</i></span><span style="--v:18"><i>18</i></span><span class="peak" style="--v:25"><i>25</i></span><span style="--v:19"><i>19</i></span><span style="--v:13"><i>13</i></span><span style="--v:6"><i>6</i></span><span style="--v:3"><i>3</i></span>
+          </div>
+          <div class="curve__axis" aria-hidden="true"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span></div>
+        </figure>
+        <p>The first draft, from July, peaked at 4 and had 104 costed cards.</p>
+
+        <h3>From the design log</h3>
+        <p>Every rules change goes in a log with a date and a reason. A few entries:</p>
+        <ul class="log">
+          <li><time>May 12</time><p><b>Front and Back line.</b> Units become resources when played to the Backline, which fixes mana screw without a separate land type.</p></li>
+          <li><time>June 22</time><p><b>Three zones.</b> Added the Middle, capped at one unit, to slow down board swings.</p></li>
+          <li><time>June 28</time><p><b>Life replaced by Regions.</b> Damage and removal use the same number. Partly reversed in August.</p></li>
+          <li><time>Aug 21</time><p><b>Defense and Layers split.</b> Defense is the Might an attack needs to connect. Layers cap how much one hit removes. Pierce beats Layers, not Defense.</p></li>
+        </ul>
+      </section>
+
+      <section id="frames">
+        <h2>Iterating on the card frame</h2>
+        <p>I build the frames in Affinity, and a script fills every card from the spreadsheet. These are five versions of the same frame from August to October:</p>
+        <ol class="evo">
+          <li><img src="img/frames/v1.webp" alt="Version 1: grey frame with placeholder text" width="360" height="503" loading="lazy"><b>Aug 20</b><span>First layout. Cost and Might share the top bar.</span></li>
+          <li><img src="img/frames/v2.webp" alt="Version 2: colour icons in the cost bar, no name bar" width="360" height="503" loading="lazy"><b>Aug 23</b><span>Colour icons replace the cost word. Still no name bar.</span></li>
+          <li><img src="img/frames/v3.webp" alt="Version 3: green name bar under the art" width="360" height="503" loading="lazy"><b>Sep 15</b><span>A name bar in the card's colour, keyword badges in the rules text.</span></li>
+          <li><img src="img/frames/v4.webp" alt="Version 4: alternative bright green frame with the name at the top" width="360" height="503" loading="lazy"><b>Oct 12</b><span>An alternative I explored: full colour frame, name on top.</span></li>
+          <li><img src="img/frames/v5.webp" alt="Version 5: final frame with colour pips, name bar, Block and production icons" width="360" height="503" loading="lazy"><b>Oct 21</b><span>Current frame. Production and Block get their own icons at the bottom corners.</span></li>
+        </ol>
+        <p>The fonts are mine too. WAR Caption, WAR Text and WAR Display are built on open-source families, with the game's icons added as ligatures: typing <i>{Might}</i> or <i>[DEPLOY]</i> in a card's text gives you the icon. This site is set in those fonts.</p>
+      </section>
+
+      <section id="tools">
+        <h2>Tools that keep it in sync</h2>
+        <p>A card game has the same data in many places: the spreadsheet, the rendered cards, the rules and the website. I built a pipeline so a change only happens once:</p>
+        <ol>
+          <li><b>Card table.</b> I edit cards in Numbers, where a rules sheet checks the set against the target counts and cost curve.</li>
+          <li><b>Card data.</b> An import script turns the export into JSON and checks the wording against the glossary.</li>
+          <li><b>Card frames.</b> An Affinity script renders every card from that data.</li>
+          <li><b>Website.</b> Every Sunday the site rebuilds from the game repository. Each card change becomes a dated patch-notes post, tagged as a buff, nerf, rework or new card.</li>
+        </ol>
+        <div class="fig-row">
+          <figure class="fig"><img src="img/shots/war-card.webp" alt="A card page on the WAR-TCG site showing Emberseer Krag with its stats and rules text" width="1200" height="750" loading="lazy"><figcaption>Each card has its own page with stats and a change history.</figcaption></figure>
+          <figure class="fig"><img src="img/shots/war-updates.webp" alt="The Updates page listing dated card changes and glossary changes" width="1200" height="750" loading="lazy"><figcaption>Patch notes write themselves from the card history.</figcaption></figure>
+        </div>
+        <p>There's also a deck builder that checks deck rules as you build (1 Leader, 40 cards, up to 3 copies, up to 3 Regions), a printable proxy sheet for playtests, and a design audit that reports colour counts, cost curves and wording drift.</p>
+      </section>
+
+      <section id="next">
+        <h2>What's next</h2>
+        <p>Open questions I'm testing now, each one tracked in its own file until it's decided:</p>
+        <ul>
+          <li><b>First-turn balance.</b> How much should going first cost?</li>
+          <li><b>Coloured costs.</b> How should coloured energy be paid when units produce different colours?</li>
+          <li><b>How Regions work.</b> Their names, and how many a deck should run.</li>
+          <li><b>Tournament rules.</b> Sideboarding, and whether to show Leaders before game one.</li>
+        </ul>
+        <div class="callout"><p>Want to see more? I can walk you through the spreadsheet, the design log or a playtest deck in an interview.</p></div>
+      </section>
+
+      <nav class="next" aria-label="More case studies">
+        <a href="./#work"><span>Back to</span>All work</a>
+        <a href="chardss.html"><span>Next case study</span>CHARDSS</a>
+      </nav>
+    </div>
+  </div>
+</div>
+</main>
+
+<footer class="site-foot on-iron" id="contact">
+  <div class="wrap">
+    <h2>Let's talk about cards</h2>
+    <p>I'm looking for a game designer role on a trading card game. I'm based in Tel Aviv and work remotely, including US hours.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="mailto:daniel.vekar@gmail.com">Email daniel.vekar@gmail.com</a>
+      <a class="btn btn-secondary" href="https://github.com/TheVaus">GitHub</a>
+    </div>
+    <div class="foot-small"><span>© 2026 Daniel Vekar</span><span>Set in the WAR-TCG card fonts</span></div>
+  </div>
+</footer>
+</body>
+</html>

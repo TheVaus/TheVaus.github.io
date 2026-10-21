@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glory case study, Daniel Vekar</title>
+<meta name="description" content="Glory is a turn-based tactics game where your hand is your move set. How I designed its combat chain, facing rules and characters.">
+<meta property="og:title" content="Glory case study, Daniel Vekar">
+<meta property="og:image" content="https://thevaus.github.io/img/og.png">
+<meta name="theme-color" content="#191F21">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/war/WARCaption-Bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/war/WARText-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="wordmark" href="./">Daniel Vekar</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="./#work" aria-current="page">Work</a>
+      <a href="./#experience" class="opt">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<div class="wrap">
+  <header class="cs-head">
+    <a class="crumb" href="./#work">All work</a>
+    <h1>Glory</h1>
+    <p class="lede">A turn-based tactics game where your hand is your move set. Each character brings their own deck, weapons and resources to a hex battlefield.</p>
+    <dl class="summary">
+      <div><dt>My role</dt><dd>Game designer: rules, characters, cards, weapons</dd></div>
+      <div><dt>Team</dt><dd>3 people: me and two developers</dd></div>
+      <div><dt>Timeline</dt><dd>Nov 2024 to Feb 2025</dd></div>
+      <div><dt>Tools</dt><dd>Spreadsheets, draw.io, Markdown</dd></div>
+      <div><dt>Status</dt><dd>Playable multiplayer build with 2 characters</dd></div>
+    </dl>
+  </header>
+
+  <figure class="cs-hero">
+    <img src="img/shots/glory-board.webp" alt="A Glory match: a Barbarian and a Necromancer on a hex grid surrounded by forest, with health, energy and agility bars top left and four cards in hand at the bottom" width="1200" height="750">
+    <figcaption>A two-player match in the playable build: the Barbarian against the Necromancer. Health, Energy and Agility are top left, and the hand is along the bottom. The pixel art is from a third-party asset pack.</figcaption>
+  </figure>
+
+  <div class="cs-body">
+    <nav class="toc" aria-label="On this page">
+      <p>On this page</p>
+      <ol>
+        <li><a href="#idea">The idea</a></li>
+        <li><a href="#chain">Combat chain</a></li>
+        <li><a href="#facing">Facing</a></li>
+        <li><a href="#characters">Characters</a></li>
+        <li><a href="#scope">Scope</a></li>
+      </ol>
+    </nav>
+
+    <div class="cs-main">
+      <section id="idea">
+        <h2>The idea</h2>
+        <p>Glory mixes a tactics game with a card game. Moving, attacking and defending all come from cards, so a character's deck is their move set. Every character has five stats that shape how they play:</p>
+        <ul>
+          <li><b>Hit points</b> and <b>Toughness</b>, which reduces every hit.</li>
+          <li><b>Wisdom</b>, the maximum hand size you draw up to each turn.</li>
+          <li><b>Energy</b> and <b>Agility</b>, two resources you gain each turn, each with its own cap.</li>
+        </ul>
+        <p>Decks are up to 40 cards, with at most 3 copies of a card, and only cards that match the character's talent.</p>
+      </section>
+
+      <section id="chain">
+        <h2>The combat chain</h2>
+        <dl class="psr">
+          <dt>Problem</dt><dd>In many turn-based tactics games, the defending player has nothing to do until their own turn.</dd>
+          <dt>Solution</dt><dd>An attack opens a <b>combat chain</b>. The defender and the attacker take turns adding reactions until both pass. Then the chain resolves from the last card to the first, like a stack in Magic or a combat chain in Flesh and Blood.</dd>
+          <dt class="res">Result</dt><dd>Every attack becomes a short back-and-forth, and the defender's hand matters as much as the attacker's.</dd>
+        </dl>
+        <ol class="chain">
+          <li><b>Attack</b>The active player plays an attack action against a target.</li>
+          <li><b>Defend</b>The target may play a defensive reaction.</li>
+          <li><b>Answer</b>The attacker may play an offensive reaction. Repeat from step 2 until nobody plays.</li>
+          <li><b>Resolve</b>Pick a path, resolve reactions last-in first-out, then deal damage.</li>
+        </ol>
+        <p>The full flow is also drawn as a flowchart in the design docs, which is what the game server implements.</p>
+      </section>
+
+      <section id="facing">
+        <h2>Facing and position</h2>
+        <p>Characters face a direction, and attacks land on the <b>front</b>, <b>side</b> or <b>back</b>. The direction comes from the shortest path between attacker and target. When there's more than one shortest path, the attacker picks one at the end of the chain. That makes positioning part of the card game:</p>
+        <div class="sheets">
+          <article class="sheet">
+            <small>Character</small>
+            <h4>Barbarian</h4>
+            <dl>
+              <div><dt>HP</dt><dd>60</dd></div>
+              <div><dt>Toughness</dt><dd>3</dd></div>
+              <div><dt>Wisdom</dt><dd>4</dd></div>
+              <div><dt>Energy</dt><dd>+5 / 8</dd></div>
+              <div><dt>Agility</dt><dd>+4 / 5</dd></div>
+              <div><dt>Weapon</dt><dd>Great Axe</dd></div>
+            </dl>
+            <p><b>Ability.</b> Agility and 3 Energy: deal 4 damage to an adjacent enemy. It's pushed 1 tile and discards a card, and the Barbarian steps into the tile it left.</p>
+          </article>
+          <article class="sheet">
+            <small>Defensive reaction, cost 0</small>
+            <h4>Aegis of Resilience</h4>
+            <p>Block 2: when this combat chain resolves, prevent 2 damage. If you were attacked from the front, block 2 more.</p>
+          </article>
+        </div>
+        <p>Cards like <b>Back Swing</b> (+2 damage from behind) and <b>Aegis</b> (+2 block from the front) pull in opposite directions, so turning to face an enemy is a real decision. Some defensive cards, like <b>Awareness</b>, let you turn during the chain.</p>
+        <figure class="fig"><img src="img/shots/glory-card.webp" alt="The Slash card enlarged in the hand: your next attack gains 3 damage, and if it hits the back the target loses energy" width="1200" height="500" loading="lazy"><figcaption>Hovering a card in hand. Slash adds damage, and hitting the back also drains the target's Energy.</figcaption></figure>
+      </section>
+
+      <section id="characters">
+        <h2>Ten characters</h2>
+        <p>I designed ten characters: Assassin, Barbarian, Bard, Cleric, Ice Wizard, Marksman, Necromancer, Rogue, Soul Stealer and Wizard. Each has its own deck and twist. A few examples:</p>
+        <ul>
+          <li><b>Marksman</b> carries up to two guns, and each gun has to be reloaded with ammo counters.</li>
+          <li><b>Necromancer</b> spends Mana to summon units, up to three at a time.</li>
+          <li><b>Assassin</b> makes reactions cost more for everyone else during their turn.</li>
+          <li><b>Ice Wizard</b> can spend Mana to put Frost on an enemy whenever it hits or gets hit.</li>
+        </ul>
+        <p>Across them there are 75 cards and 10 weapons, all kept in spreadsheets the game loads directly.</p>
+      </section>
+
+      <section id="scope">
+        <h2>Scope</h2>
+        <p>We built a working multiplayer version with the Barbarian and the Necromancer, which you can see in the screenshots. The other eight characters exist as complete designs in the data sheets but weren't implemented. The last update to the project was in February 2025.</p>
+      </section>
+
+      <nav class="next" aria-label="More case studies">
+        <a href="expanchess.html"><span>Previous</span>Expanchess</a>
+        <a href="world.html"><span>Next</span>The Wondering Emperor</a>
+      </nav>
+    </div>
+  </div>
+</div>
+</main>
+
+<footer class="site-foot on-iron" id="contact">
+  <div class="wrap">
+    <h2>Let's talk about cards</h2>
+    <p>I'm looking for a game designer role on a trading card game. I'm based in Tel Aviv and work remotely, including US hours.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="mailto:daniel.vekar@gmail.com">Email daniel.vekar@gmail.com</a>
+      <a class="btn btn-secondary" href="https://github.com/TheVaus">GitHub</a>
+    </div>
+    <div class="foot-small"><span>© 2026 Daniel Vekar</span><span>Set in the WAR-TCG card fonts</span></div>
+  </div>
+</footer>
+</body>
+</html>

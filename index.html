@@ -3,356 +3,198 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Daniel Vekar · Game Designer</title>
-<meta name="description" content="Daniel Vekar: game designer focused on trading card games. Original TCG, chess-variant and tactics designs, and a competitive One Piece TCG player.">
-<meta property="og:title" content="Daniel Vekar · Game Designer">
-<meta property="og:description" content="TCG designer and competitive player. WAR-TCG, CHARDSS, Expanchess, Glory and an original fantasy world.">
+<title>Daniel Vekar, game designer</title>
+<meta name="description" content="Daniel Vekar designs trading card games: an original five-colour TCG, a chess-and-cards game, a tactics card game, and he has won about $200,000 in competitive One Piece TCG.">
+<meta property="og:title" content="Daniel Vekar, game designer">
+<meta property="og:description" content="Trading card game designer and competitive player. Case studies: WAR-TCG, CHARDSS, Expanchess, Glory.">
 <meta property="og:image" content="https://thevaus.github.io/img/og.png">
-<meta name="theme-color" content="#111214">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#191F21">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
-<link rel="preload" href="fonts/big-shoulders-display-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/war/WARCaption-Bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/war/WARText-Regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
-<header class="top">
-  <div class="wrap top__in">
-    <a class="brand" href="#top" aria-label="Daniel Vekar, home">DV<span>/</span>GAME&nbsp;DESIGN</a>
-    <nav class="nav" aria-label="Sections">
-      <a href="#war">WAR-TCG</a>
-      <a href="#chardss">CHARDSS</a>
-      <a href="#expanchess">Expanchess</a>
-      <a href="#glory">Glory</a>
-      <a href="#world">World</a>
-      <a href="#contact" class="nav__cta">Contact</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="wordmark" href="./">Daniel Vekar</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="#work">Work</a>
+      <a href="#experience" class="opt">Experience</a>
+      <a href="#contact">Contact</a>
     </nav>
   </div>
 </header>
 
-<main id="top">
+<main id="main">
 
-<!-- HERO -->
-<section class="hero">
-  <div class="wrap hero__grid">
-    <div class="hero__copy">
-      <p class="eyebrow">Game designer · Trading card games</p>
-      <h1>Daniel Vekar</h1>
-      <p class="lede">I design card games and play them at the top level. I build my own TCG from rules to card frames, I make chess variants with cards, and I've won about <strong>$200,000</strong> in competitive One Piece TCG.</p>
-      <div class="hero__actions">
-        <a class="btn btn--solid" href="#war">See the work</a>
-        <a class="btn" href="mailto:daniel.vekar@gmail.com">daniel.vekar@gmail.com</a>
-      </div>
-    </div>
-    <div class="hand" aria-hidden="true">
-      <img src="img/war-008.webp" alt="" class="hand__c hand__c--1" width="500" height="698">
-      <img src="img/war-011.webp" alt="" class="hand__c hand__c--2" width="500" height="698">
-      <img src="img/war-007.webp" alt="" class="hand__c hand__c--3" width="500" height="698">
-    </div>
-  </div>
-
+<section class="hero on-iron">
   <div class="wrap">
-    <dl class="stats">
-      <div><dt>~$200K</dt><dd>won in One Piece TCG tournaments</dd></div>
-      <div><dt>50 → 1,000+</dt><dd>members in the community I co-ran</dd></div>
-      <div><dt>540</dt><dd>cards in my One Piece cube format</dd></div>
-      <div><dt>5</dt><dd>original games and a world, below</dd></div>
-    </dl>
-  </div>
-</section>
-
-<!-- WAR-TCG -->
-<section class="proj proj--feature" id="war">
-  <div class="wrap">
-    <header class="proj__head">
-      <p class="tag"><span>01</span> Original TCG · In development</p>
-      <h2>WAR-TCG</h2>
-      <p class="proj__sub">A five-colour trading card game about a kingdom fighting on every front. I'm designing all of it: the rules, the colour pie, the balance math, the card frames, and the tools that keep it all in sync.</p>
-      <div class="links">
-        <a class="btn btn--solid" href="https://thevaus.github.io/war-tcg-site/" target="_blank" rel="noopener">Card database &amp; deck builder ↗</a>
-      </div>
-    </header>
-
-    <div class="cards-row">
-      <figure><img src="img/war-011.webp" alt="WAR-TCG card: Old Grimtusk, a green 8-Might unit with Ward 2" loading="lazy" width="500" height="698"></figure>
-      <figure><img src="img/war-007.webp" alt="WAR-TCG card: Emberseer Krag, a red unit that pitches the top card of the deck when it attacks" loading="lazy" width="500" height="698"></figure>
-      <figure><img src="img/war-038.webp" alt="WAR-TCG card: Arch Artificer, a blue unit with a Fee cost" loading="lazy" width="500" height="698"></figure>
-      <figure><img src="img/war-021.webp" alt="WAR-TCG card: Rebbeca, a black necromancer unit" loading="lazy" width="500" height="698"></figure>
-      <figure><img src="img/war-009.webp" alt="WAR-TCG card: Cinder Outrider, a red-green unit" loading="lazy" width="500" height="698"></figure>
-    </div>
-    <p class="caption">Card frames from my Affinity template. Each card is filled in by script from the card table. The art boxes are empty until illustration.</p>
-
-    <div class="pillars">
-      <h3 class="h-sub">The design problems I set out to fix</h3>
-      <ol class="pillar-list">
-        <li>
-          <h4>No mana screw</h4>
-          <p>A unit can be stationed in the <b>Backline</b> to make energy, or played to the <b>Frontline</b> to fight. Every card in hand is a resource, so you always have something to do.</p>
-        </li>
-        <li>
-          <h4>One number for everything</h4>
-          <p>There's no separate damage or life. Units, Leaders and Regions all have <b>Might</b>, so "−3 Might" can kill a unit, weaken a leader or chip at a Region.</p>
-        </li>
-        <li>
-          <h4>Every card defends</h4>
-          <p>When you're attacked you <b>pitch</b> cards from your hand for their Block value. Each card is a play and a shield, and that choice is the core of the game.</p>
-        </li>
-        <li>
-          <h4>Travel time on the board</h4>
-          <p>Three zones: Backline, Middle, Frontline. The Middle holds only one unit, which slows big board swings and lets the opponent see threats coming.</p>
-        </li>
-        <li>
-          <h4>Always answerable</h4>
-          <p>No hexproof or shroud, and no shuffling in the middle of a game. Searches look at the top cards and put the rest on the bottom, which keeps paper play fast.</p>
-        </li>
-      </ol>
-    </div>
-
-    <div class="split">
-      <div class="panel">
-        <h3 class="h-sub">Balance formula</h3>
-        <p>Every unit is priced the same way. The spreadsheet checks each card against it.</p>
-<pre class="code"><code><span class="k">value</span> = might + block + production + text
-<span class="k">value</span> − cost ∈ [3, 5]
-
-<span class="c">// each keyword            = 1</span>
-<span class="c">// coloured production     = 1, colourless a bit less</span>
-<span class="c">// Fee — X (a drawback)    = −X</span>
-<span class="c">// cheap cards sit near 3, expensive ones near 5</span></code></pre>
-      </div>
-      <div class="panel">
-        <h3 class="h-sub">Set shape, locked</h3>
-        <p>107 cards: 12 per colour, 2 for each of the 10 colour pairs, 7 colourless, plus 5 Leaders and 10 Regions. The 92 costed cards follow this curve:</p>
-        <figure class="curve" aria-label="Cost curve: cost 1, 8 cards; 2, 18; 3, 25; 4, 19; 5, 13; 6, 6; 7, 3">
-          <div class="curve__bars">
-            <span style="--v:8"><i>8</i></span><span style="--v:18"><i>18</i></span><span style="--v:25"><i>25</i></span><span style="--v:19"><i>19</i></span><span style="--v:13"><i>13</i></span><span style="--v:6"><i>6</i></span><span style="--v:3"><i>3</i></span>
-          </div>
-          <div class="curve__axis"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span></div>
-          <figcaption>Energy cost. Peaks at 3, nothing costs 0.</figcaption>
-        </figure>
-      </div>
-    </div>
-
-    <div class="log">
-      <h3 class="h-sub">From the design log</h3>
-      <p class="log__intro">Every rules change goes in the log with a date and a reason. A few entries:</p>
-      <ul>
-        <li><time>May 2026</time><p><b>Front / Back line.</b> Units become resources when played to the Backline. This removes MTG-style mana screw without adding a separate land type.</p></li>
-        <li><time>Jun 2026</time><p><b>Life replaced by Regions.</b> Leaders can't be attacked any more. Your Regions hold your Might, so damage and removal use the same number.</p></li>
-        <li><time>Jun 2026</time><p><b>Blocking subtracts from the attacker.</b> It used to buff the defender. The change made multi-unit attacks work cleanly.</p></li>
-        <li><time>Aug 2026</time><p><b>Defense and Layers split.</b> Defense is the Might an attack needs to connect. Layers cap what one hit removes. Pierce beats Layers, not Defense.</p></li>
-      </ul>
-    </div>
-
-    <div class="pipeline">
-      <h3 class="h-sub">The production pipeline I built</h3>
-      <ol class="steps">
-        <li><b>Card table</b><span>Numbers sheet with balance checks</span></li>
-        <li><b>Card data</b><span>CSV → JSON, with rules validation</span></li>
-        <li><b>Card frames</b><span>Affinity script renders every card</span></li>
-        <li><b>Website</b><span>Gallery, deck builder, glossary, auto patch notes</span></li>
-      </ol>
-      <p class="muted">A weekly job publishes the site from the game repo, and every card change turns into a dated buff, nerf or rework post. A design audit reports colour counts, cost curves and wording drift.</p>
-    </div>
-  </div>
-</section>
-
-<!-- CHARDSS -->
-<section class="proj" id="chardss">
-  <div class="wrap proj__grid">
-    <header class="proj__head">
-      <p class="tag"><span>02</span> Chess variant · Physical card game</p>
-      <h2>CHARDSS</h2>
-      <p class="proj__sub">Cards, Chess &amp; Chaos. It's chess with a shared deck of 40 cards, and every card bends one rule of chess.</p>
-      <p>The twist is in the economy: <b>you earn points when your own pieces are captured</b> and spend them on cards. A player who is losing material gets more options, so there's a comeback mechanic built into the resource system.</p>
-      <p>Costs run from 0 to 39. The odd one out is <b>Armageddon</b>. It costs 39, which is every point a player can ever earn, and it wins the game if your King is the only piece you have left.</p>
-      <ul class="facts">
-        <li>40 cards, 3-card hand, one card per turn</li>
-        <li>Custom font that turns text into chess-piece icons</li>
-        <li>Website with an animated board demo for every card</li>
-      </ul>
-      <div class="links">
-        <a class="btn btn--solid" href="https://thevaus.github.io/CHARDSS-Website/" target="_blank" rel="noopener">Rules &amp; all 40 cards ↗</a>
-      </div>
-    </header>
-    <div class="fan">
-      <img src="img/chardss-teleport.webp" alt="CHARDSS card Teleport, cost 3: switch your King with another piece, then pass the turn" loading="lazy" width="500" height="698">
-      <img src="img/chardss-mimic.webp" alt="CHARDSS card Mimic, cost 2: a capturing piece may turn into the type it captured" loading="lazy" width="500" height="698">
-      <img src="img/chardss-armageddon.webp" alt="CHARDSS card Armageddon, cost 39: if your King is your only piece left, you win" loading="lazy" width="500" height="698">
-      <img src="img/chardss-plan-b.webp" alt="CHARDSS card Plan B, cost 3: your opponent must change their last move" loading="lazy" width="500" height="698">
-    </div>
-  </div>
-</section>
-
-<!-- EXPANCHESS -->
-<section class="proj proj--work" id="expanchess">
-  <div class="wrap proj__grid proj__grid--rev">
-    <header class="proj__head">
-      <p class="tag"><span>03</span> Work · Game Development Contractor · 2025–now</p>
-      <h2>Expanchess</h2>
-      <p class="proj__sub">A browser chess game that adds one-use ability cards, called Pans, to classic chess. I've worked on it for the past year as part of a small startup team.</p>
-      <ul class="facts">
-        <li>Iterated on rules and player experience through design feedback</li>
-        <li>UI/UX, monetization, product management and roadmap planning</li>
-        <li>Built process automations that cut manual work and running costs</li>
-        <li>Funded at 138% in crowdfunding, closed beta done</li>
-      </ul>
-      <div class="links">
-        <a class="btn btn--solid" href="https://expanchess.com" target="_blank" rel="noopener">expanchess.com ↗</a>
-      </div>
-    </header>
-    <div class="video">
-      <iframe src="https://www.youtube-nocookie.com/embed/ln0GCZdiPrY" title="Expanchess trailer" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-  </div>
-</section>
-
-<!-- GLORY -->
-<section class="proj" id="glory">
-  <div class="wrap proj__grid">
-    <header class="proj__head">
-      <p class="tag"><span>04</span> Digital game · Team project · 2024–25</p>
-      <h2>Glory</h2>
-      <p class="proj__sub">A turn-based tactics game where your hand is your move set. Each character brings their own deck, their own weapons and their own resource curve to a grid battlefield.</p>
-      <p>I wrote the rules and designed the content. The rest of the team built a Python game server and a TypeScript client. Combat runs on a <b>combat chain</b>: attacker and defender trade offensive and defensive reactions, and the chain resolves last-in, first-out. <b>Facing</b> matters too, since hits from the back or side change what lands.</p>
-      <ul class="facts">
-        <li>10 characters, 75 cards, 10 weapons</li>
-        <li>Energy and Agility resources with per-character limits</li>
-        <li>Line of sight, range, push, pull and spin on a tile grid</li>
-      </ul>
-    </header>
-    <div class="glory">
-      <article class="sheet">
-        <header><span class="sheet__type">Character</span><h4>Barbarian</h4></header>
-        <dl class="sheet__stats">
-          <div><dt>HP</dt><dd>60</dd></div>
-          <div><dt>Toughness</dt><dd>3</dd></div>
-          <div><dt>Wisdom</dt><dd>3</dd></div>
-          <div><dt>Energy</dt><dd>+5 <small>/ 8</small></dd></div>
-          <div><dt>Agility</dt><dd>+4 <small>/ 5</small></dd></div>
-          <div><dt>Weapon</dt><dd>Great Axe</dd></div>
-        </dl>
-        <p class="sheet__text"><b>[Attack action]</b> Agility + Energy: deal 4 damage to an adjacent enemy. It moves 1 tile and discards a card, and you step into the tile it left.</p>
-      </article>
-      <article class="sheet sheet--card">
-        <header><span class="sheet__type">Attack action · Cost 1</span><h4>Back Swing</h4></header>
-        <dl class="sheet__stats sheet__stats--3">
-          <div><dt>Range</dt><dd>1</dd></div>
-          <div><dt>Damage</dt><dd>6</dd></div>
-          <div><dt>Melee</dt><dd>✓</dd></div>
-        </dl>
-        <p class="sheet__text">If this attack hits the <b>back</b> of the target, it gains +2 damage.</p>
-      </article>
-      <p class="caption">Taken from the game's data sheets.</p>
-    </div>
-  </div>
-</section>
-
-<!-- WORLD -->
-<section class="proj proj--world" id="world">
-  <div class="wrap">
-    <header class="proj__head proj__head--narrow">
-      <p class="tag"><span>05</span> Worldbuilding · Ongoing</p>
-      <h2>The Wondering Emperor</h2>
-      <p class="proj__sub">An original fantasy-steampunk world in a Renaissance-like age. Hundreds of kingdoms live under a fragile alliance, and a conqueror's disappearance leaves a cycle of legacy, betrayal and revenge behind him.</p>
-    </header>
-
-    <div class="world">
-      <div class="panel">
-        <h3 class="h-sub">A hard magic system</h3>
-        <p><b>Mana</b> is a finite, body-bound resource. <b>Inner magic</b> strengthens the body. <b>Outer magic</b> pushes mana into matter, and the result depends on the state of that matter:</p>
-        <table class="matter">
-          <thead><tr><th></th><th>Add mana</th><th>Drain mana</th></tr></thead>
-          <tbody>
-            <tr><th>Gas</th><td>heats</td><td>cools</td></tr>
-            <tr><th>Liquid</th><td>expands</td><td>contracts</td></tr>
-            <tr><th>Solid</th><td>softens, can be shaped</td><td>hardens</td></tr>
-          </tbody>
-        </table>
-        <p>Each material has a maximum mana it can hold and a rate at which it leaks. Magic circles work as mana's programming language, which is how guns, transport and medicine run on it.</p>
-      </div>
-      <div class="panel">
-        <h3 class="h-sub">Power has a curve</h3>
-        <p>Strength = Physical × Magical Prowess. Physical strength peaks around 30 and Prowess keeps growing, so a mage's power peaks around 55.</p>
-        <svg class="powerchart" viewBox="0 0 320 170" role="img" aria-label="Illustrative chart: physical strength rises then falls after 30, magical prowess rises steadily, total power peaks around 55">
-          <line x1="30" y1="140" x2="310" y2="140" class="ax"/>
-          <line x1="30" y1="10" x2="30" y2="140" class="ax"/>
-          <path d="M30 135 C 70 60, 95 35, 110 35 S 200 80, 310 128" class="l-phys"/>
-          <path d="M30 138 C 120 125, 220 80, 310 45" class="l-prow"/>
-          <path d="M30 140 C 100 130, 140 35, 177 33 S 260 90, 310 118" class="l-total"/>
-          <line x1="177" y1="33" x2="177" y2="140" class="peak"/>
-          <text x="104" y="156" class="t">30</text><text x="171" y="156" class="t">55</text><text x="272" y="156" class="t">age →</text>
-          <text x="60" y="28" class="t t--phys">physical</text>
-          <text x="262" y="62" class="t t--prow">prowess</text>
-          <text x="183" y="24" class="t t--total">power</text>
-        </svg>
-        <p class="caption">Shape only, not to scale.</p>
-      </div>
-      <div class="panel">
-        <h3 class="h-sub">Rules the world keeps</h3>
-        <ul class="facts">
-          <li>Armies are small. Even great kingdoms field under 1,000 soldiers, because a few mages decide wars.</li>
-          <li>Nobody can win alone. Even the strongest need allies or a plan.</li>
-          <li>Rivers never split. They only merge on the way to the sea.</li>
-          <li>Gifted children, born with abnormal mana and silver hair, are raised as royalty on an island commoners never see.</li>
-        </ul>
-      </div>
-    </div>
-    <p class="muted world__foot">About 120 linked notes on characters, kingdoms, factions, races, technology and a full timeline, kept in Obsidian with templates, properties and a family-tree canvas. This page shows only a small part of it.</p>
-  </div>
-</section>
-
-<!-- TCG PLAYER -->
-<section class="proj proj--player" id="player">
-  <div class="wrap player">
     <div>
-      <p class="tag"><span>+</span> Competitive play &amp; community</p>
-      <h2>I play to win, too</h2>
-      <p class="proj__sub">I've played competitive One Piece TCG at the highest level since 2022. Playing that much shows me what makes a format feel fair, which decisions matter, and where players get frustrated.</p>
+      <h1>Daniel Vekar</h1>
+      <p class="role">Game designer for trading card games</p>
+      <p class="pitch">I design card games from the first rule to the last card frame, and I play them at the top level. I've won <strong>about $200,000</strong> in competitive One Piece TCG.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="war-tcg.html">Read the WAR-TCG case study</a>
+        <a class="btn btn-secondary" href="mailto:daniel.vekar@gmail.com">Email me</a>
+      </div>
+      <div class="facts-line">
+        <div><b>107-card set</b>designed solo, rules to frames</div>
+        <div><b>50 to 1,000+</b>players in the community I ran</div>
+        <div><b>540 cards</b>in my One Piece cube</div>
+      </div>
     </div>
-    <ul class="ledger">
-      <li><b>~$200,000</b><span>in One Piece TCG tournament prizes</span></li>
-      <li><b>Coach</b><span>for local players working toward competitive events</span></li>
-      <li><b>Community manager</b><span>for One Piece TCG Israel, 2022–25. Grew it from ~50 to 1,000+ members, ran weekly events with stores and enforced anti-fraud rules for trading.</span></li>
-      <li><b>Cube designer</b><span>A custom One Piece TCG cube format with its own rules and a 540-card pool</span></li>
+
+    <figure class="lcard" role="img" aria-label="A WAR-TCG style Leader card of Daniel Vekar. Might 5. Rules text: Deploy: design a card game from its first rule to its last card frame. Whenever a rule creates a feel-bad moment, rewrite it and log why. Attack: win about $200,000 in One Piece TCG prizes. Life 30.">
+      <div class="lcard__frame" aria-hidden="true">
+        <div class="lcard__top"><span>Leader</span><span class="stat"><span class="ico">{Might}</span>5</span></div>
+        <div class="lcard__art">
+          <img src="img/war-007.webp" alt="" width="500" height="698">
+          <img src="img/chardss-teleport.webp" alt="" width="500" height="698">
+          <img src="img/war-011.webp" alt="" width="500" height="698">
+        </div>
+        <p class="lcard__name">Daniel Vekar</p>
+        <div class="lcard__text">
+          <p>[DEPLOY]: Design a card game from its first rule to its last card frame.</p>
+          <p>Whenever a rule creates a feel-bad moment, rewrite it and log why.</p>
+          <p>[ATTACK]: Win about $200,000 in One Piece TCG prizes.</p>
+          <div class="lcard__type"><span>LEADER</span><i>Designer, Competitor</i><span><span class="ico">{Life}</span> 30</span></div>
+        </div>
+        <div class="lcard__foot"><span>L</span><span>DV-001</span></div>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<section class="section" id="work">
+  <div class="wrap">
+    <h2 class="section-title">Selected work</h2>
+    <p class="section-intro">Four games I designed or worked on, and a world I'm building. Each one has a case study with my role, the design problems and how I solved them.</p>
+
+    <article class="feature">
+      <a class="feature__media" href="war-tcg.html" tabindex="-1" aria-hidden="true">
+        <img src="img/war-038.webp" alt="" width="500" height="698" loading="lazy">
+        <img src="img/war-007.webp" alt="" width="500" height="698" loading="lazy">
+        <img src="img/war-021.webp" alt="" width="500" height="698" loading="lazy">
+      </a>
+      <div>
+        <p class="project-kind">Original trading card game, in development</p>
+        <h3>WAR-TCG</h3>
+        <p>A five-colour TCG where every card in your hand is a resource, a threat or a shield. I'm designing it alone, end to end.</p>
+        <dl class="meta">
+          <div><dt>Role</dt><dd>Sole designer</dd></div>
+          <div><dt>Since</dt><dd>2026</dd></div>
+          <div><dt>Cards</dt><dd>127 in testing</dd></div>
+        </dl>
+        <ul class="did">
+          <li>Removed mana screw by letting any unit become a resource</li>
+          <li>Wrote one balance formula that prices every unit</li>
+          <li>Built the card templates and a site with a deck builder and automatic patch notes</li>
+        </ul>
+        <a class="read" href="war-tcg.html">Read the WAR-TCG case study</a>
+      </div>
+    </article>
+
+    <article class="project">
+      <a class="project__thumb project__thumb--card" href="chardss.html" tabindex="-1" aria-hidden="true"><img src="img/chardss-armageddon.webp" alt="" width="500" height="698" loading="lazy"></a>
+      <div>
+        <p class="project-kind">Chess variant with a 40-card deck</p>
+        <h3>CHARDSS</h3>
+        <p>Chess with a shared deck of cards that each bend one rule. You earn points when your own pieces are captured, so the player who is behind gets more options.</p>
+        <dl class="meta">
+          <div><dt>Role</dt><dd>Sole designer</dd></div>
+          <div><dt>Format</dt><dd>Physical, 40 cards</dd></div>
+          <div><dt>Status</dt><dd>Playable, public rules</dd></div>
+        </dl>
+        <a class="read" href="chardss.html">Read the CHARDSS case study</a>
+      </div>
+    </article>
+
+    <article class="project">
+      <a class="project__thumb" href="expanchess.html" tabindex="-1" aria-hidden="true"><img src="img/expanchess-thumb.webp" alt="" width="440" height="248" loading="lazy"></a>
+      <div>
+        <p class="project-kind">Chess video game with ability cards, my current job</p>
+        <h3>Expanchess</h3>
+        <p>A browser chess game that adds one-use ability cards. I work across design, UI/UX, monetization and the product roadmap in a small startup team.</p>
+        <dl class="meta">
+          <div><dt>Role</dt><dd>Game development contractor</dd></div>
+          <div><dt>Team</dt><dd>Small startup</dd></div>
+          <div><dt>Years</dt><dd>2025 to now</dd></div>
+        </dl>
+        <a class="read" href="expanchess.html">Read about my work on Expanchess</a>
+      </div>
+    </article>
+
+    <article class="project">
+      <a class="project__thumb" href="glory.html" tabindex="-1" aria-hidden="true"><img src="img/glory-thumb.webp" alt="" width="440" height="248" loading="lazy"></a>
+      <div>
+        <p class="project-kind">Digital tactics card game</p>
+        <h3>Glory</h3>
+        <p>A turn-based tactics game where your hand is your move set. Ten characters, each with their own deck, weapons and resource curve, fight on a hex grid.</p>
+        <dl class="meta">
+          <div><dt>Role</dt><dd>Game designer</dd></div>
+          <div><dt>Team</dt><dd>3 people</dd></div>
+          <div><dt>Years</dt><dd>2024 to 2025</dd></div>
+        </dl>
+        <a class="read" href="glory.html">Read the Glory case study</a>
+      </div>
+    </article>
+
+    <article class="project">
+      <a class="project__thumb" href="world.html" tabindex="-1" aria-hidden="true"><img src="img/world-thumb.webp" alt="" width="440" height="248" loading="lazy"></a>
+      <div>
+        <p class="project-kind">Worldbuilding</p>
+        <h3>The Wondering Emperor</h3>
+        <p>An original fantasy-steampunk world with a hard magic system, hundreds of kingdoms and a full timeline. This is a short preview of it.</p>
+        <a class="read" href="world.html">See the world preview</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="section" id="play">
+  <div class="wrap split">
+    <div>
+      <h2 class="section-title">I play at the top level, too</h2>
+      <p class="section-intro">Competing teaches me where a format feels unfair, which decisions actually matter, and where players get frustrated. I bring that back into my designs.</p>
+    </div>
+    <ul class="record">
+      <li><b>About $200,000</b><span>won in One Piece TCG tournament prizes since 2022</span></li>
+      <li><b>Coach</b><span>for local players preparing for competitive events</span></li>
+      <li><b>Cube designer</b><span>a custom One Piece TCG cube format with its own rules and a 540-card pool</span></li>
+      <li><b>Playtester</b><span>structured feedback on mechanics, balance and rules for other designers' board and card games, some of which went into production</span></li>
       <li><b>Also played</b><span>Cyberpunk TCG, Magic: The Gathering, Flesh and Blood, Riftbound, Lorcana</span></li>
     </ul>
   </div>
 </section>
 
-<!-- SHIPPED -->
-<section class="proj proj--shipped">
-  <div class="wrap shipped">
-    <p class="tag"><span>+</span> Other games</p>
-    <h2>Credits on shipped games</h2>
-    <p class="proj__sub">I've playtested and given structured design feedback on board and card games by other designers that went on to production. I have the physical copies, and I can talk through my notes on any of them.</p>
-  </div>
-</section>
-
-<!-- ABOUT / CONTACT -->
-<section class="contact" id="contact">
-  <div class="wrap contact__grid">
-    <div>
-      <h2>Let's make cards.</h2>
-      <p class="proj__sub">I'm looking for a game designer role on a trading card game. I'm based in Tel Aviv, available for remote work and US hours.</p>
-      <div class="hero__actions">
-        <a class="btn btn--solid" href="mailto:daniel.vekar@gmail.com">daniel.vekar@gmail.com</a>
-        <a class="btn" href="https://github.com/TheVaus" target="_blank" rel="noopener">GitHub ↗</a>
-      </div>
-    </div>
-    <div class="skills">
-      <div><h3 class="h-sub">Design</h3><p>Systems and rules, TCG mechanics and archetypes, metagame analysis, balance, playtesting</p></div>
-      <div><h3 class="h-sub">Narrative &amp; visual</h3><p>Worldbuilding, lore, character writing, UX/UI, card layout in Affinity and Adobe</p></div>
-      <div><h3 class="h-sub">Technical</h3><p>Programming, SQL, Git, Linux, automation, AI tools</p></div>
-      <div><h3 class="h-sub">Languages</h3><p>Hebrew (native), English (fluent), German (upper-intermediate)</p></div>
-    </div>
+<section class="section" id="experience">
+  <div class="wrap">
+    <h2 class="section-title">Experience</h2>
+    <ol class="timeline">
+      <li><time>2025 to now</time><div><h3>Game development contractor, Expanchess</h3><p>Rules and player-experience iteration, UI/UX, monetization, roadmap planning, and automations that cut manual work and running costs.</p></div></li>
+      <li><time>2022 to 2025</time><div><h3>Community manager, One Piece TCG Israel</h3><p>Co-ran the local community and grew it from about 50 to more than 1,000 members. Organised weekly events and tournaments with stores, enforced anti-fraud rules for trading and worked with retailers on product supply.</p></div></li>
+      <li><time>2022 to 2024</time><div><h3>IT administrator and DBA</h3><p>SQL, programming, Linux systems, virtual machines and network infrastructure.</p></div></li>
+      <li><time>2020 to now</time><div><h3>Independent game designer</h3><p>An original TCG, a chess variant, a tactical card-driven board game and a long-running worldbuilding project, from two-week experiments to multi-year designs.</p></div></li>
+    </ol>
   </div>
 </section>
 
 </main>
 
-<footer class="foot">
-  <div class="wrap">© 2026 Daniel Vekar</div>
+<footer class="site-foot on-iron" id="contact">
+  <div class="wrap">
+    <h2>Let's talk about cards</h2>
+    <p>I'm looking for a game designer role on a trading card game. I'm based in Tel Aviv and work remotely, including US hours. I speak Hebrew and English, and upper-intermediate German.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="mailto:daniel.vekar@gmail.com">Email daniel.vekar@gmail.com</a>
+      <a class="btn btn-secondary" href="https://github.com/TheVaus">GitHub</a>
+    </div>
+    <div class="foot-small"><span>© 2026 Daniel Vekar</span><span>Set in the WAR-TCG card fonts</span></div>
+  </div>
 </footer>
-
 </body>
 </html>
