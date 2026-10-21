@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Timeline, Daniel Vekar</title>
-<meta name="description" content="A timeline of Daniel Vekar's work in game design, competitive play and community management.">
+<meta name="description" content="A timeline of Daniel Vekar's life in games: army service, game design, competitive play, community work and jobs.">
 <meta property="og:title" content="Timeline, Daniel Vekar">
 <meta property="og:image" content="https://thevaus.github.io/img/og.png">
 <meta name="theme-color" content="#191F21">
@@ -22,7 +22,7 @@
       <a href="./#games">Games</a>
       <a href="./#work" class="opt">Work</a>
       <a href="optcg.html" class="opt">Competitive</a>
-      <a href="timeline.html">Timeline</a>
+      <a href="timeline.html" aria-current="page">Timeline</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -33,33 +33,46 @@
   <header class="cs-head">
     <a class="crumb" href="./">Home</a>
     <h1>Timeline</h1>
-    <p class="lede">What I've done in game design, competitive play and community work, in the order it happened.</p>
+    <p class="lede">The steps that got me here. Lines that run down mark things that lasted a while, from start to end.</p>
   </header>
-  <ol class="tl">
-    <li class="tl-year"><h2>2020</h2><ol>
-        <li class="tl-item"><p class="kind">Game design</p><h3>Started designing games</h3><p>I began designing my own games, from two-week experiments to longer projects.</p></li>
-      </ol></li>
-    <li class="tl-year"><h2>2022</h2><ol>
-        <li class="tl-item"><p class="kind">Competitive play</p><h3>Started competing in One Piece TCG</h3><p>The start of competing at the top level, which has since earned about $200,000 in prizes.</p></li>
-        <li class="tl-item"><p class="kind">Community</p><h3>Community manager, One Piece TCG Israel</h3><p>Co-managed the local community from about 50 members, with weekly events and tournaments run with stores.</p></li>
-        <li class="tl-item"><p class="kind">Work</p><h3>IT administrator and DBA</h3><p>SQL, programming, Linux systems, virtual machines and network infrastructure, until 2024.</p></li>
-      </ol></li>
-    <li class="tl-year"><h2>2024</h2><ol>
-        <li class="tl-item"><p class="kind">Game design</p><h3>Glory</h3><p>Rules, characters and cards for a digital tactics card game, with one developer.</p><time>November 2024 to February 2025</time><img src="img/glory-thumb.webp" alt="Glory hex battlefield" loading="lazy"></li>
-      </ol></li>
-    <li class="tl-year"><h2>2025</h2><ol>
-        <li class="tl-item"><p class="kind">Game design</p><h3>First CHARDSS prototype</h3><p>A Python chess engine, the starting point for a chess variant played with cards.</p><time>March 2025</time></li>
-        <li class="tl-item"><p class="kind">Work</p><h3>Game development contractor, Expanchess</h3><p>Design, UI/UX, monetization, product and automation for a browser chess game with ability cards.</p></li>
-        <li class="tl-item"><p class="kind">Community</p><h3>Community role ends</h3><p>Over my time co-managing One Piece TCG Israel, the community grew from about 50 to more than 1,000 members.</p></li>
-      </ol></li>
-    <li class="tl-year"><h2>2026</h2><ol>
-        <li class="tl-item"><p class="kind">Game design</p><h3>WAR-TCG begins</h3><p>The first entry in the design log: units become resources when played to the Backline.</p><time>May 2026</time></li>
-        <li class="tl-item"><p class="kind">Game design</p><h3>WAR-TCG card frames and set target</h3><p>The first card frame, and a 107-card target set with a locked cost curve.</p><time>August 2026</time><img src="img/frames/v1.webp" alt="The first WAR-TCG card frame" loading="lazy"></li>
-        <li class="tl-item"><p class="kind">Game design</p><h3>WAR-TCG card database</h3><p>Started building the public site with the card gallery, a deck builder and update posts.</p><time>September 2026</time></li>
-        <li class="tl-item"><p class="kind">Game design</p><h3>CHARDSS website</h3><p>Rules, all 40 cards and an animated board demo for each card.</p><time>October 2026</time><img src="img/shots/ch-home.webp" alt="The CHARDSS homepage" loading="lazy"></li>
-      </ol></li>
-  </ol>
 </div>
+
+<div class="tlx-wrap">
+  <ul class="tlx-legend" aria-label="Kinds of entries"></ul>
+  <div class="tlx" id="tlx">
+    <svg class="tlx-svg" aria-hidden="true"></svg>
+    <ol class="tlx-items" id="tlx-items"></ol>
+  </div>
+  <noscript><p class="wrap">Turn on JavaScript to see the timeline.</p></noscript>
+</div>
+</main>
+
+<script>
+/* Timeline data. Dates are "YYYY" or "YYYY-MM". end: "present" for ongoing, omit for a single moment. */
+const NOW = "2026-10";
+const KINDS = {
+  life:   {label:"Life",              color:"#748181"},
+  design: {label:"Game design",       color:"#0B39DA"},
+  work:   {label:"Work",              color:"#139926"},
+  play:   {label:"Competitive play",  color:"#B8001F"},
+  comm:   {label:"Community",         color:"#8a5c00"},
+  service:{label:"Service",           color:"#4C0BC3"}
+};
+const ENTRIES = [
+  {start:"2003", kind:"life", title:"Born"},
+  {start:"2020", end:"present", kind:"design", title:"Independent game designer", text:"Original games from two-week experiments to a two-year design."},
+  {start:"2022", end:"present", kind:"play", title:"Competitive One Piece TCG", text:"About $200,000 in tournament prizes so far.", href:"optcg.html"},
+  {start:"2022", end:"2025", kind:"comm", title:"Community manager, One Piece TCG Israel", text:"Grew the community from about 50 to more than 1,000 members.", href:"community.html"},
+  {start:"2022", end:"2024", kind:"work", title:"IT administrator and DBA", text:"SQL, Linux, virtual machines and networks."},
+  {start:"2024-11", end:"2025-02", kind:"design", title:"Glory", text:"A digital tactics card game, built with one developer.", href:"glory.html"},
+  {start:"2025", end:"present", kind:"work", title:"Expanchess", text:"Game development contractor on a chess game with ability cards.", href:"expanchess.html"},
+  {start:"2025-03", end:"present", kind:"design", title:"CHARDSS", text:"Chess with a shared deck of 40 rule-bending cards.", href:"chardss.html"},
+  {start:"2026-05", end:"present", kind:"design", title:"WAR-TCG", text:"An original five-colour trading card game.", href:"war-tcg.html"}
+];
+/* Before FOCUS the scale is compressed; after it, PX_PER_YEAR applies. */
+const FOCUS = "2020", PRE_PX = 150, PX_PER_YEAR = 240;
+</script>
+<script src="timeline.js"></script>
 </main>
 
 <footer class="site-foot on-iron" id="contact">

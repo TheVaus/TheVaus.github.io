@@ -70,3 +70,23 @@ spreadsheets. No stock art, no AI art, no emoji, no icon sets beyond the WAR gly
 ## Motion
 
 None. Nothing animates on load, scroll or hover beyond link and button colour changes.
+
+## Project themes
+
+Each project page uses its own game's look on top of the shared layout (`body.theme-*` in `styles.css`). The site
+header, navigation and footer stay the same everywhere.
+
+| Page | Source of the theme | Background / text / accent | Type |
+|---|---|---|---|
+| WAR-TCG | The WAR-TCG card database's dark theme | `#140b06` / `#f3e3c3` / gold `#d6a756` | WAR Caption + WAR Text |
+| CHARDSS | CHARDSS website DESIGN.md (ebony, walnut, parchment, brass) | `#1e140e` / `#ead9b0` / brass `#c9a24e` | Chardss Display + Alegreya Sans |
+| Glory | The game's dark UI and sand hex tiles | `#161a15` / `#ece6d6` / sand `#e0a868` | Alagard (the game's font) + Alegreya Sans |
+| Expanchess | Colours only, no logo or art (Daniel's choice) | `#0b1020` / `#eef0f6` / gold `#e2c25b` | Portfolio fonts |
+| The Wondering Emperor | Brass, parchment and ink (no art yet) | `#efe6d2` / `#2b2118` / brass `#7a5a22` | IM Fell English + WAR Text |
+| One Piece, Community, Timeline, Home | Portfolio base (no Bandai assets) | as above | WAR Caption + WAR Text |
+
+## Timeline
+
+`timeline.html` holds the data (`ENTRIES`); `timeline.js` lays it out: a centre line, a branch for each entry at its
+start date, a coloured line running down to its end date for things that lasted, and "Present (Month Year)" at the
+bottom. Before 2020 the scale is compressed. Under 760px it becomes a simple list on a left rail.
