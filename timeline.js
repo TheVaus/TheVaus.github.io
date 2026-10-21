@@ -36,7 +36,8 @@
   const items = ENTRIES.map((e, i) => {
     const t0 = parse(e.start), t1 = e.end ? parse(e.end, true) : t0;
     const span = !!e.end;
-    const range = span ? `${fmt(e.start)} – ${e.end === "present" ? "Present" : fmt(e.end)}` : fmt(e.start);
+    const sl = e.startLabel || fmt(e.start), el = e.endLabel || fmt(e.end || e.start);
+    const range = span ? `${sl} – ${e.end === "present" ? "Present" : el}` : sl;
     const li = document.createElement("li");
     li.className = "tlx-item";
     li.style.setProperty("--c", KINDS[e.kind].color);
@@ -49,7 +50,7 @@
       endEl = document.createElement("span");
       endEl.className = "tlx-end";
       endEl.setAttribute("aria-hidden", "true");
-      endEl.textContent = `${e.title}: ended ${fmt(e.end)}`;
+      endEl.textContent = `${e.title}: ${e.endNote || "ended"} ${e.endLabel || fmt(e.end)}`;
       root.appendChild(endEl);
     }
     return { e, i, t0, t1, span, li, endEl };
@@ -81,6 +82,7 @@
     items.forEach(it => {
       let side;
       if (narrow) side = "R";
+      else if (it.e.side) side = it.e.side;
       else {
         const active = s => lanes[s].filter(end => end > it.t0).length;
         const a = active("L"), b = active("R");
