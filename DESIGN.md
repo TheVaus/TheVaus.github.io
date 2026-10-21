@@ -89,4 +89,4 @@ header, navigation and footer stay the same everywhere.
 
 `timeline.html` holds the data (`ENTRIES`); `timeline.js` lays it out: a centre line, a branch for each entry at its
 start date, a coloured line running down to its end date for things that lasted, and "Present (Month Year)" at the
-bottom. Before 2020 the scale is compressed. Under 760px it becomes a simple list on a left rail.
+bottom. Before 2021 the scale is compressed. Under 760px it becomes a simple list on a left rail.
