@@ -43,7 +43,8 @@
     li.style.setProperty("--c", KINDS[e.kind].color);
     li.innerHTML = `<p class="tlx-meta"><span class="tlx-kind">${KINDS[e.kind].label}</span><span class="tlx-date">${range}</span></p>` +
       `<h2 class="tlx-title">${e.href ? `<a href="${e.href}">${e.title}</a>` : e.title}</h2>` +
-      (e.text ? `<p class="tlx-text">${e.text}</p>` : "");
+      (e.text ? `<p class="tlx-text">${e.text}</p>` : "") +
+      (e.site ? `<p class="tlx-site"><a href="${e.site}">${e.siteLabel || "Website"}</a></p>` : "");
     list.appendChild(li);
     let endEl = null;
     if (span && e.end !== "present") {
