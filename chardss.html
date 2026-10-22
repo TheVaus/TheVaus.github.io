@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CHARDSS case study, Daniel Vekar</title>
-<meta name="description" content="CHARDSS is chess with a shared deck of 40 rule-bending cards, paid for with the pieces you lose. How I designed its economy and its cards.">
-<meta property="og:title" content="CHARDSS case study, Daniel Vekar">
+<title>CHARDSS, Daniel Vekar</title>
+<meta name="description" content="CHARDSS is chess with a shared deck of 40 rule-bending cards, paid for with the pieces you lose. An overview, with links to its design notes, rules and cards.">
+<meta property="og:title" content="CHARDSS, Daniel Vekar">
 <meta property="og:image" content="https://thevaus.github.io/img/og.png">
 <meta name="theme-color" content="#191F21">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
@@ -34,7 +34,7 @@
     <a class="crumb" href="./">Home</a>
     <img src="img/chardss-logo.webp" alt="CHARDSS logo" width="72" height="72" style="border-radius:6px;margin-bottom:16px">
     <h1>CHARDSS</h1>
-    <p class="lede">Cards, Chess &amp; Chaos. It's chess with a shared deck of 40 cards, and every card bends one rule of chess. You pay for cards with <a class="wl" href="#economy" data-wl="points">the pieces you lose</a>.</p>
+    <p class="lede">Cards, Chess &amp; Chaos. It's chess with a shared deck of 40 cards, and every card bends one rule of chess. You pay for cards with <a class="wl" href="https://thevaus.github.io/CHARDSS-Website/design/#economy" data-wl="points">the pieces you lose</a>.</p>
     <dl class="summary">
       <div><dt>My role</dt><dd>Sole designer: rules, cards, card frames</dd></div>
       <div><dt>Team</dt><dd>Solo project</dd></div>
@@ -42,7 +42,7 @@
       <div><dt>Tools</dt><dd>Affinity, Python, AI coding tools</dd></div>
       <div><dt>Status</dt><dd>Playable. <a href="https://thevaus.github.io/CHARDSS-Website/">Rules and all 40 cards</a></dd></div>
     </dl>
-    <div class="site-links"><a class="btn btn-primary" href="https://thevaus.github.io/CHARDSS-Website/">Open the CHARDSS website</a></div>
+    <div class="site-links"><a class="btn btn-primary" href="https://thevaus.github.io/CHARDSS-Website/">Open the CHARDSS website</a><a class="btn btn-secondary" href="https://thevaus.github.io/CHARDSS-Website/design/">Read the design notes</a></div>
   </header>
   <div class="board-strip" aria-hidden="true"></div>
 
@@ -51,89 +51,38 @@
     <figcaption>Every card has its own page with an animated board that plays out what it does. <a href="https://thevaus.github.io/CHARDSS-Website/cards/teleport/">See Teleport</a>.</figcaption>
   </figure>
 
-  <div class="cs-body">
-    <nav class="toc" aria-label="On this page">
-      <p>On this page</p>
-      <ol>
-        <li><a href="#idea">The idea</a></li>
-        <li><a href="#economy">The economy</a></li>
-        <li><a href="#cards">Pricing the cards</a></li>
-        <li><a href="#rules">Rules that hold</a></li>
-        <li><a href="#look">The look</a></li>
-        <li><a href="#learned">Where it started</a></li>
-      </ol>
-    </nav>
-
+  <div class="cs-body cs-body--solo">
     <div class="cs-main">
       <section id="idea">
-        <h2>The idea</h2>
-        <p>Both players draw from one shared deck. Each turn you may play one card, then make one move, then draw back to three cards.</p>
-        <p>Every card bends one rule of chess. Your Pawns capture sideways. Your King swaps places with a Rook. Your opponent has to change their last move. All normal chess rules still apply unless a card says otherwise.</p>
+        <h2>The game</h2>
+        <p>Both players draw from one shared deck. Each turn you may play one card, then make one move, then draw back to three cards. Every card bends one rule of chess: your Pawns capture sideways, your King swaps places with another piece, your opponent has to change their last move.</p>
+        <p>You pay for cards with <a class="wl" href="https://thevaus.github.io/CHARDSS-Website/design/#economy" data-wl="points">Points</a>, and you earn points when <b>your own</b> pieces are captured. The player who is behind on material has the most to spend.</p>
         <figure class="fig fig--cards">
           <img src="img/chardss-teleport.webp" alt="Teleport, cost 3: switch your King with another piece, then pass the turn" width="500" height="698" loading="lazy">
           <img src="img/chardss-mimic.webp" alt="Mimic, cost 2: when you capture, your piece may become the type it captured" width="500" height="698" loading="lazy">
           <img src="img/chardss-plan-b.webp" alt="Plan B, cost 3: your opponent must change their last move" width="500" height="698" loading="lazy">
           <img src="img/chardss-armageddon.webp" alt="Armageddon, cost 39: if your King is your only piece left, you win" width="500" height="698" loading="lazy">
-          <figcaption>Four of the 40 cards. The piece icons in the text come from the game's font.</figcaption>
+          <figcaption>Four of the 40 cards.</figcaption>
         </figure>
       </section>
 
-      <section id="economy">
-        <h2>Your losses pay for your cards</h2>
-        <p>You earn points when <b>your own</b> pieces are captured, equal to their chess value. Capturing your opponent's pieces earns you nothing.</p>
-        <div class="table-wrap" style="max-width:560px">
-          <table>
-            <thead><tr><th scope="col">Piece lost</th><th scope="col">Points earned</th></tr></thead>
-            <tbody>
-              <tr><th scope="row"><img class="piece" src="img/pieces/Pawn.svg" alt="">Pawn</th><td>1</td></tr>
-              <tr><th scope="row"><img class="piece" src="img/pieces/Knight.svg" alt="">Knight</th><td>3</td></tr>
-              <tr><th scope="row"><img class="piece" src="img/pieces/Bishop.svg" alt="">Bishop</th><td>3</td></tr>
-              <tr><th scope="row"><img class="piece" src="img/pieces/Rook.svg" alt="">Rook</th><td>5</td></tr>
-              <tr><th scope="row"><img class="piece" src="img/pieces/Queen.svg" alt="">Queen</th><td>9</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p>So the player who is behind on material has the most points to spend. Most cards cost 1 or 2, so losing a Pawn or two is enough to play one.</p>
-      </section>
-
-      <section id="cards">
-        <h2>Pricing the cards</h2>
-        <p>Costs run from 0 to 39, and almost everything sits between 0 and 3. <a href="https://thevaus.github.io/CHARDSS-Website/cards/">All 40 cards</a> are on the CHARDSS website.</p>
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th scope="col">Cost</th><th scope="col">0</th><th scope="col">1</th><th scope="col">2</th><th scope="col">3</th><th scope="col">4</th><th scope="col">7</th><th scope="col">39</th></tr></thead>
-            <tbody><tr><th scope="row">Cards</th><td>4</td><td>13</td><td>14</td><td>5</td><td>2</td><td>1</td><td>1</td></tr></tbody>
-          </table>
-        </div>
-        <p>A family of cards lets your Pawns move like another piece for a turn. Their costs follow the strength of that piece: <b>Kingified</b> costs 1, <b>Knightified</b> and <b>Bishopified</b> 2, <b>Rookified</b> 3 and <b>Queenified</b> 4.</p>
-        <p>The outlier is <b><a href="https://thevaus.github.io/CHARDSS-Website/cards/armageddon/">Armageddon</a></b>. It costs 39, the total value of all your pieces except the King (8 Pawns, 2 Knights, 2 Bishops, 2 Rooks and a Queen). It wins the game if your King is the only piece you have left on the board.</p>
-      </section>
-
-      <section id="rules">
-        <h2>Rules that hold up</h2>
-        <p>Cards that bend chess rules can create positions chess has no answer for. Three rules from the <a href="https://thevaus.github.io/CHARDSS-Website/rules/">rulebook</a> keep the game playable:</p>
+      <section id="work">
+        <h2>What I've done</h2>
         <ul>
-          <li><b>Cards beat rules, but legality beats cards.</b> A card wins over normal chess rules, but you can't play a card if the result would be an illegal position. For example, you can't skip your move while in check.</li>
-          <li><b>One card per turn, and play before you move.</b> Turns stay readable: card, move, draw.</li>
-          <li><b>When the deck runs out, it's chess.</b> Nobody draws from an empty deck. Once both hands are empty, the game finishes as normal chess.</li>
+          <li><b>Rules.</b> The rulebook, including the rules that keep rule-bending cards from breaking the game.</li>
+          <li><b>Cards.</b> All 40 cards and their prices, from 0 to <a class="wl" href="https://thevaus.github.io/CHARDSS-Website/design/#pricing" data-wl="armageddon">39 points</a>.</li>
+          <li><b>Card frames and font.</b> The card fronts and back in Affinity, and a font that draws chess pieces in card text.</li>
+          <li><b>Website.</b> Rules, every card with an animated board demo, and design notes, all built from the game's card data.</li>
         </ul>
       </section>
 
-      <section id="look">
-        <h2>The look</h2>
-        <p>The first card fronts were colour-coded in blue, red, green and purple. The current version uses one brown frame for every card.</p>
-        <ol class="evo" style="grid-template-columns:repeat(3,minmax(0,220px))">
-          <li><img src="img/chardss-teleport-v1.webp" alt="Version 1 of Teleport with a blue frame" width="360" height="503" loading="lazy"><b>Version 1</b><span>Colour-coded fronts</span></li>
-          <li><img src="img/chardss-teleport-v2.webp" alt="Current Teleport with a brown frame" width="360" height="503" loading="lazy"><b>Current</b><span>One frame for all 40 cards</span></li>
-          <li><img src="img/chardss-back.webp" alt="The CHARDSS card back: brown and cream quarters with the CHARDSS logo in a diamond" width="500" height="698" loading="lazy"><b>Card back</b><span>Shared by all 40 cards</span></li>
-        </ol>
-        <p>The game's font, <b>Chardss Display</b>, is Cormorant with chess-piece glyphs added (pieces by Colin M.L. Burnett). Typing <i>{King}</i> on a card or on the website gives you the King icon. The card data lives in one JSON file, and every change to the rules or cards rebuilds the website's rules, card pages and images.</p>
-        <figure class="fig"><img src="img/shots/ch-home.webp" alt="The CHARDSS homepage with the title Chess, Cards, Chaos and a hand of three cards" width="1200" height="750" loading="lazy"><figcaption>The <a href="https://thevaus.github.io/CHARDSS-Website/">CHARDSS homepage</a>. The hero deals you an opening hand of three cards.</figcaption></figure>
-      </section>
-
-      <section id="learned">
-        <h2>Where it started</h2>
-        <p>The first prototype, from March 2025, was a Python chess engine that plays full chess with castling, en passant and a clock. It never got card mechanics. The game became a physical card deck instead, with the website for rules and card demos.</p>
+      <section id="more">
+        <h2>More on the CHARDSS website</h2>
+        <ul class="more">
+          <li><a href="https://thevaus.github.io/CHARDSS-Website/design/"><b>Design notes</b><span>The points economy, how the cards are priced, the rules that hold it together, and the look.</span></a></li>
+          <li><a href="https://thevaus.github.io/CHARDSS-Website/rules/"><b>Rules</b><span>The full rulebook.</span></a></li>
+          <li><a href="https://thevaus.github.io/CHARDSS-Website/cards/"><b>Cards</b><span>All 40 cards, each with an animated board that plays out what it does.</span></a></li>
+        </ul>
       </section>
 
       <nav class="next" aria-label="More case studies">
@@ -145,10 +94,11 @@
 </div>
 </main>
 
+
 <footer class="site-foot on-iron" id="contact">
   <div class="wrap">
     <h2>Contact</h2>
-    <p>I'm looking for a game designer role on a trading card game. I'm based in Tel Aviv and work remotely, including US hours.</p>
+    <p>Open to game design work. Based in Tel Aviv, happy to work remotely.</p>
     <div class="actions">
       <a class="btn btn-primary" href="mailto:daniel.vekar@gmail.com">Email daniel.vekar@gmail.com</a>
       <a class="btn btn-secondary" href="https://github.com/TheVaus">GitHub</a>

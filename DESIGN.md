@@ -24,6 +24,11 @@ All values come from `WAR-TCG/Assets/Palette.ase` (CMYK converted to sRGB).
 | `--gold` | `#F5991F` | Focus ring only (palette "Frame Gold") |
 | `--paper` | `#E6E0CF` | Card text boxes only |
 
+**60-30-10.** Roughly 60% light page (`--page`, `--surface`), 30% Iron (hero, project tiles, footer) and 10%
+Sapphire as the one accent: links, the primary button, the bar under the hero role and over each home section title,
+and the top edge of the plain tiles. Each project theme follows the same split with its own three colours (table
+below). Measured on the home page at 1440 px: about 55% light, 37% dark, the rest text and accent.
+
 Faction colours appear only where they mean a WAR colour: W `#EBC000`, U `#0B39DA`, B `#4C0BC3`, R `#B8001F`,
 G `#139926`.
 
@@ -70,6 +75,13 @@ spreadsheets. No stock art, no AI art, no emoji, no icon sets beyond the WAR gly
 ## Motion
 
 None. Nothing animates on load, scroll or hover beyond link and button colour changes.
+
+## Project pages
+
+WAR-TCG and CHARDSS have their own websites, so their portfolio pages are short overviews (the game, what I did) with a
+"More on the … website" list linking to each site's design notes, updates, rules and cards. The detailed design
+thinking lives on those sites (WAR-TCG: `/design` and the Updates feed; CHARDSS: `/design/`). Glory, Expanchess and The
+Wondering Emperor keep their detail here (Glory's site is only the game).
 
 ## Project themes
 

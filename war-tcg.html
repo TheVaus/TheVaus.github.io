@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>WAR-TCG case study, Daniel Vekar</title>
-<meta name="description" content="How I designed WAR-TCG, a five-colour trading card game: the resource system, one-number combat, the balance formula, card frame iterations and its tools.">
-<meta property="og:title" content="WAR-TCG case study, Daniel Vekar">
+<title>WAR-TCG, Daniel Vekar</title>
+<meta name="description" content="WAR-TCG is a five-colour trading card game I design on my own. An overview, with links to the design notes and updates on its website.">
+<meta property="og:title" content="WAR-TCG, Daniel Vekar">
 <meta property="og:image" content="https://thevaus.github.io/img/og.png">
 <meta name="theme-color" content="#191F21">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
@@ -33,15 +33,15 @@
   <header class="cs-head">
     <a class="crumb" href="./">Home</a>
     <h1>WAR-TCG</h1>
-    <p class="lede">A five-colour trading card game about a kingdom fighting on every front. Any unit in your hand can become a resource, a threat or a shield, and you decide which.</p>
+    <p class="lede">A five-colour trading card game about a kingdom fighting on every front. Any unit in your hand can become a resource or a threat, and any Command a shield.</p>
     <dl class="summary">
       <div><dt>My role</dt><dd>Sole designer: rules, colour pie, balance, card templates</dd></div>
       <div><dt>Team</dt><dd>Solo project</dd></div>
       <div><dt>Timeline</dt><dd>May 2026 to now</dd></div>
       <div><dt>Tools</dt><dd>Apple Numbers, Affinity, Obsidian, AI coding tools</dd></div>
-      <div><dt>Status</dt><dd>127 cards at concept stage. <a href="https://thevaus.github.io/war-tcg-site/">Card database</a></dd></div>
+      <div><dt>Status</dt><dd>127 cards at concept stage. Rules v5</dd></div>
     </dl>
-    <div class="site-links"><a class="btn btn-primary" href="https://thevaus.github.io/war-tcg-site/">Open the WAR-TCG card database</a></div>
+    <div class="site-links"><a class="btn btn-primary" href="https://thevaus.github.io/war-tcg-site/">Open the WAR-TCG website</a><a class="btn btn-secondary" href="https://thevaus.github.io/war-tcg-site/design">Read the design notes</a></div>
   </header>
 
   <figure class="cs-hero">
@@ -49,198 +49,63 @@
     <figcaption>The public <a href="https://thevaus.github.io/war-tcg-site/cards">card database</a>, with filters for colour, type, cost, rarity and Might.</figcaption>
   </figure>
 
-  <div class="cs-body">
-    <nav class="toc" aria-label="On this page">
-      <p>On this page</p>
-      <ol>
-        <li><a href="#goals">Goals</a></li>
-        <li><a href="#resources">Resources</a></li>
-        <li><a href="#might">Combat</a></li>
-        <li><a href="#pitch">Blocking</a></li>
-        <li><a href="#colours">Colour pie</a></li>
-        <li><a href="#cards">More cards</a></li>
-        <li><a href="#balance">Balance</a></li>
-        <li><a href="#frames">Card frame</a></li>
-        <li><a href="#tools">Tools</a></li>
-        <li><a href="#next">Open questions</a></li>
-      </ol>
-    </nav>
-
+  <div class="cs-body cs-body--solo">
     <div class="cs-main">
-      <section id="goals">
-        <h2>Design rules</h2>
-        <p>WAR-TCG borrows what works from the games I play and avoids what frustrates players in them: mana screw and flood from Magic, and One Piece triggers you can't play around. Every card is held to a short list of rules:</p>
+      <section id="about">
+        <h2>The game</h2>
+        <p>Your kingdom is at war on every front. Each player brings a Leader, which sets their identity, and three Regions, and picks one Region to defend after seeing the opponent's Leader. The ideas the game is built on:</p>
         <ul>
-          <li><b>Always answerable.</b> No hexproof or shroud. Every board state can be dealt with.</li>
-          <li><b>Low upkeep at the table.</b> No +1/+1 counters to track and no shuffling in the middle of a game. Searches look at the top cards and put the rest on the bottom.</li>
-          <li><b>Rules text that reads like code.</b> Keywords are nested, for example <i>Rush: Unit</i>, so every card parses the same way. Every keyword is defined in the <a href="https://thevaus.github.io/war-tcg-site/glossary">glossary</a>.</li>
-          <li><b>No card costs 0.</b> Every unit follows the balance formula, and the colours get roughly equal card counts.</li>
+          <li><b>Units are the resource.</b> There are no land cards. Any unit can be <a class="wl" href="https://thevaus.github.io/war-tcg-site/design#resources" data-wl="station">stationed</a> in your Backline to produce energy, or deployed to the Frontline to fight, so there's no mana screw.</li>
+          <li><b>Combat on one number.</b> Units fight with <a class="wl" href="https://thevaus.github.io/war-tcg-site/design#combat" data-wl="might">Might</a> alone. An attack hits if the attackers' Might reaches the target's.</li>
+          <li><b>Every Command is also a shield.</b> Issue it for its effect, or <a class="wl" href="https://thevaus.github.io/war-tcg-site/design#defending" data-wl="pitch">Pitch</a> it from your hand to add its Block to whatever is being attacked.</li>
+          <li><b>Always answerable.</b> No hexproof, no counters to track, no shuffling in the middle of a game.</li>
         </ul>
         <figure class="fig fig--cards">
-          <img src="img/war-089.webp" alt="Pikeman Corvo, white unit with Assist" width="500" height="698" loading="lazy">
-          <img src="img/war-038.webp" alt="Arch Artificer, blue unit with Ward 2 and a Fee" width="500" height="698" loading="lazy">
-          <img src="img/war-021.webp" alt="Rebbeca, black necromancer with Blocker" width="500" height="698" loading="lazy">
-          <img src="img/war-007.webp" alt="Emberseer Krag, red unit that can pitch the top card of the deck when it attacks" width="500" height="698" loading="lazy">
-          <img src="img/war-011.webp" alt="Old Grimtusk, green unit, 8 Might, Ward 2" width="500" height="698" loading="lazy">
-          <figcaption>One unit from each colour: white, blue, black, red and green. The art isn't done yet.</figcaption>
+          <img src="img/war-089.webp" alt="Pikeman Corvo, white unit" width="500" height="698" loading="lazy">
+          <img src="img/war-038.webp" alt="Arch Artificer, blue unit" width="500" height="698" loading="lazy">
+          <img src="img/war-021.webp" alt="Rebbeca, black unit" width="500" height="698" loading="lazy">
+          <img src="img/war-007.webp" alt="Emberseer Krag, red unit" width="500" height="698" loading="lazy">
+          <img src="img/war-011.webp" alt="Old Grimtusk, green unit" width="500" height="698" loading="lazy">
+          <figcaption>One unit from each of the five colours. The art isn't done yet.</figcaption>
         </figure>
       </section>
 
-      <section id="resources">
-        <h2>Resources without mana screw</h2>
-        <dl class="psr">
-          <dt>Problem</dt><dd>In Magic, drawing too many or too few lands can lose a game before it starts.</dd>
-          <dt>Solution</dt><dd>There's no resource card. Once per turn you can <b>station</b> a unit from your hand in your <b>Backline</b> for free, where it taps to produce energy. Or you pay its cost and <b>deploy</b> it to the <b>Frontline</b> to fight. Backline units can later <b>advance</b> through the <b>Middle</b>, which holds only one unit.</dd>
-          <dt>Result</dt><dd>A unit you can't afford yet is still useful as next turn's energy, and resources can turn into threats over time.</dd>
-        </dl>
-        <div class="zones" role="img" aria-label="The three board zones from back to front: Backline, Middle and Frontline">
-          <div><b>Backline</b><span>Stationed units tap for energy</span></div>
-          <div><b>Middle</b><span>Holds one unit on its way forward</span></div>
-          <div><b>Frontline</b><span>Deployed units and items, where attacks come from</span></div>
-        </div>
-        <p>The Middle came in a second pass. In May the board had two zones. In June I added the Middle, capped at one unit, to add travel time between producing energy and fighting, and to prevent big, sudden board swings.</p>
-      </section>
-
-      <section id="might">
-        <h2>Combat on one number</h2>
-        <dl class="psr">
-          <dt>Problem</dt><dd>Games like Magic give units separate power and toughness and track damage on them, which is more to explain and more to remember.</dd>
-          <dt>Solution</dt><dd>Units fight with one number, <b>Might</b> <span class="ico-inline" aria-hidden="true">{Might}</span>. An attack hits if the attackers' total Might is at least the target's. A unit that's hit is destroyed. A Leader that's hit loses Life <span class="ico-inline" aria-hidden="true">{Life}</span> equal to the strongest attacker's Might. Attackers never take damage back.</dd>
-          <dt>Result</dt><dd>Combat is one comparison, and an effect like "−3 Might" works on any target. I also scaled all numbers down from thousands (3000) to single digits (3).</dd>
-        </dl>
-        <p>This went back and forth. In June I removed Life and had players defend Regions instead, so damage and removal used the same number. Leaders and Regions now have Life again. In August I kept Leader Might as a fixed budget, so every Region stays roughly equal in power no matter how many a deck runs.</p>
-      </section>
-
-      <section id="pitch">
-        <h2>Blocking by pitching</h2>
-        <p>When you're attacked, you can <b>pitch</b> cards from your hand that have a Block value <span class="ico-inline" aria-hidden="true">{Block}</span> (0, 1 or 2). Each one adds its Block to the target's Might for that combat, and pitched cards go to the bottom of their owner's deck at the end of the turn. A defender can also tap one unit with <i>Blocker</i> to take the attack instead.</p>
-        <p>So a unit in hand has three uses: play it, <a class="wl" href="#resources" data-wl="station">station it</a>, or keep it to block. In June I tried having Block lower the attacker's Might instead, to make attacks by several units easier to resolve. The current rules add Block to the defender again.</p>
-      </section>
-
-      <section id="colours">
-        <h2>The colour pie</h2>
-        <p>Five colours, each with a play style, signature mechanics and mechanics it may never use:</p>
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th scope="col">Colour</th><th scope="col">Plays like</th><th scope="col">Signature mechanics</th><th scope="col">Never gets</th></tr></thead>
-            <tbody>
-              <tr><th scope="row"><span class="pip" style="background:var(--w)"></span>White</th><td>Control with some aggro</td><td>Blocker, Convoke, Banish, Recover</td><td>Big units, direct removal</td></tr>
-              <tr><th scope="row"><span class="pip" style="background:var(--u)"></span>Blue</th><td>Control, with combo potential</td><td>Flash, Evasive, Foresight, Bounce</td><td>Direct removal, direct damage to Bases</td></tr>
-              <tr><th scope="row"><span class="pip" style="background:var(--b)"></span>Black</th><td>Control and combo</td><td>Delve, Mill, Discard, Destroy</td><td>Removing Items, gaining Base Might directly</td></tr>
-              <tr><th scope="row"><span class="pip" style="background:var(--r)"></span>Red</th><td>Aggro</td><td>Rush, Pierce, Advance, Impulse</td><td>Destroying Items, Recover, protecting its own units</td></tr>
-              <tr><th scope="row"><span class="pip" style="background:var(--g)"></span>Green</th><td>In the middle, leaning combo and aggro</td><td>Hunt, Overwhelm, Ramp</td><td>Removing units except by fighting</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p>Each of the ten colour pairs has its own written identity too. Blue and Red, for example, is "thinking before acting against acting without thinking", and it's a deck where Commands matter.</p>
-      </section>
-
-      <section id="cards">
-        <h2>More from the card table</h2>
-        <p>Ten more cards across the five colours and all three card types: units, commands and items.</p>
-        <div class="strip" tabindex="0" aria-label="Scrollable row of ten WAR-TCG cards">
-          <img src="img/strip/war-004.webp" alt="Rotfuse Sappers, black-red unit" width="340" height="475" loading="lazy">
-          <img src="img/strip/war-008.webp" alt="Countercharge, white command" width="340" height="475" loading="lazy">
-          <img src="img/strip/war-010.webp" alt="Thornwake Sentinel, green unit" width="340" height="475" loading="lazy">
-          <img src="img/strip/war-013.webp" alt="Goblin Field Mortar, red item" width="340" height="475" loading="lazy">
-          <img src="img/strip/war-036.webp" alt="Shrinker, blue item" width="340" height="475" loading="lazy">
-          <img src="img/strip/war-040.webp" alt="Selfish Inventor, blue-black unit" width="340" height="475" loading="lazy">
-          <img src="img/strip/war-055.webp" alt="Signal Cannon, red item" width="340" height="475" loading="lazy">
-          <img src="img/strip/war-059.webp" alt="Siegecaller Ryn, blue-red unit" width="340" height="475" loading="lazy">
-          <img src="img/strip/war-061.webp" alt="Purify, white command" width="340" height="475" loading="lazy">
-          <img src="img/strip/war-067.webp" alt="Iron Manacles, white item" width="340" height="475" loading="lazy">
-        </div>
-      </section>
-
-      <section id="balance">
-        <h2>Balance</h2>
-        <p>Every unit is priced with the same formula:</p>
-        <div class="formula">
-          <code>value − cost = 3 to 5</code><br>
-          where value = <a class="wl" href="#might" data-wl="might">Might</a> + <a class="wl" href="#pitch" data-wl="block">Block</a> + production + text. Each keyword counts 1, and a drawback like <i>Fee — X</i> counts −X. Cheap cards sit near 3 and expensive cards near 5.
-        </div>
-        <p>In August the spreadsheet had drifted to a much looser scale, with keywords worth 2 or 3. I made the formula the single source of truth again and scaled the old text prices to 40%.</p>
-        <h3>Target set size and cost curve</h3>
-        <p>In August I set a target of 107 cards: 12 per colour, 2 for each of the 10 colour pairs, 7 colourless and 5 free slots, plus 5 Leaders and 10 Regions. The 92 costed cards follow this target curve, peaking at 3 with nothing at 0:</p>
-        <figure class="curve" aria-label="Target cost curve: cost 1, 8 cards; cost 2, 18; cost 3, 25; cost 4, 19; cost 5, 13; cost 6, 6; cost 7, 3.">
-          <div class="curve__bars" aria-hidden="true">
-            <span style="--v:8"><i>8</i></span><span style="--v:18"><i>18</i></span><span class="peak" style="--v:25"><i>25</i></span><span style="--v:19"><i>19</i></span><span style="--v:13"><i>13</i></span><span style="--v:6"><i>6</i></span><span style="--v:3"><i>3</i></span>
-          </div>
-          <div class="curve__axis" aria-hidden="true"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span></div>
-        </figure>
-        <p>The July draft peaked at 4 with 104 costed cards. The card table has since grown to 127 cards, so whether 107 is still the target is one of the open questions below.</p>
-
-        <h3>From the design log</h3>
-        <p>Major design decisions go in a dated log with the reasoning. A few entries:</p>
-        <ul class="log">
-          <li><time>May 12</time><p><b>Front and Back line.</b> Units act as resources when played to the <a class="wl" href="#resources" data-wl="backline">Backline</a>, so there's no mana screw and always a play to make.</p></li>
-          <li><time>June 22</time><p><b>Three zones.</b> Added the <a class="wl" href="#resources" data-wl="middle">Middle</a>, capped at one unit, to add travel time and prevent sudden board swings.</p></li>
-          <li><time>June 28</time><p><b>Life replaced by Regions.</b> "−3 Might" can now hit a unit, a Leader or a Region.</p></li>
-          <li><time>Aug 21</time><p><b>Defense and Layers split.</b> Defense is the Might an attack needs to connect. Layers cap how much one hit removes. Pierce beats Layers, not Defense.</p></li>
-        </ul>
-      </section>
-
-      <section id="frames">
-        <h2>Iterating on the card frame</h2>
-        <p>I build the frames in Affinity, and a script fills every card from the card table. These are four saved versions from August to October:</p>
-        <ol class="evo" style="grid-template-columns:repeat(4,minmax(0,1fr))">
-          <li><img src="img/frames/v1.webp" alt="Version 1: grey frame with placeholder text" width="360" height="503" loading="lazy"><b>Aug 20</b><span>First layout, with cost and Might in the top bar.</span></li>
-          <li><img src="img/frames/v2.webp" alt="Version 2: colour icons in the cost bar, no name bar" width="360" height="503" loading="lazy"><b>Aug 23</b><span>Colour icons in the cost bar.</span></li>
-          <li><img src="img/frames/v3.webp" alt="Version 3: green name bar under the art" width="360" height="503" loading="lazy"><b>Sep 15</b><span>A name bar in the card's colour and keyword badges. This is the frame the card database uses.</span></li>
-          <li><img src="img/frames/v4.webp" alt="Version 4: bright green frame with the name at the top" width="360" height="503" loading="lazy"><b>Oct 12</b><span>An alternative layout with a full-colour frame and the name on top.</span></li>
-        </ol>
-        <h3>Newest frames: one finish per card type</h3>
-        <p>The latest frames give each card type its own metal: gold for units, silver for commands and bronze for items.</p>
-        <div class="war-frames">
-          <figure><img src="img/war-frames/gold.webp" alt="Blank WAR-TCG card frame with a gold border, for units" width="420" height="587" loading="lazy"><figcaption>Gold: units</figcaption></figure>
-          <figure><img src="img/war-frames/silver.webp" alt="Blank WAR-TCG card frame with a silver border, for commands" width="420" height="587" loading="lazy"><figcaption>Silver: commands</figcaption></figure>
-          <figure><img src="img/war-frames/bronze.webp" alt="Blank WAR-TCG card frame with a bronze border, for items" width="420" height="587" loading="lazy"><figcaption>Bronze: items</figcaption></figure>
-        </div>
-        <p>The card fonts are custom builds of Barlow Semi Condensed, TeX Gyre Pagella and Cormorant Upright with the game's icons added as ligatures: typing <i>{Might}</i> or <i>[DEPLOY]</i> in a card's text gives you the icon. This site uses those fonts.</p>
-      </section>
-
-      <section id="tools">
-        <h2>Tools</h2>
-        <p>The same card data shows up in the spreadsheet, the rendered cards, the rules and the website. With AI coding tools, I set up a pipeline so a change only has to be made once:</p>
-        <ol>
-          <li><b>Card table.</b> I edit cards in Numbers and export them.</li>
-          <li><b>Card data.</b> An import script turns the export into JSON. The build warns about keywords that aren't in the glossary.</li>
-          <li><b>Card frames.</b> An Affinity script renders every card from that data.</li>
-          <li><b>Website.</b> The <a href="https://thevaus.github.io/war-tcg-site/">site</a> is built from the game repository. Each card change becomes a dated <a href="https://thevaus.github.io/war-tcg-site/updates">update post</a>, tagged as a buff, nerf, rework or new card.</li>
-        </ol>
-        <div class="fig-row">
-          <figure class="fig"><img src="img/shots/war-card.webp" alt="A card page on the WAR-TCG site showing Emberseer Krag with its stats and rules text" width="1200" height="750" loading="lazy"><figcaption>Each card has <a href="https://thevaus.github.io/war-tcg-site/card/TST-007">its own page</a> with its stats and change history.</figcaption></figure>
-          <figure class="fig"><img src="img/shots/war-updates.webp" alt="The Updates page listing dated card changes and glossary changes" width="1200" height="750" loading="lazy"><figcaption><a href="https://thevaus.github.io/war-tcg-site/updates">Update posts</a> are generated from the card history.</figcaption></figure>
-        </div>
-        <p>The site also has a <a href="https://thevaus.github.io/war-tcg-site/decks">deck builder</a> that checks the deck rules as you build (1 Leader, 40 cards, up to 3 copies of a card, up to 3 Regions), a printable proxy sheet, and a design audit that reports colour counts, cost curves and wording problems.</p>
-      </section>
-
-      <section id="next">
-        <h2>Open questions</h2>
-        <p>Each undecided rule has its own file until I answer it. Some of the current ones:</p>
+      <section id="work">
+        <h2>What I've done</h2>
         <ul>
-          <li><b>Set size.</b> Keep the 107-card target, or adopt the 127 cards in the table?</li>
-          <li><b>First-turn balance.</b> How much should going first cost?</li>
-          <li><b>Coloured costs.</b> How should coloured energy be paid?</li>
-          <li><b>Regions.</b> Their setup, their zone, Defense and Layers, and their names.</li>
-          <li><b>Tournament rules.</b> Match format, sideboarding and time limits.</li>
+          <li><b>Rules.</b> Five versions of the rules so far, with every decision logged with its reasoning.</li>
+          <li><b>Colour pie.</b> Five colours, each with a play style, signature mechanics and mechanics it never gets, plus an identity for each of the ten colour pairs.</li>
+          <li><b>Balance.</b> One <a class="wl" href="https://thevaus.github.io/war-tcg-site/design#balance" data-wl="balance-formula">pricing formula</a> for every unit, a locked set size and a target cost curve.</li>
+          <li><b>Card frames.</b> Built in Affinity and filled by a script from the card table, now with gold, silver and bronze frames for units, commands and items.</li>
+          <li><b>Tools.</b> One card table feeds the card renders, the rules, the glossary and the website, which turns every change into a dated update.</li>
         </ul>
-        <div class="callout"><p>I can walk you through the card table, the design log or a playtest deck in an interview.</p></div>
+      </section>
+
+      <section id="more">
+        <h2>More on the WAR-TCG website</h2>
+        <p>The design thinking, the history of every decision and the game itself live on the game's own site.</p>
+        <ul class="more">
+          <li><a href="https://thevaus.github.io/war-tcg-site/design"><b>Design</b><span>The rules every card follows, the resource system, combat, the colour pie, balance and the card frame.</span></a></li>
+          <li><a href="https://thevaus.github.io/war-tcg-site/updates"><b>Updates</b><span>Dated posts on rules changes, card changes and design decisions.</span></a></li>
+          <li><a href="https://thevaus.github.io/war-tcg-site/how-to-play"><b>How to Play</b><span>The full rules.</span></a></li>
+          <li><a href="https://thevaus.github.io/war-tcg-site/cards"><b>Cards</b><span>All 127 cards, with filters and a deck builder.</span></a></li>
+        </ul>
       </section>
 
       <nav class="next" aria-label="More case studies">
-        <a href="./#work"><span>Back to</span>All work</a>
-        <a href="chardss.html"><span>Next case study</span>CHARDSS</a>
+        <a href="./#games"><span>Back to</span>All games</a>
+        <a href="chardss.html"><span>Next</span>CHARDSS</a>
       </nav>
     </div>
   </div>
 </div>
 </main>
 
+
 <footer class="site-foot on-iron" id="contact">
   <div class="wrap">
     <h2>Contact</h2>
-    <p>I'm looking for a game designer role on a trading card game. I'm based in Tel Aviv and work remotely, including US hours.</p>
+    <p>Open to game design work. Based in Tel Aviv, happy to work remotely.</p>
     <div class="actions">
       <a class="btn btn-primary" href="mailto:daniel.vekar@gmail.com">Email daniel.vekar@gmail.com</a>
       <a class="btn btn-secondary" href="https://github.com/TheVaus">GitHub</a>

@@ -495,3 +495,20 @@ img.px{image-rendering:pixelated;image-rendering:crisp-edges}
 .glory-title{width:300px;margin-bottom:var(--s3)}
 @media (max-width:560px){.glory-title{width:220px}}
 .tlx-site{margin:6px 0 0;font:600 14px var(--f-cap)}
+
+/* Overview pages (project details live on the project's own website) */
+.cs-body--solo{grid-template-columns:minmax(0,1fr);max-width:820px}
+.more{list-style:none;padding:0;margin:var(--s3) 0 0;display:grid;gap:var(--s2)}
+.more a{display:block;padding:var(--s3);border:1px solid var(--rule);border-left:4px solid var(--primary);background:var(--surface);color:var(--ink);text-decoration:none;border-radius:var(--r,6px);transition:border-color .15s}
+.more a:hover{border-color:var(--primary)}
+.more b{display:block;font:700 20px/1.2 var(--f-cap);color:var(--ink)}
+.more b::after{content:" →";color:var(--primary)}
+.more span{display:block;margin-top:4px;color:var(--ink-2)}
+
+/* 60-30-10: light page ~60%, iron ~30%, primary blue as the ~10% accent */
+.hero{padding:var(--s8) 0 var(--s8)}
+.hero .role::after{content:"";display:block;width:56px;height:4px;background:var(--primary);margin-top:var(--s2)}
+.group-title::before{content:"";display:block;width:40px;height:4px;background:var(--primary);margin-bottom:12px}
+.tile--plain{border-top:4px solid var(--primary)}
+.site-foot .btn-primary{box-shadow:none}
+.cs-main .more{max-width:none}

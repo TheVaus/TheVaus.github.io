@@ -41,57 +41,57 @@ window.WIKI = {
 },
 "might": {
 "t": "Might",
-"h": "war-tcg.html#might",
-"d": "WAR-TCG's one combat number. An attack hits if the attackers' total Might is at least the target's."
+"h": "https://thevaus.github.io/war-tcg-site/design#combat",
+"d": "WAR-TCG's one combat number. An attack hits if the attackers' combined Might is at least the target's."
 },
 "block": {
 "t": "Block",
-"h": "war-tcg.html#pitch",
-"d": "A card's Block value (0, 1 or 2) is added to the target's Might when it's pitched to defend."
+"h": "https://thevaus.github.io/war-tcg-site/design#defending",
+"d": "A Command's Block value (0 to 3) is added to the target's Might when it's pitched to defend."
 },
 "pitch": {
 "t": "Pitch",
-"h": "war-tcg.html#pitch",
-"d": "When attacked, pitch cards with a Block value from your hand to raise the target's Might for that combat."
+"h": "https://thevaus.github.io/war-tcg-site/design#defending",
+"d": "When attacked, pitch Commands from your hand to add their Block to the target's Might for that combat."
 },
 "station": {
 "t": "Station",
-"h": "war-tcg.html#resources",
+"h": "https://thevaus.github.io/war-tcg-site/design#resources",
 "d": "Once per turn, put a unit from your hand into your Backline for free, where it produces energy."
 },
 "backline": {
 "t": "Backline",
-"h": "war-tcg.html#resources",
+"h": "https://thevaus.github.io/war-tcg-site/design#resources",
 "d": "The zone where stationed units tap to produce energy."
 },
 "middle": {
 "t": "Middle",
-"h": "war-tcg.html#resources",
+"h": "https://thevaus.github.io/war-tcg-site/design#resources",
 "d": "The zone between Backline and Frontline. It holds one unit."
 },
 "frontline": {
 "t": "Frontline",
-"h": "war-tcg.html#resources",
+"h": "https://thevaus.github.io/war-tcg-site/design#resources",
 "d": "Where deployed units and items go. Only Frontline units can attack."
 },
 "colour-pie": {
 "t": "Colour pie",
-"h": "war-tcg.html#colours",
+"h": "https://thevaus.github.io/war-tcg-site/design#colours",
 "d": "WAR-TCG's five colours, each with a play style, signature mechanics and mechanics it never gets."
 },
 "balance-formula": {
 "t": "Balance formula",
-"h": "war-tcg.html#balance",
-"d": "value − cost = 3 to 5, where value = Might + Block + production + text."
+"h": "https://thevaus.github.io/war-tcg-site/design#balance",
+"d": "value − cost = 3 to 5, where value = Might + production + text."
 },
 "points": {
 "t": "Points",
-"h": "chardss.html#economy",
+"h": "https://thevaus.github.io/CHARDSS-Website/design/#economy",
 "d": "In CHARDSS you earn points when your own pieces are captured: Pawn 1, Knight and Bishop 3, Rook 5, Queen 9."
 },
 "armageddon": {
 "t": "Armageddon",
-"h": "chardss.html#cards",
+"h": "https://thevaus.github.io/CHARDSS-Website/design/#pricing",
 "d": "A 39-point CHARDSS card. It wins the game if your King is your only piece left."
 },
 "combat-chain": {
