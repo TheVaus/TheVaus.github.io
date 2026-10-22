@@ -512,3 +512,7 @@ img.px{image-rendering:pixelated;image-rendering:crisp-edges}
 .tile--plain{border-top:4px solid var(--primary)}
 .site-foot .btn-primary{box-shadow:none}
 .cs-main .more{max-width:none}
+.tile--static{cursor:default}
+.tile--static:hover{border-color:var(--rule)}
+.tile--static:hover h3{text-decoration:none}
+.tile--static{border-top:1px solid var(--rule);height:100%}

@@ -2,7 +2,7 @@ window.WIKI = {
 "war-tcg": {
 "t": "WAR-TCG",
 "h": "war-tcg.html",
-"d": "An original five-colour trading card game I'm designing solo."
+"d": "An original trading card game I'm designing solo."
 },
 "chardss": {
 "t": "CHARDSS",
@@ -12,7 +12,7 @@ window.WIKI = {
 "glory": {
 "t": "Glory",
 "h": "glory.html",
-"d": "A digital tactics card game where your hand is your move set."
+"d": "An asymmetric strategy game: a digital, turn-based card game."
 },
 "expanchess": {
 "t": "Expanchess",
@@ -22,7 +22,7 @@ window.WIKI = {
 "world": {
 "t": "The Wondering Emperor",
 "h": "world.html",
-"d": "An original fantasy-steampunk world with a hard magic system."
+"d": "An original high fantasy world with lore, history, characters, a story and a hard magic system."
 },
 "optcg": {
 "t": "Competitive One Piece TCG",
@@ -32,7 +32,7 @@ window.WIKI = {
 "community": {
 "t": "Community management",
 "h": "community.html",
-"d": "Co-managed One Piece TCG Israel from January 2023 to 2025."
+"d": "Co-managed One Piece TCG Israel from January 2023 to 2025, growing it to 1,000+ active members."
 },
 "timeline": {
 "t": "Timeline",
