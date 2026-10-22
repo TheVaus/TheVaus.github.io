@@ -90,3 +90,11 @@ header, navigation and footer stay the same everywhere.
 `timeline.html` holds the data (`ENTRIES`); `timeline.js` lays it out: a centre line, a branch for each entry at its
 start date, a coloured line running down to its end date for things that lasted, and "Present (Month Year)" at the
 bottom. Before 2021 the scale is compressed. Under 760px it becomes a simple list on a left rail.
+
+## Wikilinks
+
+Key terms link to where they're explained, like links in an Obsidian vault. Hovering or focusing one shows a short
+preview card; on touch screens the first tap shows the card and the second follows the link. Write `[[key]]` or
+`[[key|label]]` in any page, add the key to `tools/glossary.py` (title, target, one-line preview), then run
+`python3 tools/wikilinks.py`, which converts the markers and regenerates `wiki-data.js`. Wikilinks are dotted-underlined
+in the page's accent colour to set them apart from ordinary links.

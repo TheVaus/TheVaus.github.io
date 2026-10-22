@@ -47,37 +47,93 @@
     <nav class="toc" aria-label="On this page">
       <p>On this page</p>
       <ol>
-        <li><a href="#magic">Magic</a></li>
+        <li><a href="#world">The world</a></li>
+        <li><a href="#mana">Mana</a></li>
+        <li><a href="#inner-magic">Inner magic</a></li>
+        <li><a href="#outer-magic">Outer magic</a></li>
+        <li><a href="#indexes">Material indexes</a></li>
+        <li><a href="#magic-circles">Magic circles</a></li>
         <li><a href="#power">Power</a></li>
-        <li><a href="#rules">World rules</a></li>
+        <li><a href="#magical-plant">The magical plant</a></li>
+        <li><a href="#technology">Technology</a></li>
+        <li><a href="#peoples">Peoples</a></li>
+        <li><a href="#powers">Places and powers</a></li>
+        <li><a href="#story">The story</a></li>
         <li><a href="#vault">How it's built</a></li>
       </ol>
     </nav>
 
     <div class="cs-main">
-      <section id="magic">
-        <h2>A hard magic system</h2>
-        <p><b>Mana</b> is a finite energy each person carries, like muscle strength. Overusing it leads to exhaustion or unconsciousness, and it comes back with rest, food, or time in places rich in mana. Magic splits in two:</p>
+      <section id="world">
+        <h2>The world</h2>
+        <p>The world has no name yet. It's set in a Renaissance-like age, rich in culture, politics and magic, and its big capitals have a fantasy-steampunk look. Magic shapes every part of life. A few rules hold everywhere:</p>
         <ul>
-          <li><b>Inner magic</b> strengthens the body: speed, strength, durability and senses.</li>
-          <li><b>Outer magic</b> pushes mana into matter. What happens depends on the state of that matter.</li>
+          <li><b>Armies are small.</b> Even the mightiest kingdoms field no more than about 1,000 soldiers, because a few strong magic users decide wars.</li>
+          <li><b>Nobody wins alone.</b> Power is balanced so that even the strongest need allies or a plan.</li>
+          <li><b>The land is huge.</b> Ancient forests have trees as big as the largest sequoias, so people feel small.</li>
+          <li><b>Rivers never split.</b> They only merge on their way to the sea.</li>
         </ul>
+        <p>Port cities sit where the world's great waterways meet the sea. They don't make much themselves. They live off taxing imports and moving trade between distant markets. Inside each kingdom, factions with conflicting interests and hazards unique to its land keep the pressure on.</p>
+      </section>
+
+      <section id="mana">
+        <h2>Mana</h2>
+        <p><b>Mana</b> is the unit of magic, and there are two kinds:</p>
+        <ul>
+          <li><b>Living mana</b> is in everything alive: people, animals, plants.</li>
+          <li><b>Non-living mana</b> is in everything that isn't: gas, liquid and solid matter.</li>
+        </ul>
+        <p>Living mana can only move non-living mana. Nobody can touch the living mana of another creature. When something dies, its soul is released and its <a class="wl" href="#mana" data-wl="mana">Mana</a> slowly turns from living to non-living. For a small bug that takes a moment. For a dragon it takes minutes.</p>
+        <p>Mana is never created or destroyed. It circulates through the world as it changes between living and non-living, a principle called <span id="cosmic-flow"><b>Cosmic Flow</b></span>, which keeps magic consistent with conservation of energy.</p>
+        <p>Each person's mana is finite, like muscle strength. Overusing it leads to exhaustion or unconsciousness. It comes back with rest and food, and faster in places rich in mana, which are lush and full of colour.</p>
+      </section>
+
+      <section id="inner-magic">
+        <h2>Inner magic</h2>
+        <p><b>Inner magic</b> channels your own living mana inward. It boosts strength, speed and durability, sharpens the senses, and gives control over parts of the body that normally can't be controlled. It takes years of disciplined training, and pushing too far causes severe strain and long recovery.</p>
+      </section>
+
+      <section id="outer-magic">
+        <h2>Outer magic</h2>
+        <p><b>Outer magic</b> moves mana from yourself into an object, a bit like charging a battery or heating metal. What happens depends on the state of the matter:</p>
         <div class="table-wrap matter">
           <table>
-            <thead><tr><th scope="col">Matter</th><th scope="col">Adding mana</th><th scope="col">Draining mana</th></tr></thead>
+            <thead><tr><th scope="col">Matter</th><th scope="col">More mana than its base</th><th scope="col">Less mana than its base</th></tr></thead>
             <tbody>
-              <tr><th scope="row">Gas</th><td>Heats it</td><td>Cools it</td></tr>
-              <tr><th scope="row">Liquid</th><td>Expands it</td><td>Contracts it</td></tr>
-              <tr><th scope="row">Solid</th><td>Softens it so it can be shaped</td><td>Hardens it</td></tr>
+              <tr><th scope="row">Gas</th><td>Heats up</td><td>Cools down</td></tr>
+              <tr><th scope="row">Liquid</th><td>Expands</td><td>Contracts</td></tr>
+              <tr><th scope="row">Solid</th><td>Softens, so it can be shaped like warm clay</td><td>Hardens</td></tr>
             </tbody>
           </table>
         </div>
-        <p>Every material has two numbers: how much mana it can hold and how fast it leaks. A plant that conducts mana works as cable, and <b>magic circles</b> act as mana's programming language. That's how this world gets guns, transport, communication and medicine.</p>
+        <p>Magic users usually specialise in either inner or outer magic. Mastering both is rare.</p>
+        <h3 id="teleportation">Forbidden: teleportation</h3>
+        <p>Teleportation needs mastery of both <a class="wl" href="#inner-magic" data-wl="inner-magic">inner</a> and <a class="wl" href="#outer-magic" data-wl="outer-magic">outer</a> magic. The caster has to move all of their mana to another place in an instant while keeping its form. If it fails, the caster dies on the spot, which makes it nearly impossible to practise. It's forbidden.</p>
+      </section>
+
+      <section id="indexes">
+        <h2>Material indexes</h2>
+        <p>Every material has four numbers on top of its normal physical properties:</p>
+        <ul>
+          <li><b>Base mana index:</b> how much mana one kilogram holds when nothing interferes. Left alone, a material always drifts back to it.</li>
+          <li><b>Max mana index:</b> the most mana it can hold. Anything above that leaks away at once.</li>
+          <li><b>Mana leak index:</b> how fast extra mana leaks out. Closer to 0 means slower.</li>
+          <li><b>Purity index:</b> how much of the max a particular piece can actually hold, as a percentage.</li>
+        </ul>
+        <p>Purity sets price. Parts that need to react strongly to mana are worth more when they're pure. Parts that need to stay sturdy are worth more when they aren't.</p>
+      </section>
+
+      <section id="magic-circles">
+        <h2>Magic circles</h2>
+        <p>A <b>magic circle</b> is a pattern laid in strings of the <a class="wl" href="#magical-plant" data-wl="magical-plant">magical plant</a> that dictates what mana does in an object. It works as mana's programming language: anyone can pour mana into a circle-marked object without having to control the result.</p>
+        <p>For example, a metal sphere carved with a circle that ends in a wand can only ever become that wand, or something between the two, however skilled the person charging it is. Circles only work on solids, because gases and liquids have no surface to hold them.</p>
+        <h3 id="tattoos">Broken circles</h3>
+        <p>Some kingdoms tattoo deliberately broken circles onto prisoners' palms. Any mana the prisoner channels goes into the broken pattern and does nothing. A few former prisoners have managed to "fix" their tattoos into working spells. That locks them into one narrow kind of magic, but at a power far beyond ordinary practitioners.</p>
       </section>
 
       <section id="power">
         <h2>Power has a curve</h2>
-        <p>A mage's power is Physical Strength × Magical Prowess. Physical strength peaks around 30 and then falls. Prowess keeps growing all their life. Together they put a mage's peak around 55.</p>
+        <p>A magic user's strength is Physical Strength × Magical Prowess. Physical strength peaks around 30 and then falls. Prowess keeps growing all their life. Together they put a magic user's peak around 55.</p>
         <svg class="powerchart" viewBox="0 0 320 170" role="img" aria-label="Sketch: physical strength rises and falls after 30, prowess rises steadily, total power peaks around 55">
           <line x1="30" y1="140" x2="310" y2="140" stroke="#5e4f3d" stroke-width="1.5"/>
           <line x1="30" y1="10" x2="30" y2="140" stroke="#5e4f3d" stroke-width="1.5"/>
@@ -92,23 +148,58 @@
             <text x="184" y="25" fill="#7a5a22">Power</text>
           </g>
         </svg>
-        <p>Rare <b>Gifted</b> children are born with abnormal mana, silver hair and long lives. They're raised as royalty on an island that commoners never see, and they become generals, guards and advisors.</p>
       </section>
 
-      <section id="rules">
-        <h2>Rules the world keeps</h2>
+      <section id="magical-plant">
+        <h2>The magical plant</h2>
+        <p>The <b>magical plant</b> is the most valuable resource in the world. It has no seeds and can't be farmed. It only grows where mana is dense, and those places tend to be home to dangerous creatures, so finding and harvesting it is risky work for specialists.</p>
+        <p>Its white, string-like leaves conduct mana, and every leaf of every plant is exactly one metre long, so a leaf is the world's standard unit of length. It's also money: leaves are set into thin metal plates and cut into halves, quarters and twelfths for smaller coins.</p>
+        <p>By law, every magical plant found in a kingdom belongs to its royalty, and collecting it is how the kingdoms tax. Royalty also wear clothing woven from it, which keeps their mana flowing and greatly extends their lives. The highest families wait until around the age of 200 to have children, so that long-lived generations don't pile up on top of each other.</p>
+      </section>
+
+      <section id="technology">
+        <h2>Technology</h2>
         <ul>
-          <li><b>Armies are small.</b> Even great kingdoms field fewer than 1,000 soldiers, because a few strong mages decide wars.</li>
-          <li><b>Nobody wins alone.</b> Even the strongest characters need allies or a plan.</li>
-          <li><b>Rivers never split.</b> They only merge on the way to the sea, and port cities sit where big rivers reach the sea.</li>
-          <li><b>The land is huge.</b> Ancient forests have trees the size of giant sequoias, so people feel small.</li>
+          <li><b>Mana cables.</b> Strings of the <a class="wl" href="#magical-plant" data-wl="magical-plant">magical plant</a> carry mana between devices.</li>
+          <li><b>Circle-driven machines.</b> In guns, <a class="wl" href="#magic-circles" data-wl="magic-circles">magic circles</a> control how hard the spring compresses, for the highest bullet speed. Transport, communication devices and medical tools work the same way.</li>
+          <li><b>Power stones.</b> High-purity rocks that store mana. <a class="wl" href="#sorcerers" data-wl="sorcerers">Sorcerers</a> do the physical work of charging them.</li>
+          <li><b id="sol">SOL, the Seed of Life.</b> A device that captures the soul of someone who has just died. Released later with a command, the soul takes the person's form and carries out the order until it's done, its body fails or someone kills it. It made one kingdom the most feared in the <a class="wl" href="#houses-of-power" data-wl="houses-of-power">alliance</a>.</li>
         </ul>
+      </section>
+
+      <section id="peoples">
+        <h2>Peoples</h2>
+        <ul>
+          <li><b id="gifted">The Gifted.</b> Very rarely, a child is born bonded to the <a class="wl" href="#magical-plant" data-wl="magical-plant">magical plant</a>: every hair on their body is one of its leaves, so it's silver from birth. They're exposed to far more mana than anyone else, live longer and grow taller. Only a few dozen cases are recorded. They're raised on <a class="wl" href="#god-island" data-wl="god-island">God Island</a> as if they were royal children and become generals, elite guards and advisors.</li>
+          <li><b id="omnigoyf">The Omnigoyf.</b> The most ancient humanoid race. They live deep in the forests, have a partial exoskeleton, and are so powerful and hostile that few who meet them survive.</li>
+          <li><b id="manakin">The manakin.</b> A small people, rarely taller than half a metre, who live up to 500 years in the mountains. They're peaceful and hospitable, and they've developed advanced inner magic techniques.</li>
+          <li><b id="sorcerers">Sorcerers and Guardians.</b> Sorcerers have more mana than most people and do mana labour, like charging <a class="wl" href="#technology" data-wl="power-stones">power stones</a>. Guardians have more still.</li>
+        </ul>
+      </section>
+
+      <section id="powers">
+        <h2>Places and powers</h2>
+        <h3 id="houses-of-power">The Houses of Power</h3>
+        <p>Most of the land is ruled by an alliance of seven kingdoms, nicknamed the Houses of Power. When the conqueror <a class="wl" href="#kan-noulend" data-wl="kan-noulend">Kan Noulend</a> gave up his empire, he split it among his seven wives, and their eldest sons became the kings. They're half-brothers raised in different cultures, and they have little in common. The alliance runs on cold respect and convenience more than loyalty.</p>
+        <h3 id="god-island">God Island</h3>
+        <p>The sanctuary of the alliance's royalty. Nobody knows where it is, and the only way there is through the <a class="wl" href="#stone-gates" data-wl="stone-gates">Stone Gates</a>. Only royalty and their chosen staff may go. Royals rarely leave it or show themselves in public.</p>
+        <h3 id="stone-gates">The Stone Gates</h3>
+        <p>Ten known gates stand around the world: nine twin gates and one master gate, each 100 to 300 metres tall. They've existed for thousands of years, and nobody knows who or what built them.</p>
+      </section>
+
+      <section id="story">
+        <h2>The story, in brief</h2>
+        <ol>
+          <li><b id="kan-noulend">The God of War.</b> After a raid on his home city kills his first wife, Kan Noulend conquers kingdom after kingdom. Along the way he becomes obsessed with the Stone Gates. He's the first to solve them, the first to reach God Island, and he founds the Houses of Power before leaving for a remote island, never to be heard from again.</li>
+          <li><b>The betrayal.</b> After he's gone, the alliance quietly agrees to let a rising kingdom destroy one of its own members, the strongest of them. A young prince who grew up close to its king is lied to about what happened.</li>
+          <li><b>The fall.</b> The prince's revenge on the kingdom behind it leads to a final confrontation, the fall of the old alliance and the kingdoms being rebuilt as one.</li>
+        </ol>
       </section>
 
       <section id="vault">
         <h2>How it's built</h2>
         <p>The world lives in an Obsidian vault of about 120 linked notes. Characters, cities, kingdoms, events and races each use a template with structured properties, so tables of characters and events build themselves. There's a family-tree canvas and a full timeline split into sagas.</p>
-        <div class="callout"><p>This page is a small preview. I'm happy to talk about the history, characters and story in an interview.</p></div>
+        <div class="callout"><p>This page is a preview. I'm happy to talk about the history, characters and story in an interview.</p></div>
       </section>
 
       <nav class="next" aria-label="More case studies">
@@ -131,5 +222,7 @@
     <div class="foot-small"><span>© 2026 Daniel Vekar</span><span>Set in the WAR-TCG card fonts</span></div>
   </div>
 </footer>
+<script src="wiki-data.js"></script>
+<script src="wiki.js"></script>
 </body>
 </html>

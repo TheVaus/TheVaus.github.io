@@ -114,7 +114,7 @@
       <section id="pitch">
         <h2>Blocking by pitching</h2>
         <p>When you're attacked, you can <b>pitch</b> cards from your hand that have a Block value <span class="ico-inline" aria-hidden="true">{Block}</span> (0, 1 or 2). Each one adds its Block to the target's Might for that combat, and pitched cards go to the bottom of their owner's deck at the end of the turn. A defender can also tap one unit with <i>Blocker</i> to take the attack instead.</p>
-        <p>So a unit in hand has three uses: play it, station it, or keep it to block. In June I tried having Block lower the attacker's Might instead, to make attacks by several units easier to resolve. The current rules add Block to the defender again.</p>
+        <p>So a unit in hand has three uses: play it, <a class="wl" href="#resources" data-wl="station">station it</a>, or keep it to block. In June I tried having Block lower the attacker's Might instead, to make attacks by several units easier to resolve. The current rules add Block to the defender again.</p>
       </section>
 
       <section id="colours">
@@ -157,7 +157,7 @@
         <p>Every unit is priced with the same formula:</p>
         <div class="formula">
           <code>value − cost = 3 to 5</code><br>
-          where value = Might + Block + production + text. Each keyword counts 1, and a drawback like <i>Fee — X</i> counts −X. Cheap cards sit near 3 and expensive cards near 5.
+          where value = <a class="wl" href="#might" data-wl="might">Might</a> + <a class="wl" href="#pitch" data-wl="block">Block</a> + production + text. Each keyword counts 1, and a drawback like <i>Fee — X</i> counts −X. Cheap cards sit near 3 and expensive cards near 5.
         </div>
         <p>In August the spreadsheet had drifted to a much looser scale, with keywords worth 2 or 3. I made the formula the single source of truth again and scaled the old text prices to 40%.</p>
         <h3>Target set size and cost curve</h3>
@@ -173,8 +173,8 @@
         <h3>From the design log</h3>
         <p>Major design decisions go in a dated log with the reasoning. A few entries:</p>
         <ul class="log">
-          <li><time>May 12</time><p><b>Front and Back line.</b> Units act as resources when played to the Backline, so there's no mana screw and always a play to make.</p></li>
-          <li><time>June 22</time><p><b>Three zones.</b> Added the Middle, capped at one unit, to add travel time and prevent sudden board swings.</p></li>
+          <li><time>May 12</time><p><b>Front and Back line.</b> Units act as resources when played to the <a class="wl" href="#resources" data-wl="backline">Backline</a>, so there's no mana screw and always a play to make.</p></li>
+          <li><time>June 22</time><p><b>Three zones.</b> Added the <a class="wl" href="#resources" data-wl="middle">Middle</a>, capped at one unit, to add travel time and prevent sudden board swings.</p></li>
           <li><time>June 28</time><p><b>Life replaced by Regions.</b> "−3 Might" can now hit a unit, a Leader or a Region.</p></li>
           <li><time>Aug 21</time><p><b>Defense and Layers split.</b> Defense is the Might an attack needs to connect. Layers cap how much one hit removes. Pierce beats Layers, not Defense.</p></li>
         </ul>
@@ -242,5 +242,7 @@
     <div class="foot-small"><span>© 2026 Daniel Vekar</span><span>Set in the WAR-TCG card fonts</span></div>
   </div>
 </footer>
+<script src="wiki-data.js"></script>
+<script src="wiki.js"></script>
 </body>
 </html>
