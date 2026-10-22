@@ -98,3 +98,9 @@ preview card; on touch screens the first tap shows the card and the second follo
 `[[key|label]]` in any page, add the key to `tools/glossary.py` (title, target, one-line preview), then run
 `python3 tools/wikilinks.py`, which converts the markers and regenerates `wiki-data.js`. Wikilinks are dotted-underlined
 in the page's accent colour to set them apart from ordinary links.
+
+## Visit notifications
+
+`notify.js` sends one ntfy.sh push per browser session ("Someone opened <page> (from <site>)"). No cookies and no
+personal data; bots and automated browsers are skipped. Opening any page with `?me=1` stops notifications from that
+browser; `?me=0` turns them back on. The footer says visits trigger an anonymous notification.
