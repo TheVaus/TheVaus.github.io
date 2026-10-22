@@ -32,7 +32,8 @@
 <div class="wrap">
   <header class="cs-head">
     <a class="crumb" href="./">Home</a>
-    <h1>Glory</h1>
+    <img class="px glory-title" src="img/glory/title.png" alt="" width="360" height="120">
+    <h1 class="sr-only">Glory</h1>
     <p class="lede">A turn-based tactics game where your hand is your move set. Each character brings its own ability to a hex battlefield.</p>
     <dl class="summary">
       <div><dt>My role</dt><dd>Game designer: rules, characters, cards, weapons</dd></div>
@@ -46,7 +47,7 @@
 
   <figure class="cs-hero">
     <img src="img/shots/glory-board.webp" alt="A Glory match: a Barbarian and a Necromancer on a hex grid surrounded by forest, with health, energy and agility bars top left and four cards in hand at the bottom" width="1200" height="750">
-    <figcaption>A two-player match in the playable build: the Barbarian against the Necromancer. Health, Energy and Agility are top left, and the hand is along the bottom. The pixel art is from a third-party asset pack.</figcaption>
+    <figcaption>A two-player match in the playable build: the Barbarian against the Necromancer. Health, Energy and Agility are top left, and the hand is along the bottom. The map, cards, icons and title are my art. The character sprites come from an asset pack.</figcaption>
   </figure>
 
   <div class="cs-body">
@@ -54,9 +55,11 @@
       <p>On this page</p>
       <ol>
         <li><a href="#idea">The idea</a></li>
+        <li><a href="#sketch">Sketch to screen</a></li>
         <li><a href="#chain">Combat chain</a></li>
         <li><a href="#facing">Facing</a></li>
         <li><a href="#characters">Characters</a></li>
+        <li><a href="#art">Art</a></li>
         <li><a href="#scope">Scope</a></li>
       </ol>
     </nav>
@@ -66,11 +69,20 @@
         <h2>The idea</h2>
         <p>Glory mixes a tactics game with a card game. Attacks, defence and movement are driven by cards, weapons and each character's ability, so a character's deck is a big part of how it plays. Every character has five stats that shape how they play:</p>
         <ul>
-          <li><b>Hit points</b> and <b>Toughness</b>, which reduces every hit.</li>
+          <li><img class="px-ico" src="img/glory/hp-icon.png" alt="" width="20" height="20"><b>Hit points</b> and <img class="px-ico" src="img/glory/armor-icon.png" alt="" width="20" height="20"><b>Toughness</b>, which reduces every hit.</li>
           <li><b>Wisdom</b>, the maximum hand size you draw up to each turn.</li>
-          <li><b>Energy</b> and <b>Agility</b>, two resources you gain each turn, each with its own cap.</li>
+          <li><img class="px-ico" src="img/glory/energy-icon.png" alt="" width="20" height="20"><b>Energy</b> and <img class="px-ico" src="img/glory/agility-icon.png" alt="" width="20" height="20"><b>Agility</b>, two resources you gain each turn, each with its own cap. Some characters also use <img class="px-ico" src="img/glory/mana-icon.png" alt="" width="20" height="20"><b>Mana</b>.</li>
         </ul>
         <p>Decks are up to 40 cards, with at most 3 copies of a card, and only cards that match the character's talent.</p>
+      </section>
+
+      <section id="sketch">
+        <h2>From sketch to screen</h2>
+        <p>I sketched the game screen before it was built: the hex board in the middle, the character and stats in the bottom-left corner, the hand along the bottom, and the deck and discard pile on the right.</p>
+        <div class="fig-row">
+          <figure class="fig"><img src="img/glory/ui-sketch.webp" alt="Hand-drawn UI sketch: hex board, player list top left, stat hexagons bottom left, cards along the bottom, deck and discard bottom right" width="1280" height="720" loading="lazy"><figcaption>My UI sketch.</figcaption></figure>
+          <figure class="fig"><img src="img/shots/glory-board.webp" alt="The built game screen with the same layout" width="1200" height="750" loading="lazy"><figcaption>The built screen in the playable version.</figcaption></figure>
+        </div>
       </section>
 
       <section id="chain">
@@ -123,6 +135,20 @@
         </ul>
         <figure class="fig"><img src="img/shots/glory-necro.webp" alt="The same match from the Necromancer player's side, with their own stats and hand" width="1200" height="750" loading="lazy"><figcaption>The same match from the Necromancer's side, with its own stats and hand.</figcaption></figure>
         <p>Across them there are 75 cards and 10 weapons, defined in the game's code and exported to spreadsheets.</p>
+      </section>
+
+      <section id="art">
+        <h2>Art</h2>
+        <p>I drew the cards, the stat icons, the maps and the title.</p>
+        <div class="glory-cards">
+          <img class="px" src="img/glory/card-front.png" alt="Glory card front template" width="175" height="245" loading="lazy">
+          <img class="px" src="img/glory/attack-action-example-card.png" alt="An example attack action card" width="175" height="245" loading="lazy">
+          <img class="px" src="img/glory/card-back.png" alt="Glory card back" width="175" height="245" loading="lazy">
+        </div>
+        <div class="fig-row">
+          <figure class="fig"><img src="img/glory/map1.webp" alt="A battle map: a sandy clearing ringed by forest, in a flat illustrated style" width="1400" height="788" loading="lazy"><figcaption>Map, first style.</figcaption></figure>
+          <figure class="fig"><img src="img/glory/map2.webp" alt="A battle map: a sandy clearing ringed by round trees and rocks" width="1400" height="788" loading="lazy"><figcaption>Map, second style, used in the playable version.</figcaption></figure>
+        </div>
       </section>
 
       <section id="scope">
