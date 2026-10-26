@@ -47,12 +47,12 @@ window.WIKI = {
 "block": {
 "t": "Block",
 "h": "https://thevaus.github.io/war-tcg-site/design#defending",
-"d": "A Command's Block value (0 to 3) is added to the target's Might when it's pitched to defend."
+"d": "A unit's Block value (0, 1 or 2) is added to the target's Might when it's pitched to defend."
 },
 "pitch": {
 "t": "Pitch",
 "h": "https://thevaus.github.io/war-tcg-site/design#defending",
-"d": "When attacked, pitch Commands from your hand to add their Block to the target's Might for that combat."
+"d": "When attacked, pitch units from your hand to add their Block to the target's Might for that combat."
 },
 "station": {
 "t": "Station",

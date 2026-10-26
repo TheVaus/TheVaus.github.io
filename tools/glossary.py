@@ -12,8 +12,8 @@ G = {
  "timeline":  ("Timeline", "timeline.html", "Everything, in the order it happened."),
  # WAR-TCG
  "might":     ("Might", "https://thevaus.github.io/war-tcg-site/design#combat", "WAR-TCG's one combat number. An attack hits if the attackers' combined Might is at least the target's."),
- "block":     ("Block", "https://thevaus.github.io/war-tcg-site/design#defending", "A Command's Block value (0 to 3) is added to the target's Might when it's pitched to defend."),
- "pitch":     ("Pitch", "https://thevaus.github.io/war-tcg-site/design#defending", "When attacked, pitch Commands from your hand to add their Block to the target's Might for that combat."),
+ "block":     ("Block", "https://thevaus.github.io/war-tcg-site/design#defending", "A unit's Block value (0, 1 or 2) is added to the target's Might when it's pitched to defend."),
+ "pitch":     ("Pitch", "https://thevaus.github.io/war-tcg-site/design#defending", "When attacked, pitch units from your hand to add their Block to the target's Might for that combat."),
  "station":   ("Station", "https://thevaus.github.io/war-tcg-site/design#resources", "Once per turn, put a unit from your hand into your Backline for free, where it produces energy."),
  "backline":  ("Backline", "https://thevaus.github.io/war-tcg-site/design#resources", "The zone where stationed units tap to produce energy."),
  "middle":    ("Middle", "https://thevaus.github.io/war-tcg-site/design#resources", "The zone between Backline and Frontline. It holds one unit."),
