@@ -516,3 +516,10 @@ img.px{image-rendering:pixelated;image-rendering:crisp-edges}
 .tile--static:hover{border-color:var(--rule)}
 .tile--static:hover h3{text-decoration:none}
 .tile--static{border-top:1px solid var(--rule);height:100%}
+.cube-list{margin-top:var(--s3);display:grid;gap:6px}
+.cube-list details{border:1px solid var(--rule);background:var(--surface);border-radius:4px}
+.cube-list summary{display:flex;justify-content:space-between;gap:var(--s2);padding:10px 14px;cursor:pointer;font-family:var(--f-cap)}
+.cube-list summary span{color:var(--ink-2);font-variant-numeric:tabular-nums}
+.cube-list ul{columns:2 240px;column-gap:var(--s4);margin:0;padding:4px 14px 14px;list-style:none}
+.cube-list li{break-inside:avoid;padding:2px 0}
+.cube-list code{font:600 13px/1 var(--f-cap);color:var(--ink-2);margin-right:4px;font-variant-numeric:tabular-nums}

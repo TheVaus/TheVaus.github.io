@@ -36,7 +36,7 @@
     <p class="lede">A small project of mine: a cube format for One Piece TCG, where players build their decks from a shared pool instead of bringing their own.</p>
     <dl class="summary">
       <div><dt>Format</dt><dd>Custom cube for One Piece TCG</dd></div>
-      <div><dt>Card pool</dt><dd>540 cards</dd></div>
+      <div><dt>Card pool</dt><dd>404 cards (version 1, March 2025)</dd></div>
       <div><dt>Design goal</dt><dd>Magic's cube archetypes, in One Piece's rules</dd></div>
     </dl>
   </header>
@@ -46,6 +46,21 @@
       <section id="idea">
         <h2>The idea</h2>
         <p>A cube needs its own format rules and a curated card pool. I chose the cards and wrote the rules to adapt Magic deck archetypes to the One Piece ruleset.</p>
+      </section>
+      <section id="list">
+        <h2>The card list</h2>
+        <p>The cube changes over time. Each version is kept here, newest first.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th scope="col">Version</th><th scope="col">Date</th><th scope="col">Cards</th><th scope="col">List</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">1</th><td>March 2025</td><td>404</td><td><a href="cube/v1-2025-03.txt">Plain text</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="cube-list" id="cube-list" data-src="cube/v1-2025-03.txt">
+          <p>Version 1, one copy of each card, grouped by set. The <a href="cube/v1-2025-03.txt">plain text list</a> has the same cards.</p>
+        </div>
       </section>
       <nav class="next" aria-label="More">
         <a href="./#others"><span>Back to</span>Home</a>
@@ -71,5 +86,6 @@
 <script src="wiki.js"></script>
 <script src="notify.js"></script>
 <script src="stats.js"></script>
+<script src="cube.js"></script>
 </body>
 </html>

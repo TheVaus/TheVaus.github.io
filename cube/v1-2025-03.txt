@@ -1,0 +1,404 @@
+1 OP01-006 Otama
+1 OP01-041 Kouzuki Momonosuke
+1 ST05-014 Buena Festa
+1 OP02-106 Tsuru
+1 OP03-044 Kaya
+1 OP04-059 Iceburg
+1 OP05-082 Shirahoshi
+1 OP05-088 Mansherry
+1 OP07-088 Hattori
+1 OP09-102 Professor Clover
+1 OP09-106 Nico Olvia
+1 OP02-112 Bell-mère
+1 OP04-005 Kung Fu Jugon
+1 EB01-015 Scratchmen Apoo
+1 EB01-056 Charlotte Flampe
+1 ST19-002 Sengoku
+1 OP09-050 Nami
+1 OP01-016 Nami
+1 OP02-074 Saldeath
+1 OP03-003 Izo
+1 OP05-010 Nico Robin
+1 OP06-016 Raise Max
+1 OP06-050 Tashigi
+1 ST13-013 Monkey.D.Garp
+1 OP07-043 Salome
+1 OP08-015 Dr.Kureha
+1 OP08-107 Nitro
+1 P-013 Gordon
+1 OP09-069 Trafalgar Law
+1 OP10-111 Monkey.D.Luffy
+1 OP03-048 Nojiko
+1 OP04-024 Sugar
+1 OP04-050 Hanger
+1 OP05-081 One-Legged Toy Soldier
+1 OP06-106 Kouzuki Hiyori
+1 EB01-052 Viola
+1 EB01-057 Shirahoshi
+1 OP07-066 Tony Tony.Chopper
+1 OP09-090 Doc Q
+1 OP05-030 Donquixote Rosinante
+1 ST12-014 Duval
+1 OP02-034 Tony Tony.Chopper
+1 OP05-011 Bartholomew Kuma
+1 ST01-011 Brook
+1 OP01-083 Mr.1(Daz.Bonez)
+1 OP01-085 Mr.3(Galdino)
+1 ST06-010 Helmeppo
+1 OP02-052 Cabaji
+1 OP02-100 Jango
+1 OP02-111 Fullbody
+1 OP03-089 Brannew
+1 ST08-002 Uta
+1 OP04-065 Miss.Goldenweek(Marianne)
+1 OP05-006 Koala
+1 OP06-013 Monkey.D.Luffy
+1 OP06-028 Zeo
+1 OP06-082 Inuppe
+1 OP06-101 O-Nami
+1 OP08-101 Charlotte Angel
+1 ST16-005 Monkey.D.Luffy
+1 OP10-016 Monet
+1 OP07-005 Carina
+1 OP07-060 Itomimizu
+1 OP08-016 Dr.Hiriluk
+1 OP01-079 Ms. All Sunday
+1 ST07-007 Charlotte Brulee
+1 OP05-036 Monet
+1 OP10-076 Baby 5
+1 OP03-063 Zambai
+1 OP07-054 Marguerite
+1 ST14-006 Nami
+1 OP08-074 Black Maria
+1 OP01-033 Izo
+1 OP02-011 Vista
+1 ST07-011 Zeus
+1 ST07-013 Prometheus
+1 OP03-117 Napoleon
+1 OP04-089 Bartolomeo
+1 OP04-100 Capone"Gang"Bege
+1 OP08-012 Lapins
+1 P-006 Monkey.D.Luffy
+1 ST20-003 Charlotte Brulee
+1 ST18-001 Uso-Hachi
+1 OP09-011 Hongo
+1 OP10-005 Sanji
+1 ST06-006 Tashigi
+1 OP02-098 Koby
+1 OP04-048 Sasaki
+1 OP04-061 Tom
+1 OP04-085 Suleiman
+1 OP05-050 Hina
+1 OP05-061 Uso-Hachi
+1 OP05-067 Zoro-Juurou
+1 ST12-003 Dracule Mihawk
+1 ST12-010 Emporio.Ivankov
+1 OP06-009 Shuraiya
+1 OP06-029 Daruma
+1 OP06-088 Sai
+1 EB01-006 Tony Tony.Chopper
+1 EB01-034 Ms. Wednesday
+1 EB01-046 Brook
+1 OP07-010 Baccarat
+1 OP07-063 Capote
+1 OP07-104 Nico Robin
+1 OP08-067 Charlotte Pudding
+1 OP08-105 Jewelry Bonney
+1 ST16-003 Charlotte Katakuri
+1 OP09-092 Marshall.D.Teach
+1 OP10-062 Violet
+1 OP01-025 Roronoa Zoro
+1 ST06-008 Hina
+1 OP02-036 Nami
+1 OP03-069 Minorhinoceros
+1 OP04-008 Chaka
+1 OP04-082 Kyros
+1 EB01-035 Ms. Monday
+1 OP08-068 Charlotte Perospero
+1 OP09-075 Eustass"Captain"Kid
+1 OP09-076 Roronoa Zoro
+1 OP09-109 Jaguar.D.Saul
+1 ST08-006 Shirahoshi
+1 OP05-091 Rebecca
+1 ST08-004 Koby
+1 EB01-061 Mr.2.Bon.Kurei(Bentham)
+1 OP08-066 Charlotte Brulee
+1 OP01-106 Basil Hawkins
+1 ST18-002 O-Nami
+1 OP03-026 Kuroobi
+1 OP03-033 Hatchan
+1 OP03-060 Kalifa
+1 OP03-081 Kalifa
+1 OP06-047 Charlotte Pudding
+1 OP08-044 Kingdew
+1 OP09-017 Wire
+1 OP01-078 Boa Hancock
+1 OP01-108 Hitokiri Kamazo
+1 ST05-002 Ain
+1 ST05-004 Uta
+1 OP02-040 Brook
+1 OP02-086 Minokoala
+1 OP02-087 Minotaur
+1 OP02-096 Kuzan
+1 OP02-114 Borsalino
+1 OP03-024 Gin
+1 OP03-068 Minozebra
+1 OP03-108 Charlotte Cracker
+1 OP04-104 Sanji
+1 ST10-009 Jean Bart
+1 ST10-010 Trafalgar Law
+1 OP05-005 Karasu
+1 OP05-043 Ulti
+1 OP05-080 Elizabello II
+1 OP06-069 Vinsmoke Reiju
+1 OP06-076 Hitokiri Kamazo
+1 OP06-081 Absalom
+1 OP06-090 Dr. Hogback
+1 OP06-093 Perona
+1 OP06-110 Nekomamushi
+1 EB01-003 Kid & Killer
+1 EB01-014 Sanji
+1 EB01-036 Minochihuahua
+1 EB01-048 Laboon
+1 OP07-100 Edison
+1 OP07-107 Franky
+1 OP08-004 Kuromarimo
+1 OP08-040 Atmos
+1 OP08-045 Thatch
+1 P-017 Trafalgar Law
+1 ST17-002 Trafalgar Law
+1 OP09-015 Lucky.Roux
+1 OP09-072 Franky
+1 OP09-086 Jesus Burgess
+1 OP10-049 Sabo
+1 OP10-086 Shiryu
+1 OP10-109 Basil Hawkins
+1 OP02-042 Yamato
+1 OP02-043 Roronoa Zoro
+1 OP03-012 Marshall.D.Teach
+1 OP05-093 Rob Lucci
+1 OP06-023 Arlong
+1 OP06-036 Ryuma
+1 OP06-104 Kikunojo
+1 EB01-023 Edward Weevil
+1 P-022 Monkey.D.Luffy
+1 ST19-004 Hina
+1 ST18-004 Zoro-Juurou
+1 ST17-004 Boa Hancock
+1 OP10-045 Cavendish
+1 OP03-116 Shirahoshi
+1 OP01-114 X.Drake
+1 OP01-121 Yamato
+1 OP03-067 Peepley Lulu
+1 OP03-079 Vergo
+1 OP04-064 Ms. All Sunday
+1 OP05-105 Satori
+1 EB01-031 Kalifa
+1 EB01-049 T-Bone
+1 OP08-106 Nami
+1 OP09-064 Killer
+1 ST01-012 Monkey.D.Luffy
+1 ST04-005 Queen
+1 OP01-047 Trafalgar Law
+1 OP01-054 X.Drake
+1 ST05-006 Gild Tesoro
+1 OP02-085 Magellan
+1 OP02-110 Hina
+1 OP03-013 Marco
+1 OP03-028 Jango
+1 OP03-047 Zeff
+1 OP03-064 Tilestone
+1 OP03-066 Paulie
+1 OP04-013 Pell
+1 OP04-083 Sabo
+1 ST10-007 Killer
+1 OP05-074 Eustass"Captain"Kid
+1 OP05-102 Gedatsu
+1 OP06-107 Kouzuki Momonosuke
+1 ST13-008 Sabo
+1 ST13-015 Monkey.D.Luffy
+1 EB01-012 Cavendish
+1 EB01-027 Mr.1(Daz.Bonez)
+1 OP07-026 Jewelry Bonney
+1 OP07-032 Fisher Tiger
+1 OP07-091 Monkey.D.Luffy
+1 OP07-098 Atlas
+1 OP07-101 Shaka
+1 OP07-102 Jinbe
+1 OP07-105 Pythagoras
+1 OP07-109 Monkey.D.Luffy
+1 OP07-110 York
+1 OP07-113 Roronoa Zoro
+1 OP08-022 Inuarashi
+1 OP08-023 Carrot
+1 OP08-028 Nekomamushi
+1 OP08-112 S-Snake
+1 ST19-003 Tashigi
+1 ST18-003 San-Gorou
+1 ST15-005 Portgas.D.Ace
+1 OP09-005 Silvers Rayleigh
+1 OP09-013 Yasopp
+1 OP09-043 Alvida
+1 OP09-083 Van Augur
+1 OP09-084 Catarina Devon
+1 OP10-023 Issho
+1 ST21-014 Monkey.D.Luffy
+1 OP01-046 Denjiro
+1 ST06-004 Smoker
+1 EB01-002 Izo
+1 OP10-030 Smoker
+1 OP01-040 Kin'emon
+1 OP04-030 Trebol
+1 OP06-092 Brook
+1 OP07-064 Sanji
+1 OP09-107 Nico Robin
+1 ST04-004 King
+1 OP02-062 Monkey.D.Luffy
+1 OP02-099 Sakazuki
+1 OP03-025 Krieg
+1 EB01-022 Inazuma
+1 OP07-029 Basil Hawkins
+1 OP07-112 Lucy
+1 OP08-047 Jozu
+1 ST20-005 Charlotte Linlin
+1 OP09-048 Dracule Mihawk
+1 OP10-118 Monkey.D.Luffy
+1 OP07-051 Boa Hancock
+1 OP03-122 Sogeking
+1 OP02-013 Portgas.D.Ace
+1 OP02-041 Monkey.D.Luffy
+1 OP04-090 Monkey.D.Luffy
+1 OP05-100 Enel
+1 OP07-071 Foxy
+1 OP09-009 Benn.Beckman
+1 OP09-065 Sanji
+1 ST07-010 Charlotte Linlin
+1 ST10-013 Eustass"Captain"Kid
+1 OP05-051 Borsalino
+1 OP06-035 Hody Jones
+1 OP08-084 Jack
+1 ST18-005 Luffy-Tarou
+1 ST15-002 Edward.Newgate
+1 OP10-046 Kyros
+1 OP10-119 Trafalgar Law
+1 OP01-051 Eustass"Captain"Kid
+1 OP02-030 Kouzuki Oden
+1 OP02-082 Byrnndi World
+1 OP02-120 Uta
+1 OP03-123 Charlotte Katakuri
+1 OP04-119 Donquixote Rosinante
+1 OP08-118 Silvers Rayleigh
+1 OP03-078 Issho
+1 OP04-014 Monkey.D.Luffy
+1 OP04-060 Crocodile
+1 OP06-086 Gecko Moria
+1 OP07-015 Monkey.D.Dragon
+1 OP07-118 Sabo
+1 OP10-071 Donquixote Doflamingo
+1 OP10-112 Eustass"Captain"Kid
+1 ST05-011 Douglas Bullet
+1 OP01-070 Dracule Mihawk
+1 OP04-112 Yamato
+1 OP06-118 Roronoa Zoro
+1 OP06-119 Sanji
+1 OP07-085 Stussy
+1 OP08-069 Charlotte Linlin
+1 OP08-079 Kaido
+1 OP09-023 Adio
+1 ST04-003 Kaido
+1 OP01-120 Shanks
+1 OP02-004 Edward.Newgate
+1 OP09-119 Monkey.D.Luffy
+1 ST16-004 Shanks
+1 OP02-121 Kuzan
+1 OP04-031 Donquixote Doflamingo
+1 OP07-119 Portgas.D.Ace
+1 ST10-006 Monkey.D.Luffy
+1 OP01-094 Kaido
+1 OP03-114 Charlotte Linlin
+1 OP04-044 Kaido
+1 OP05-118 Kaido
+1 OP05-119 Monkey.D.Luffy
+1 OP06-007 Shanks
+1 OP08-043 Edward.Newgate
+1 OP08-119 Kaido & Linlin
+1 OP09-004 Shanks
+1 OP09-093 Marshall.D.Teach
+1 OP09-118 Gol.D.Roger
+1 OP02-068 Gum-Gum Rain
+1 OP03-072 Gum-Gum Jet Gatling
+1 OP03-097 Six King Pistol
+1 OP04-016 Bad Manners Kick Course
+1 OP05-037 Because the Side of Justice Will Be Whichever Side Wins!!
+1 OP06-115 You're the One Who Should Disappear.
+1 ST01-014 Guard Point
+1 ST01-016 Diable Jambe
+1 OP01-029 Radical Beam!!
+1 ST06-015 Great Eruption
+1 OP02-066 Impel Down All Stars
+1 OP02-117 Ice Age
+1 OP03-095 Soap Sheep
+1 OP05-076 When You're at Sea You Fight against Pirates!!
+1 EB01-020 Chambres
+1 EB01-028 Gum-Gum Champion Rifle
+1 EB01-038 Oh Come My Way
+1 OP07-077 We're Going to Claim the One Piece!!!
+1 OP07-096 Tempest Kick
+1 OP07-116 Blaze Slice
+1 ST14-016 I Have My Crew!!
+1 OP09-078 Gum-Gum Giant
+1 OP01-058 Punk Gibson
+1 ST06-014 Shockwave
+1 OP02-089 Judgment of Hell
+1 OP03-096 Tempest Kick Sky Slicer
+1 OP03-121 Thunder Bolt
+1 ST08-014 Gum-Gum Bell
+1 OP04-035 Spiderweb
+1 OP04-037 Flapping Thread
+1 OP05-057 Hound Blaze
+1 OP05-078 Punk Rotten
+1 OP05-115 Two-Hundred Million Volts Amaru
+1 ST11-003 Backlight
+1 OP06-059 White Snake
+1 OP07-036 Demonic Aura Nine-Sword Style Asura Demon Nine Flash
+1 OP07-057 Perfume Femur
+1 OP03-018 Fire Fist
+1 OP03-036 Out-of-the-Bag
+1 OP03-056 Sanji's Pilaf
+1 OP04-018 Enchanting Vertigo Dance
+1 ST11-005 I'm invincible
+1 EB01-010 There's No Way You Could Defeat Me!!
+1 OP08-036 Electrical Luna
+1 OP08-076 It's to Die For...
+1 OP09-117 Dereshi!
+1 OP03-057 Three Thousand Worlds
+1 OP06-116 Reject
+1 EB01-051 Finger Pistol
+1 ST07-015 Soul Pocus
+1 OP04-038 The Weak Do Not Have the Right to Choose How They Die!!!
+1 OP05-059 Let Us Begin the World of Violence!!!
+1 EB01-039 Conquerer of Three Worlds Ragnaraku
+1 OP04-056 Gum-Gum Red Roc
+1 OP08-077 Conquest of the Sea
+1 OP03-016 Flame Emperor
+1 OP06-058 Gravity Blade Raging Tiger
+1 ST06-017 Navy HQ
+1 OP02-070 New Kama Land
+1 OP03-020 Striker
+1 OP04-096 Corrida Coliseum
+1 OP06-117 The Ark Maxim
+1 EB01-011 Mini-Merry
+1 ST14-017 Thousand Sunny
+1 OP09-060 Emptee Bluffs Island
+1 OP10-021 Punk Hazard
+1 ST01-017 Thousand Sunny
+1 OP02-024 Moby Dick
+1 ST07-017 Queen Mama Chanter
+1 OP03-098 Enies Lobby
+1 EB01-030 Loguetown
+1 OP09-021 Red Force
+1 ST04-017 Onigashima Island
+1 OP03-075 Galley-La Company
+1 OP08-039 Zou
+1 OP05-040 Birdcage
+1 OP06-041 The Ark Noah
