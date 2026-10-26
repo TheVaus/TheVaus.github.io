@@ -1,0 +1,7 @@
+{
+  "source": "https://github.com/TheVaus/OPTCG-Cube",
+  "versions": [
+    { "version": 2, "date": "2026-10", "file": "cube/v2-2026-10.txt", "cards": 540, "added": 313, "removed": 177 },
+    { "version": 1, "date": "2025-03", "file": "cube/v1-2025-03.txt", "cards": 404, "added": null, "removed": null }
+  ]
+}
