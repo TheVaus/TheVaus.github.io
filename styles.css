@@ -522,4 +522,8 @@ img.px{image-rendering:pixelated;image-rendering:crisp-edges}
 .cube-list summary span{color:var(--ink-2);font-variant-numeric:tabular-nums}
 .cube-list ul{columns:2 240px;column-gap:var(--s4);margin:0;padding:4px 14px 14px;list-style:none}
 .cube-list li{break-inside:avoid;padding:2px 0}
-.cube-list code{font:600 13px/1 var(--f-cap);color:var(--ink-2);margin-right:4px;font-variant-numeric:tabular-nums}
+.cube-list code{font:600 14px/1.4 var(--f-cap);color:var(--ink-2);margin-right:4px;font-variant-numeric:tabular-nums}
+.cube-show{font:600 14px/1 var(--f-cap);padding:6px 10px;border:1px solid var(--rule);background:var(--surface);color:var(--ink);border-radius:3px;cursor:pointer;margin-right:6px}
+.cube-show[aria-pressed="true"]{background:var(--primary);border-color:var(--primary);color:#fff}
+.cube-show:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+.cube-list ul{grid-template-columns:none}
