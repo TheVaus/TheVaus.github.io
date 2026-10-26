@@ -1,6 +1,7 @@
 """Weekly: fetch the cube list from TheVaus/OPTCG-Cube and, if the set of cards changed, save it as a new version.
 
-Writes cube/vN-YYYY-MM.txt and adds a row to cube/versions.json (newest first). Run by .github/workflows/cube-sync.yml.
+Writes cube/vN-YYYY-MM.txt and adds a row to cube/versions.json (newest first). The cube repo is private, so a weekly
+scheduled Claude task clones it and runs: CUBE_SRC=file:///path/to/OPTCG-Cube/cube.txt python3 tools/sync_cube.py
 Lines like "1xOP17-039" or "1 OP01-006 Otama" are accepted; the saved file keeps the source's text as is.
 """
 import datetime, json, os, pathlib, re, sys, urllib.request
