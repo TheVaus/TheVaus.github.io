@@ -115,4 +115,16 @@ in the page's accent colour to set them apart from ordinary links.
 
 `notify.js` sends one ntfy.sh push per browser session ("Someone opened <page> (from <site>)"). No cookies and no
 personal data; bots and automated browsers are skipped. Opening any page with `?me=1` stops notifications from that
-browser; `?me=0` turns them back on. The footer says visits trigger an anonymous notification.
+browser; `?me=0` turns them back on. (The footer note about this was removed on Daniel's request on 2026-10-26.)
+
+History: a LaunchAgent on Daniel's Mac (`com.danielvekar.portfolio-visits`, script in
+`~/Library/Application Support/PortfolioVisits/watch.sh`) saves every visit to `Portfolio visits.csv` there, with a
+shortcut on the Desktop, and shows a pop-up. ntfy.sh keeps messages about 12 hours, so visits made while the Mac is
+off longer than that are lost.
+
+## The cube page
+
+`cube.html` shows the One Piece TCG cube: format rules, the Rainbow Luffy card (`img/cube/`) and every version of the
+card list (`cube/vN-YYYY-MM.txt`, listed in `cube/versions.json`, drawn by `cube.js`). The current list lives in the
+private repo TheVaus/OPTCG-Cube (`cube.txt`). A weekly scheduled Claude task (Mondays 08:37 Israel time) runs
+`tools/sync_cube.py` against it and commits a new version when the cards change.
