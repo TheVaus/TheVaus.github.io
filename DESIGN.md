@@ -120,7 +120,10 @@ browser; `?me=0` turns them back on. (The footer note about this was removed on 
 History: a LaunchAgent on Daniel's Mac (`com.danielvekar.portfolio-visits`, script in
 `~/Library/Application Support/PortfolioVisits/watch.sh`) saves every visit to `Portfolio visits.csv` there, with a
 shortcut on the Desktop, and shows a pop-up. ntfy.sh keeps messages about 12 hours, so visits made while the Mac is
-off longer than that are lost.
+off longer than that are lost, unless the checker below has saved them.
+
+The private repo TheVaus/portfolio-visits has a GitHub Actions job (every 10 hours) that saves every visit from ntfy.sh to
+`visits.csv` and shows totals and the latest visits in its README. That's the complete history, Mac on or off.
 
 ## The cube page
 
