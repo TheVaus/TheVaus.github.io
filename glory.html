@@ -46,8 +46,11 @@
   </header>
 
   <figure class="cs-hero">
-    <img src="img/shots/glory-board.webp" alt="A Glory match: a Barbarian and a Necromancer on a hex grid surrounded by forest, with health, energy and agility bars top left and four cards in hand at the bottom" width="1200" height="750">
-    <figcaption>A two-player match in the playable build: the Barbarian against the Necromancer. Health, Energy and Agility are top left, and the hand is along the bottom. The map, cards, icons and title are my art. The character sprites come from an asset pack.</figcaption>
+    <video autoplay muted loop playsinline preload="metadata" poster="img/shots/glory-board.webp" width="960" height="600" aria-label="Gameplay clip from the playable build: the Barbarian moves three tiles toward the centre of the hex board, then the player looks through the cards in hand">
+      <source src="img/glory/gameplay.webm" type="video/webm">
+      <source src="img/glory/gameplay.mp4" type="video/mp4">
+    </video>
+    <figcaption>The playable build: the Barbarian moves across the hex board, and the hand is along the bottom. The map, cards, icons and title are my art. The character sprites come from an asset pack.</figcaption>
   </figure>
 
   <div class="cs-body">
@@ -103,7 +106,7 @@
         <div class="sheets">
           <article class="sheet">
             <small>Character</small>
-            <h4>Barbarian</h4>
+            <h3>Barbarian</h3>
             <dl>
               <div><dt>HP</dt><dd>60</dd></div>
               <div><dt>Toughness</dt><dd>3</dd></div>
@@ -116,7 +119,7 @@
           </article>
           <article class="sheet">
             <small>Defensive reaction, cost 0</small>
-            <h4>Aegis of Resilience</h4>
+            <h3>Aegis of Resilience</h3>
             <p>Block 2: when this combat chain resolves, prevent 2 damage. If you were attacked from the front, block 2 more.</p>
           </article>
         </div>
@@ -176,6 +179,7 @@
     <div class="foot-small"><span>© 2026 Daniel Vekar</span></div>
   </div>
 </footer>
+<script>if (matchMedia("(prefers-reduced-motion: reduce)").matches) document.querySelectorAll("video[autoplay]").forEach(function (v) { v.removeAttribute("autoplay"); v.pause(); v.controls = true; });</script>
 <script src="wiki-data.js"></script>
 <script src="wiki.js"></script>
 <script src="notify.js"></script>

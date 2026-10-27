@@ -214,7 +214,7 @@ tbody th{font:700 18px/1.2 var(--f-cap);white-space:nowrap}
 /* stat sheet (Glory) */
 .sheets{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:var(--s3);margin:var(--s4) 0}
 .sheet{background:var(--paper);border:2px solid var(--ink);border-radius:10px;padding:var(--s2) var(--s3) var(--s3)}
-.sheet h4{font-size:30px;border-bottom:2px solid var(--ink);padding-bottom:8px;margin-bottom:12px}
+.sheet h4,.sheet h3{margin-top:0;font-size:30px;border-bottom:2px solid var(--ink);padding-bottom:8px;margin-bottom:12px}
 .sheet small{display:block;font:600 14px/1.2 var(--f-cap);color:#5b5244;margin-bottom:2px}
 .sheet dl{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:0 0 12px}
 .sheet dl div{background:rgba(23,15,11,.07);padding:6px 10px;border-radius:3px}
@@ -407,11 +407,11 @@ img[src*="img/strip/"]{background:#0b0d0e}
 
 /* Glory: the game's UI colours and Alagard */
 .theme-glory{--page:#161a15;--surface:#20261e;--ink:#ece6d6;--ink-2:#b9b3a1;--rule:#343c31;--iron:#0f120e;--on-iron:#ece6d6;--on-iron-2:#b9b3a1;--primary:#e0a868;--primary-deep:#f0c08a;--on-primary:#161a15;--foot-link:#e0a868;--f-text:"Alegreya Sans",system-ui,sans-serif;--shadow:0 18px 36px rgba(0,0,0,.55)}
-.theme-glory h1,.theme-glory h2,.theme-glory .sheet h4,.theme-glory .next a{font-family:"Alagard",var(--f-cap);font-weight:400;letter-spacing:.01em}
+.theme-glory h1,.theme-glory h2,.theme-glory .sheet h4,.theme-glory .sheet h3,.theme-glory .next a{font-family:"Alagard",var(--f-cap);font-weight:400;letter-spacing:.01em}
 .theme-glory .btn-secondary{color:var(--ink)}
 .theme-glory .btn-secondary:hover{background:var(--ink);color:var(--page)}
 .theme-glory .sheet{background:#2a3127;border-color:#4a5444;color:var(--ink)}
-.theme-glory .sheet h4{border-color:#4a5444}
+.theme-glory .sheet h4,.theme-glory .sheet h3{border-color:#4a5444}
 .theme-glory .sheet small,.theme-glory .sheet dt{color:var(--ink-2)}
 .theme-glory .sheet dl div{background:rgba(255,255,255,.06)}
 .theme-glory .fig img[src*="glory-chain"]{background:#fff;padding:8px}
@@ -527,3 +527,18 @@ img.px{image-rendering:pixelated;image-rendering:crisp-edges}
 .cube-show[aria-pressed="true"]{background:var(--primary);border-color:var(--primary);color:#fff}
 .cube-show:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
 .cube-list ul{grid-template-columns:none}
+
+/* Home: skills under the intro, tiles with an image, timeline link */
+.skills{list-style:none;margin:var(--s3) 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px;max-width:40em}
+.skills li{font:600 14px/1 var(--f-cap);color:var(--on-iron);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:7px 12px}
+.hero .actions{margin-top:var(--s4)}
+.tile--media{padding:0;overflow:hidden;justify-content:flex-start;min-height:0}
+.tile--media .tile-img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-bottom:1px solid var(--rule)}
+.tile--media h3{margin:var(--s3) var(--s3) 6px}
+.tile--media p{margin:0 var(--s3) var(--s3)}
+.tile--media:hover .tile-img{filter:brightness(1.08)}
+.timeline-link{margin:var(--s8) 0 0;font:600 20px/1.3 var(--f-cap)}
+.timeline-link a{color:var(--ink);text-decoration-color:var(--primary);text-decoration-thickness:2px;text-underline-offset:5px}
+.timeline-link a:hover{color:var(--primary)}
+@media (max-width:560px){.tile{min-height:0;padding:var(--s2) var(--s3) var(--s3)}.tile--media{padding:0}.tile h3{font-size:26px}}
+.cs-hero video{display:block;width:100%;height:auto;aspect-ratio:8/5;border-radius:6px;box-shadow:var(--shadow);background:#000}
