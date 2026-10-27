@@ -12,7 +12,7 @@ window.WIKI = {
 "glory": {
 "t": "Glory",
 "h": "glory.html",
-"d": "An asymmetric strategy game: a digital, turn-based card game."
+"d": "An asymmetric, digital, turn-based strategy card game."
 },
 "expanchess": {
 "t": "Expanchess",
@@ -27,12 +27,12 @@ window.WIKI = {
 "optcg": {
 "t": "Competitive One Piece TCG",
 "h": "optcg.html",
-"d": "Top-level play since the game's release at the end of 2022."
+"d": "Top-level play since January 2023."
 },
 "community": {
 "t": "Community management",
 "h": "community.html",
-"d": "Co-managed One Piece TCG Israel from January 2023 to 2025, growing it to 1,000+ active members."
+"d": "Co-managed One Piece TCG Israel for 3 years (2023 to 2025), growing it to 1,000+ active members."
 },
 "timeline": {
 "t": "Timeline",

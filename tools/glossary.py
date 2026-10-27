@@ -4,11 +4,11 @@ G = {
  # Projects
  "war-tcg":   ("WAR-TCG", "war-tcg.html", "An original trading card game I'm designing solo."),
  "chardss":   ("CHARDSS", "chardss.html", "Chess with a shared deck of 40 cards that each bend one rule."),
- "glory":     ("Glory", "glory.html", "An asymmetric strategy game: a digital, turn-based card game."),
+ "glory":     ("Glory", "glory.html", "An asymmetric, digital, turn-based strategy card game."),
  "expanchess":("Expanchess", "expanchess.html", "A browser chess game with one-use ability cards. My job since July 2025."),
  "world":     ("The Wondering Emperor", "world.html", "An original high fantasy world with lore, history, characters, a story and a hard magic system."),
- "optcg":     ("Competitive One Piece TCG", "optcg.html", "Top-level play since the game's release at the end of 2022."),
- "community": ("Community management", "community.html", "Co-managed One Piece TCG Israel from January 2023 to 2025, growing it to 1,000+ active members."),
+ "optcg":     ("Competitive One Piece TCG", "optcg.html", "Top-level play since January 2023."),
+ "community": ("Community management", "community.html", "Co-managed One Piece TCG Israel for 3 years (2023 to 2025), growing it to 1,000+ active members."),
  "timeline":  ("Timeline", "timeline.html", "Everything, in the order it happened."),
  # WAR-TCG
  "might":     ("Might", "https://thevaus.github.io/war-tcg-site/design#combat", "WAR-TCG's one combat number. An attack hits if the attackers' combined Might is at least the target's."),
