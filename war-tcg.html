@@ -33,13 +33,13 @@
   <header class="cs-head">
     <a class="crumb" href="./">Home</a>
     <h1>WAR-TCG</h1>
-    <p class="lede">A five-colour trading card game about a kingdom fighting on every front. Any unit in your hand can become a resource, a threat or a shield, and you decide which.</p>
+    <p class="lede">Your kingdom is at war on every front. Choose the land you'll defend, send your most trusted general to lead, raise your army, and march to battle.</p>
     <dl class="summary">
       <div><dt>My role</dt><dd>Sole designer: rules, colour pie, balance, card templates</dd></div>
       <div><dt>Team</dt><dd>Solo project</dd></div>
       <div><dt>Timeline</dt><dd>May 2026 to now</dd></div>
       <div><dt>Tools</dt><dd>Apple Numbers, Affinity, Obsidian, AI coding tools</dd></div>
-      <div><dt>Status</dt><dd>127 cards at concept stage. Rules v5</dd></div>
+      <div><dt>Status</dt><dd>In playtesting, 127 cards</dd></div>
     </dl>
     <div class="site-links"><a class="btn btn-primary" href="https://thevaus.github.io/war-tcg-site/">Open the WAR-TCG website</a><a class="btn btn-secondary" href="https://thevaus.github.io/war-tcg-site/design">Read the design notes</a></div>
   </header>
@@ -51,9 +51,21 @@
 
   <div class="cs-body cs-body--solo">
     <div class="cs-main">
+      <section id="start">
+        <h2>How it started</h2>
+        <p>In April 2026 I wrote a list in my journal: for every TCG I'd played, the mechanics I thought were the best and the ones I thought were the worst. Reading it back gave me one question: <b>what if I took everything I like from each of these games and put it into one game, with a hard rule against what I dislike most in each?</b></p>
+        <p>I put my favourite mechanics together, playtested, and trimmed from there. A few lines from that list, and where they ended up:</p>
+        <ul>
+          <li><b>Magic: The Gathering.</b> Best: lands, and how a land can do more than make mana. Worst: losing to mana screw or flood. In WAR-TCG, units in your Backline are the resource.</li>
+          <li><b>One Piece TCG.</b> Best: discarding cards from your hand to defend, which gives every card a second use. Worst: triggers you can't play around. WAR-TCG keeps pitching to block and has no such triggers.</li>
+          <li><b>Flesh and Blood.</b> Best: sideboarding from game 1, because you see the opposing hero first. Worst: little board presence. In WAR-TCG you pick your Region after seeing the opposing Leader, and the board is full of units.</li>
+        </ul>
+        <p><a href="https://thevaus.github.io/war-tcg-site/updates/2026-10-23-designers-notes-03-the-best-and-worst-of-other-games">The full list, game by game</a> is in my Designer's notes.</p>
+      </section>
+
       <section id="about">
         <h2>The game</h2>
-        <p>Your kingdom is at war on every front. Each player brings a Leader, which sets their identity, and three Regions, and picks one Region to defend after seeing the opponent's Leader. The ideas the game is built on:</p>
+        <p>Each player brings a Leader, which sets their identity, and three Regions, and picks one Region to defend after seeing the opponent's Leader. The ideas the game is built on:</p>
         <ul>
           <li><b>Units are the resource.</b> There are no land cards. Any unit can be <a class="wl" href="https://thevaus.github.io/war-tcg-site/design#resources" data-wl="station">stationed</a> in your Backline to produce energy, or deployed to the Frontline to fight, so there's no mana screw.</li>
           <li><b>Combat on one number.</b> Units fight with <a class="wl" href="https://thevaus.github.io/war-tcg-site/design#combat" data-wl="might">Might</a> alone. An attack hits if the attackers' Might reaches the target's.</li>
